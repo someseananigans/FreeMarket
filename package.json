@@ -1,0 +1,24 @@
+{
+  "name": "Week06-Review",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QFults/Week06-Review.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QFults/Week06-Review/issues"
+  },
+  "homepage": "https://github.com/QFults/Week06-Review#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
