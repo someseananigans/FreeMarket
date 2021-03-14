@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .info {
+      background: lightblue;
+      height: 140px;
+    }
+
+    .sidebar {
+      background: lightcoral;
+      height: 500px
+    }
+
+    h5 {
+      color: white;
+    }
+  </style>
+
+  <title>FreeMarket</title>
+</head>
+
+<body>
+  <nav class="nav-wrapper teal lighten-1 valign-wrapper">
+    <div class="container">
+      <a href="" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons">menu</i>
+      </a>
+      <a href="./sampleIndex.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <input type="search">
+        </li>
+        <li>
+          <a href=""><i class="material-icons">search</i></a>
+        </li>
+        <li><a href="./sampleProfile.html">My Profile</a></li>
+        <li><a href="./sampleListings.html">My Listings</a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="./sampleLogin.html">Home</a></li>
+    <li><a href="./sampleProfile.html">My Profile</a></li>
+    <li><a href="./sampleListings.html">My Listings</a></li>
+  </ul>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s3 l3 sidebar">
+        <h5>Categories</h5>
+        <div class="collection">
+          <a href="#!" class="collection-item">Automotive</a>
+          <a href="#!" class="collection-item">Household</a>
+          <a href="#!" class="collection-item">Decor</a>
+          <a href="#!" class="collection-item">Clothing</a>
+          <a href="#!" class="collection-item">Accessories</a>
+          <a href="#!" class="collection-item">Shoes</a>
+          <a href="#!" class="collection-item">Random</a>
+        </div>
+      </div>
+      <div class="col s9 l9">
+        <div class="row">
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+          <div class="col s12 m6 l4">
+            <div class="card info z-depth-3"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
+
+</body>
+
+</html>
