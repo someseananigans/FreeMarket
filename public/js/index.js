@@ -1,5 +1,4 @@
-
-// creates form on profile page to create post
+// Creates form to create a post
 document.getElementById('create').addEventListener('click', () => {
   let getItemInfo = document.createElement('div')
   getItemInfo.className =
@@ -32,7 +31,7 @@ document.getElementById('create').addEventListener('click', () => {
           </div>
         </form>
       </div> 
-    </div>
+    </div>  
   </form>
  <button class="btn waves-effect waves-light" type="submit" name="action" id="createItem">Create
  <i class="material-icons right">send</i>
@@ -40,9 +39,7 @@ document.getElementById('create').addEventListener('click', () => {
  `
   document.getElementById('items').append(getItemInfo)
 
-  
-
-// creates card with post when click create
+// Creates card for created post
   document.getElementById('createItem').addEventListener('click', () => {
     event.preventDefault
     console.log('tick')
@@ -52,7 +49,7 @@ document.getElementById('create').addEventListener('click', () => {
     newItem.className = 'card'
     newItem.innerHTML =
       `
-  <div class="row">
+     <div class="row">
     <div class="col s12 m6">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
@@ -60,13 +57,15 @@ document.getElementById('create').addEventListener('click', () => {
           <p>${description}</p>
         </div>
         <div class="card-action">
-          <a href="#">Contact Owner</a>
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
         </div>
       </div>
     </div>
   </div>
     `
     document.getElementById('items').append(newItem)
+
 
   })
 })
