@@ -9,14 +9,15 @@ router.get('/listings', (req, res) => {
 })
 
 // Get specific listings
-router.get('/listings/:username', (req, res) => {
-  Listing.findAll({ where: { username: req.params.username } })
-    .then(listing => res.json(user))
+router.get('/listings/:user_id', (req, res) => {
+  Listing.findAll({ where: { user_id: req.params.user_id } })
+    .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
 
 // Add new listing
-router.post('/listings', (req, res) => {
+router.post('/listings/:user_id', (req, res) => {
+  req.body.user_id = req.params.user_id
   Listing.create(req.body)
   .then(listing => res.json(listing))
   .catch(err => res.json(err))
