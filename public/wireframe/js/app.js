@@ -37,7 +37,7 @@ document.getElementById('create').addEventListener('click', () => {
  </button>
  `
   document.getElementById('items').append(getItemInfo)
-  
+
   
   document.getElementById('createItem').addEventListener('click', () => {
     event.preventDefault
@@ -64,6 +64,6 @@ document.getElementById('create').addEventListener('click', () => {
   </div>
     `
     document.getElementById('items').append(newItem)
-    
+
   })
 })
