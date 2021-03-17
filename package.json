@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/QFults/Week06-Review#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.5.1"
   }
 }
