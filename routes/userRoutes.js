@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const { User } = require('../models')
+const passport = require('passport')
+const jwt = require('jsonwebtoken')
 
 // GET specific user
 router.get('/user/:username', (req, res) => {
@@ -7,6 +9,12 @@ router.get('/user/:username', (req, res) => {
     .then(user => res.json(user))
     .catch(err => res.json(err))
 })
+
+router.get('/user', passport.authenticate('jwt'), (req, res) => {
+  User.findOne({ where: { id: req.user.id } })
+    .then(user => res.json(user))
+    .catch(err => console.log(err))
+}))
 
 // Add new user (register)
 router.post('/user/register', (req, res) => {
@@ -21,16 +29,27 @@ router.post('/user/register', (req, res) => {
 router.post('/user/login', (req, res) => {
   User.authenticate()(req.body.username, req.body.password, (err, user) => {
     if (err) { console.log(err) }
-    res.json(user)
+    // webtoken (store to represent users login)
+    res.json(user ? jwt.sign({ id: user.id }, process.env.SECRET): null)
   })
 })
 
-// Update current user
+router.get('/user/test', passport.authenticate('jwt'), (req, res) => {
+  res.json(req.user)
+})
+
+// Update current user (needs update)
 router.put('/user/:username', (req, res) => {
   User.update(req.body, { where: { username: req.params.username} })
     .then(() => res.sendStatus(200))
     .catch(err => res.json(err))
 })
+
+router.put('/user', passport.authenticate('jwt'), (req, res) => {
+  User.update(req.body, { where: { id: req.user.id } })
+  .then(() => res.sendStatus(200))
+  .catch(err => console.log(err))
+}))
 
 // Delete user
 router.delete('/user/:username', (req, res) => {
@@ -38,6 +57,12 @@ router.delete('/user/:username', (req, res) => {
   .then(() => res.sendStatus(200))
   .catch(err => res.json(err))
 })
+
+router.delete('/user', passport.authenticate('jwt'), (req, res) => {
+  User.destroy( { where: { id: req.user.id } })
+    .then(() => res.sendStatus(200))
+    .catch(err => console.log(err))
+}))
 
 
 module.exports = router
