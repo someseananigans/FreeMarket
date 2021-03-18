@@ -1,4 +1,7 @@
-module.exports = {
-  User: require('./User.js'),
-  Listing: require('./Listing.js')
-}
+const User = require('./User.js')
+const Listing = require('./Listing.js')
+
+User.hasMany(Item, { foreignKey: 'uid' })
+Listing.belongsTo(User, { foreignKey: 'uid' })
+
+module.exports = { User, Listing }
