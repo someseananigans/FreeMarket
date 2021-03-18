@@ -12,16 +12,5 @@ User.init({
   phone: DataTypes.INTEGER
 }, { sequelize, modelName: 'users' })
 
-// Populate table with a row (user)
-User.create({
-  name: 'name',
-  email: 'email@gmail.com',
-  username: 'username',
-  password: 'password',
-  phone: '1234567890'
-})
-  .then(user => { console.log(user) })
-  .catch(err => console.log(err))
-
 
 module.exports = User
