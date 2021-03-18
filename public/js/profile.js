@@ -9,7 +9,7 @@ const getListings = () => {
     document.getElementById('myItems').innerHTML = ''
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
-        listingElem.className = 'card info z-depth-3'
+        listingElem.className = 'col s9 l6'
         listingElem.innerHTML = `
           <p>${listing.title}</p>
           <p>${listing.description}</p>
@@ -17,10 +17,16 @@ const getListings = () => {
           <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
         `
       document.getElementById('myItems').append(listingElem)
+       
       })
+   
   })
   .catch(err => console.err(err))
 }
+// document.addEventListener('DOMContentLoaded', function () {
+//   var elems = document.querySelectorAll('.modal');
+//   var instances = M.Modal.init(elems, options);
+// });
 
 // Creates form to create a post
 document.getElementById('create').addEventListener('click', () => {
@@ -76,7 +82,7 @@ document.getElementById('createItem').addEventListener('click', () => {
   newItem.innerHTML =
     `
     
-    <div class="col s12 m6">
+    <div class="col s12 m8">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">${title}</span>
@@ -106,22 +112,22 @@ getListings()
 
 
 
-axios.post('/api/listings', {
-        title: document.getElementById('title').value
-        description: document.getElementById('description').value
-    })
-      .then(({ data: listing }) => {
-        let listingElem = document.createElement('div')
-        listingElem.className = 'col s12 m6 l4'
-        listingElem.innerHTML = `
-          <p>${listing.title}</p>
-          <p>${listing.description}</p>
-          <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
-        `
-        document.getElementById('myItems').append(listingElem)
-      })
-      let listing = {
-        title: `${title}`,
-        description: `${description}`
-      }
-    .catch(err => console.error(err))
+// axios.post('/api/listings', {
+//         title: document.getElementById('title').value
+//         description: document.getElementById('description').value
+//     })
+//       .then(({ data: listing }) => {
+//         let listingElem = document.createElement('div')
+//         listingElem.className = 'col s12 m6 l4'
+//         listingElem.innerHTML = `
+//           <p>${listing.title}</p>
+//           <p>${listing.description}</p>
+//           <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
+//         `
+//         document.getElementById('myItems').append(listingElem)
+//       })
+//       let listing = {
+//         title: `${title}`,
+//         description: `${description}`
+//       }
+//     .catch(err => console.error(err))
