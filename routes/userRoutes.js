@@ -8,11 +8,21 @@ router.get('/user/:username', (req, res) => {
     .catch(err => res.json(err))
 })
 
-// Add new user
-router.post('/user', (req, res) => {
-  User.create(req.body)
-    .then(user => res.json(user))
-    .catch(err => res.json(err))
+// Add new user (register)
+router.post('/user/register', (req, res) => {
+  const { name, email, username } = req.body 
+  User.register(new User{ name, email, username }), req.body.password, err => {
+    if (err) { console.log(err) }
+    res.sendStatus(200)
+  }
+})
+
+// Login user
+router.post('/user/login', (req, res) => {
+  User.authenticate()(req.body.username, req.body.password, (err, user) => {
+    if (err) { console.log(err) }
+    res.json(user)
+  })
 })
 
 // Update current user
