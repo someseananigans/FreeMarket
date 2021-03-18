@@ -8,7 +8,7 @@ Listing.init({
   title: DataTypes.STRING,
   description: DataTypes.STRING,
   image: DataTypes.STRING,
-  user_id: DataTypes.INTEGER
+  username: DataTypes.STRING
 }, { sequelize, modelName: 'listings' })
 
 module.exports = Listing
