@@ -5,7 +5,10 @@ User.destroy({where: { } })
   .then(() => {
     User.bulkCreate([
       {
-
+        name: "John Doe",
+        email: "johnDoe@gmail.com",
+        username: "JJJDoe",
+        password: "M3rrrrrr"
       }
     ])
       .then(() => {
