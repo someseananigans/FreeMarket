@@ -6,6 +6,24 @@ const jwt = require('jsonwebtoken')
 
 let users = [
   {
+    name: "Sean",
+    email: "johnDoe@gmail.com",
+    username: "Sean",
+    password: "Admin"
+  },
+  {
+    name: "Joseph",
+    email: "johnDoe@gmail.com",
+    username: "Joeseph",
+    password: "Admin"
+  },
+  {
+    name: "Kyle",
+    email: "johnDoe@gmail.com",
+    username: "Kyle",
+    password: "Admin"
+  },
+  {
     name: "John Doe",
     email: "johnDoe@gmail.com",
     username: "JJJDoe",
