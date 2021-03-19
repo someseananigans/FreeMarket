@@ -31,6 +31,12 @@ passport.use(new JWTStrategy({
 
 app.use(require('./routes'))
 
+<<<<<<< HEAD
 sequelize.sync({})
+=======
+
+// { force: true }
+sequelize.sync()
+>>>>>>> 7490c6f523dcc7e6e5d6e79bc8067200099d9b7f
   .then(() => app.listen(process.env.PORT || PORT))
   .catch(err => console.log(err))

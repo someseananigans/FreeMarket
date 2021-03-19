@@ -1,6 +1,8 @@
 const router = require('express').Router()
 const { User } = require('../models')
 const { Listing } = require('../models')
+const passport = require('passport')
+const jwt = require('jsonwebtoken')
 
 let users = [
   {
@@ -58,6 +60,29 @@ let listings = [
 
 // users and listings table must be dropped first for seed to work
 // seed users and than seed listings
+// router.post('/users', passport.authenticate('jwt'), (req, res) => {
+//   if (req.user.isAdmin) {
+//     User.destroy({ where: {} })
+//       .then(() => {
+//         for (let i = 0; i < users.length; i++) {
+//           let { name, email, username } = users[i]
+//           User.register(new User({ name, email, username }), users[0].password, err => {
+//             if (err) { console.log(err) }
+//             res.sendStatus(200)
+//           })
+//         }
+//       })
+//       .catch(err => console.log(err))
+//   }
+//   else {
+//     res.json({
+//       status: 401,
+//       message: 'Unauthorized: Admin access only'
+//     })
+//     return
+//   }
+// })
+
 router.post('/users', (req, res) => {
   User.destroy({ where: {} })
     .then(() => {
@@ -71,6 +96,7 @@ router.post('/users', (req, res) => {
     })
     .catch(err => console.log(err))
 })
+
 
 router.post('/listings', (req, res) => {
   Listing.destroy({ where: {} })
