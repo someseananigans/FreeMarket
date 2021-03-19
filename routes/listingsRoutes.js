@@ -67,8 +67,9 @@ router.get('/listings/:category', (req, res) => {
 // Add new listing
 router.post('/listings/', passport.authenticate('jwt'), (req, res) => {
   Listing.create({
-    text: req.body.text,
-    isDone: req.body.isDone,
+    title: req.body.title,
+    description: req.body.description,
+    image: req.body.image,
     uid: req.user.id
   })
   .then(listing => res.json(listing))
