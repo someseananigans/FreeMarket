@@ -9,6 +9,24 @@ User.destroy({where: { } })
         email: "johnDoe@gmail.com",
         username: "JJJDoe",
         password: "M3rrrrrr"
+      },
+      {
+        name: "Jane Doe",
+        email: "janeDoe@gmail.com",
+        username: "janeDoe",
+        password: "Mist3rrrrrr"
+      },
+      {
+        name: "Jim Doe",
+        email: "jimDoe@gmail.com",
+        username: "JimDoe",
+        password: "Jeeberrrrrr"
+      },
+      {
+        name: "Jamie Doe",
+        email: "jamieDoe@gmail.com",
+        username: "JamieDoe",
+        password: "j33b3rrrrrr"
       }
     ])
       .then(() => {
