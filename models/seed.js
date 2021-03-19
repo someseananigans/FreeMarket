@@ -1,72 +1,80 @@
 const Listing = require('./Listing.js')
 const User = require('./User.js')
 
-User.destroy({where: { } })
-  .then(() => {
-    User.bulkCreate([
-      {
-        name: "John Doe",
-        email: "johnDoe@gmail.com",
-        username: "JJJDoe",
-        password: "M3rrrrrr"
-      },
-      {
-        name: "Jane Doe",
-        email: "janeDoe@gmail.com",
-        username: "janeDoe",
-        password: "Mist3rrrrrr"
-      },
-      {
-        name: "Jim Doe",
-        email: "jimDoe@gmail.com",
-        username: "JimDoe",
-        password: "Jeeberrrrrr"
-      },
-      {
-        name: "Jamie Doe",
-        email: "jamieDoe@gmail.com",
-        username: "JamieDoe",
-        password: "j33b3rrrrrr"
-      }
-    ])
-      .then(() => {
-        console.log('Seed Successful')
-        process.exit()
-      })
-      .catch(err => console.log(err))
-  })
+let users = [
+  {
+    name: "John Doe",
+    email: "johnDoe@gmail.com",
+    username: "JJJDoe",
+    password: "M3rrrrrr"
+  },
+  {
+    name: "Jane Doe",
+    email: "janeDoe@gmail.com",
+    username: "janeDoe",
+    password: "Mist3rrrrrr"
+  },
+  {
+    name: "Jim Doe",
+    email: "jimDoe@gmail.com",
+    username: "JimDoe",
+    password: "Jeeberrrrrr"
+  },
+  {
+    name: "Jamie Doe",
+    email: "jamieDoe@gmail.com",
+    username: "JamieDoe",
+    password: "j33b3rrrrrr"
+  }
+]
 
-Listing.destroy({where: { } })
+let listings = [
+  {
+    title: 'item1',
+    description: 'description',
+    image: 'image1',
+    uid: 1
+  },
+  {
+    title: 'item2',
+    description: 'description',
+    image: 'image2',
+    uid: 2
+  },
+  {
+    title: 'item3',
+    description: 'description',
+    image: 'image3',
+    uid: 3
+  },
+  {
+    title: 'item4',
+    description: 'description',
+    image: 'image4',
+    uid: 1
+  }
+]
+
+// users and listings table must be dropped first for seed to work
+// seed users and than seed listings
+User.destroy({ where: {} })
   .then(() => {
-    Listing.bulkCreate([
-      {
-        title: 'item1',
-        description: 'description',
-        image: 'image1',
-        user_id: '1'
-      },
-      {
-        title: 'item2',
-        description: 'description',
-        image: 'image2',
-        user_id: '2'
-      },
-      {
-        title: 'item3',
-        description: 'description',
-        image: 'image3',
-        user_id: '3'
-      },
-      {
-        title: 'item4',
-        description: 'description',
-        image: 'image4',
-        user_id: '1'
-      }
-    ])
+    for (let i = 0; i < users.length; i++) {
+      let { name, email, username } = users[i]
+      User.register(new User({ name, email, username }), users[0].password, err => {
+        if (err) { console.log(err) }
+        res.sendStatus(200)
+      })
+    }
+  })
+  .catch(err => console.log(err))
+
+Listing.destroy({ where: {} })
+  .then(() => {
+    Listing.bulkCreate(listings)
       .then(() => {
-        console.log('Seed Successful')
-        process.exit()
+        res.sendStatus(200)
       })
       .catch(err => console.log(err))
   })
+  .catch(err => console.log(err))
