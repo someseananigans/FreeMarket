@@ -1,3 +1,4 @@
+const { query } = require("express")
 
 
 // get all listings
@@ -14,7 +15,6 @@ let getAllListings = () => {
           <p>${listing.title}</p>
           <p>${listing.description}</p>
           <p>${image}
-          <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
         `
         document.getElementById('allListings').append(listingElem)
     })
@@ -23,6 +23,18 @@ let getAllListings = () => {
 }
 
 getAllListings()
+
+document.getElementById('automotive').addEventListener('click', event => {
+  db.query('SECLECT * FROM listings WHERE category = automotive', 
+  (err, data) => {
+    document.getElementById('allListings').append = data
+  })
+  axios.get('api/listings')
+  .then(({ data: listings }) => {
+
+  })
+  .catch(err => console.log(err))
+})
 
 // create new post
 

@@ -1,6 +1,5 @@
-// document.getElementById('search').addEventListener('input', () => {
 
-// })
+
 const axios = window.axios
 
 const getListings = () => {
@@ -14,7 +13,7 @@ const getListings = () => {
           <p>${listing.title}</p>
           <p>${listing.description}</p>
           <p>${image}
-          <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
+          <button data-target=“modal1” class=“btn modal-trigger”>Contact Owner</button>
         `
       document.getElementById('myItems').append(listingElem)
        
@@ -23,14 +22,16 @@ const getListings = () => {
   })
   .catch(err => console.err(err))
 }
-// document.addEventListener('DOMContentLoaded', function () {
-//   var elems = document.querySelectorAll('.modal');
-//   var instances = M.Modal.init(elems, options);
-// });
+// sign Out
+document.getElementById('signOut').addEventListener('click', event => {
+  localStorage.removeItem('token')
+  window.location = '/login.html'
+})
+
 
 // Creates form to create a post
 document.getElementById('create').addEventListener('click', () => {
-  
+  document.getElementById('myItems').innerHTML = ''
 
   let getItemInfo = document.createElement('div')
   getItemInfo.className =
@@ -69,6 +70,7 @@ document.getElementById('create').addEventListener('click', () => {
  <i class="material-icons right">send</i>
  </button>
  `
+ 
   document.getElementById('items').append(getItemInfo)
 
   // Creates card for created post
@@ -89,8 +91,7 @@ document.getElementById('createItem').addEventListener('click', () => {
           <p>${description}</p>
         </div>
         <div class="card-action">
-         <button data-target="#modal1" class="btn modal-trigger .modal-close">Contact Owner</button>
- 
+         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Contact Owner</a>
         </div>
       </div>
     </div>
@@ -101,6 +102,7 @@ document.getElementById('createItem').addEventListener('click', () => {
 })
 
 })
+
 
 
 
