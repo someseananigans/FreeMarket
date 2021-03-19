@@ -127,7 +127,8 @@
 <script>
 
   const getListings = () => {
-   axios.get('/api/listings')
+    axios.get('/api/listings')
+
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
