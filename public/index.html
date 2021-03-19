@@ -78,9 +78,9 @@
           <a href="#!" class="collection-item" id="random">Random</a>
         </div>
       </div>
-    <div class="itesmContainer">  
+    <div class="itemsContainer">  
       <div class="col s9 l9">
-        <div class="row listings">
+        <div class="row" id="listings">
           <!-- <div class="col s12 m6 l4">
             <div class="card info z-depth-3"></div>
           </div>
@@ -130,7 +130,7 @@
    axios.get('/api/listings')
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
-      songs.forEach(listing => {
+      listings.forEach(listing => {
         const listingElem = document.createElement('div')
         listingElem.className = 'col s12 m6 l4'
         listingElem.innerHTML = `
