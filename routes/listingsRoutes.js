@@ -2,20 +2,16 @@ const router = require('express').Router()
 const { Listing } = require('../models')
 const passport = require('passport')
 
-// Get all listings
+// Get all listings (No authentication necessary)
 router.get('/listings', (req, res) => {
   Listing.findAll({})
     .then(listings => res.json(listings))
     .catch(err => res.json(listings))
 })
 
-// // Get listings by title
-// router.get('/listings/:title', (req, res) => {
-//   Listing.findAll({ where: { title: req.params.title } })
-//     .then(listing => res.json(listing))
-//     .catch(listing => res.json(err))
-// })
+// All listings under user can be grabbed via the user data itself
 
+// search bar get via title input
 router.get('/listings/search/:title', (req, res) => {
   Listing.findAll({})
     .then(listing => {
@@ -31,12 +27,19 @@ router.get('/listings/search/:title', (req, res) => {
     .catch(listing => res.json(err))
 })
 
-// Get listings by criteria
+// Get listings by category
 router.get('/listings/:category', (req, res) => {
   Listing.findAll({ where: { category: req.params.category } })
     .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
+
+// // Get listings by title
+// router.get('/listings/:title', (req, res) => {
+//   Listing.findAll({ where: { title: req.params.title } })
+//     .then(listing => res.json(listing))
+//     .catch(listing => res.json(err))
+// })
 
 // // Get listings by tag
 // router.get('/listings/tagsearch/:tag', (req, res) => {
