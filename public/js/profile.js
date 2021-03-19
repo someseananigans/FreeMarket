@@ -79,7 +79,7 @@ document.getElementById('create').addEventListener('click', () => {
 
   // Creates card for created post
 document.getElementById('createItem').addEventListener('click', () => {
-  event.preventDefault
+  event.preventDefault()
   console.log('tick')
   let title = document.getElementById('title').value
   let description = document.getElementById('description').value
@@ -87,7 +87,6 @@ document.getElementById('createItem').addEventListener('click', () => {
   newItem.className = 'card'
   newItem.innerHTML =
     `
-    
     <div class="col s12 m8">
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
@@ -95,7 +94,7 @@ document.getElementById('createItem').addEventListener('click', () => {
           <p>${description}</p>
         </div>
         <div class="card-action">
-         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Contact Owner</a>
+         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Edit Post</a>
         </div>
       </div>
     </div>
@@ -107,7 +106,12 @@ document.getElementById('createItem').addEventListener('click', () => {
 
 })
 
+document.getElementById('editProfile').addEventListener('click', event => {
+  document.getElementById('myItems').innerHTML = ''
+  
 
+
+})
 
 
 // document.getElementById('contact').addEventListener('click', event => {
