@@ -4,8 +4,8 @@ const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
 // get user(listings)
-router.get('/users/auth', passport.authenticate('jwt'), (req, res) => {
-  res.json(req.user.listings)
+router.get('/user/auth', passport.authenticate('jwt'), (req, res) => {
+  res.json(req.user)
 })
 
 // Add new user (register)
