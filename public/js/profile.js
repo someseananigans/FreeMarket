@@ -3,7 +3,11 @@
 const axios = window.axios
 
 const getListings = () => {
-  axios.get('/api/listings')
+  axios.get('/api/listings/auth', {
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem('token')}`
+    }
+    })
   .then(({ data: listings }) => {
     document.getElementById('myItems').innerHTML = ''
       listings.forEach(listing => {
@@ -12,13 +16,12 @@ const getListings = () => {
         listingElem.innerHTML = `
           <p>${listing.title}</p>
           <p>${listing.description}</p>
-          <p>${image}
-          <button data-target=“modal1” class=“btn modal-trigger”>Contact Owner</button>
+          <img>${listing.image}</img>
+          <button data-target=“modal1” class=“btn modal-trigger” id="editListing">Edit Listing</button>
+          <button class=“btn modal-trigger” id="deleteListing">Delete Listing</button>
         `
       document.getElementById('myItems').append(listingElem)
-       
       })
-   
   })
   .catch(err => console.err(err))
 }
@@ -64,14 +67,15 @@ document.getElementById('create').addEventListener('click', () => {
           </div>
         </form>
       </div> 
-    </div>  
+    </div>
   </form>
- <button class="btn waves-effect waves-light" type="submit" name="action" id="createItem">Create
+ <button class="btn" type="submit" name="action" id="createItem">Create
  <i class="material-icons right">send</i>
  </button>
  `
  
   document.getElementById('items').append(getItemInfo)
+
 
   // Creates card for created post
 document.getElementById('createItem').addEventListener('click', () => {

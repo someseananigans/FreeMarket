@@ -25,7 +25,7 @@ passport.deserializeUser(User.deserializeUser())
 passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET
-}, ({ id }, cb) => User.findOne({ where: { id }, include: [Listing] })
+}, ({ id }, cb) => User.findOne({ id })
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 
@@ -34,3 +34,6 @@ app.use(require('./routes'))
 sequelize.sync()
   .then(() => app.listen(process.env.PORT || PORT))
   .catch(err => console.log(err))
+
+
+// where: { id }, include: [Listing]
