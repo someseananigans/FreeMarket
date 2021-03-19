@@ -2,27 +2,28 @@ const { query } = require("express")
 
 
 // get all listings
-let getAllListings = () => {
+// let getAllListings = () => {
 
-  axios.get('/api/listings')
-  .then(({ data: listings }) => {
-    console.log(listings)
-    document.getElementById('allListings').innerHTML = ''
-    listings.forEach(listing => {
-      const listingElem = document.createElement('div')
-      listingElem.className = 'col s12 m6 l4'
-      listingElem.innerHTML = `
-          <p>${listing.title}</p>
-          <p>${listing.description}</p>
-          <p>${image}
-        `
-        document.getElementById('allListings').append(listingElem)
-    })
-  })
-  .catch(err => console.error(err))
-}
+//   axios.get('/api/listings')
+//   .then(({ data: listings }) => {
+//     console.log(listings)
+//     document.getElementById('allListings').innerHTML = ''
+//     listings.forEach(listing => {
+//       const listingElem = document.createElement('div')
+//       listingElem.className = 'col s12 m6 l4'
+//       listingElem.innerHTML = `
+//           <p>${listing.title}</p>
+//           <p>${listing.description}</p>
+//           <p>${image}
+//           <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
+//         `
+//         document.getElementById('allListings').append(listingElem)
+//     })
+//   })
+//   .catch(err => console.error(err))
+// }
 
-getAllListings()
+// getAllListings()
 
 document.getElementById('automotive').addEventListener('click', event => {
   db.query('SECLECT * FROM listings WHERE category = automotive', 
