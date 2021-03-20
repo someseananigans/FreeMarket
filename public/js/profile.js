@@ -2,6 +2,7 @@
 
 const axios = window.axios
 
+// page load
 const getListings = () => {
   axios.get('/api/user/1', {
     headers: {
