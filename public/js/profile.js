@@ -3,14 +3,15 @@
 const axios = window.axios
 
 // page load
-const getListings = () => {
-  axios.get('/api/user/1', {
-    headers: {
-      'Authorization': `Bearer ${localStorage.getItem('token')}`
-    }
-    })
+const getMyListings = () => {
+  axios.get('/api/listings')
+  // , {
+  //   headers: {
+  //     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNjE2Mjc3MDQyfQ.34dN3orR0dPHnGWzZBmD5HWITCVRePmpBLioQCrvJ4U"
+  //   }
+  //   })
   .then(({ data: listings }) => {
-    res.json(listings)
+    // res.json(listings)
     document.getElementById('myItems').innerHTML = ''
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
@@ -21,8 +22,8 @@ const getListings = () => {
           <p>${listing.title}</p>
           <p>${listing.description}</p>
           <img src= "${listing.image}">
-          <button data-target=“modal1” class=“btn modal-trigger” id="editListing">Edit Listing</button>
-          <button class=“btn modal-trigger” id="deleteListing">Delete Listing</button>
+          <a class="waves-effect waves-light btn modal-trigger" id="editPost" href="#modal1">Edit Post</a>
+          <a class="waves-effect waves-light btn modal-trigger" id="deletePost" href="#modal1">Delete Post</a>
           </div>
           </div>
         `
@@ -37,7 +38,50 @@ document.getElementById('signOut').addEventListener('click', event => {
   window.location = '/login.html'
 })
 
-document.getElementById('editProfile').addEventListener('')
+document.getElementById('editProfile').addEventListener('click', event => {
+  document.getElementById('items').innerHTML = ''
+  let getItemInfo = document.createElement('div')
+  getItemInfo.className =
+    getItemInfo.innerHTML = `
+  
+ <form class="col s12" id="getinfo">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="name" type="text" class="validate">
+        <label for="title">Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="email" class="materialize-textarea"></textarea>
+            <label for="textarea1">Email</label>
+          </div>
+        </div>
+        </form>
+      </div> 
+    </div>
+  </form>
+ <button class="btn" type="submit" name="action" id="updateProfile">Save
+ <i class="material-icons right">send</i>
+ </button>
+ 
+ `
+  document.getElementById('items').append(getItemInfo)
+
+  document.getElementById('updateProfile').addEventListener('click', event => {
+
+    axios.put('/api/user', {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value
+    })
+      .then(() => {
+        getMyListings()
+      })
+      .catch(err => console.log(err))
+  })
+})
 
 // Creates form to create a post
 document.getElementById('create').addEventListener('click', () => {
@@ -110,8 +154,8 @@ document.getElementById('createItem').addEventListener('click', () => {
   document.getElementById('myItems').append(newItem)
   document.getElementById('items').innerHTML = ''
   document.getElementById('editPost').addEventListener('click', event => {
-      const id = event.relatedTarget.dataset.id
-      axios.get(`/api/listings/${id}`)
+      const title = event.target.dataset.title
+      axios.get(`/api/listings/${title}`)
       .then(({ data: listing }) => {
         document.getElementById('uTitle').value = listing.title
         document.getElementById('uDescription').value = listing.description
@@ -125,7 +169,7 @@ document.getElementById('createItem').addEventListener('click', () => {
       img: document.getElementById('uImg').value
     })
     .then(() => {
-      getListings()
+      getMyListings()
     })
     .catch(err => console.log(err))
   })
@@ -170,16 +214,16 @@ document.getElementById('createItem').addEventListener('click', () => {
   
 // })
 
-getListings()
+getMyListings()
 
 
 
 // axios.post('/api/listings', {
-//         title: document.getElementById('title').value
-//         description: document.getElementById('description').value
-//         img: document.getElementById('listingImg').value
+//         title: document.getElementById('title').value,
+//         description: document.getElementById('description').value,
+//         image: document.getElementById('listingImg').value
 //     })
 //       .then(() => {
-//          getListings()
+//          getMyListings()
 //       })
 //     .catch(err => console.error(err))
