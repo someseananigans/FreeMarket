@@ -29,20 +29,24 @@
       margin-top: 10px;
       text-align: center;
     }
+
+    .listing {
+      margin-left: 300px;
+    }
     
   </style>
   <link rel="stylesheet" href="./css/styles.css">
 
-  <title>Free Market Home</title>
+  <title>Free Market</title>
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
 
   <nav class="nav-wrapper teal lighten-1 valign-wrapper">
     <div class="container">
      
-      <a href="./index.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
+      <a href="./index.html" class="brand-logo center"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
       <ul class="right hide-on-med-and-down">
         <li>
           <input type="search" id="search">
@@ -50,16 +54,13 @@
         <li>
           <a href=""><i class="material-icons">search</i></a>
         </li>
-        <li><a href="./login.html">Login</a></li>
-        <li><a href="./profile.html">My Profile</a></li>
-
       </ul>
 
     </div>
     
   </nav>
   <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  <ul id="slide-out" class="sidenav">
+  <ul id="slide-out" class="sidenav invisible-top">
     <div class="container">
       <li class="collection-item filter  waves-effect white" id="automotive">Automotive</li>
       <li class="collection-item filter waves-effect white" id="household">Household</li>
@@ -86,7 +87,8 @@
     </div>
   </div>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+  </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
