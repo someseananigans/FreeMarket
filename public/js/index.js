@@ -41,9 +41,9 @@ document.getElementById('automotive').addEventListener('click', event => {
       autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -69,9 +69,9 @@ document.getElementById('household').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -97,9 +97,9 @@ document.getElementById('decor').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -125,9 +125,9 @@ document.getElementById('apparel').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -153,9 +153,9 @@ document.getElementById('accessories').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -181,9 +181,9 @@ document.getElementById('technology').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -209,9 +209,9 @@ document.getElementById('pet').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -237,9 +237,9 @@ document.getElementById('random').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
@@ -268,9 +268,9 @@ document.getElementById('search').addEventListener('input', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card">
+           <div class="card hoverable">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
