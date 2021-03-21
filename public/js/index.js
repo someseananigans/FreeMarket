@@ -12,7 +12,7 @@ const getListings = () => {
          <div class="col s12 m7">
            <div class="card">
              <div class="card-image">
-                <img src="../images/${listing.image}">
+                <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
