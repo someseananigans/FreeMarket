@@ -29,7 +29,6 @@ const getListings = () => {
 
 getListings()
 
-
 document.getElementById('automotive').addEventListener('click', event => {
 
   axios.get(`/api/listings/automotive`)
@@ -257,9 +256,7 @@ document.getElementById('random').addEventListener('click', event => {
 
 document.getElementById('search').addEventListener('input', event => {
 
-  axios.get(
-    `/api/listings/search/`
-    )
+  axios.get(`/api/listings/search/`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
