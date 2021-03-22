@@ -1,0 +1,73 @@
+/* Login/SignUp styling Start */
+
+.connect {
+  margin-top: 100px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#invalid {
+  margin-top: -20px;
+  margin-bottom: 30px
+}
+
+.info {
+  background: lightblue;
+  height: 140px;
+}
+
+.sidebar {
+  background: lightcoral;
+  height: 500px
+}
+
+h5 {
+  color: white;
+}
+
+.headSpace {
+  /* background-color: lightcoral; */
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.headSpace h1 {
+  font-weight: 100;
+  margin: 0;
+  color: rgb(4, 131, 110);
+}
+
+.itemName {
+  width: 75% !important;
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 35px !important;
+}
+
+.card-panel {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.card-panel .row {
+  margin-bottom: -5px;
+}
+
+.invalid {
+  border-bottom: #f44336
+}
+
+@media only screen and (max-width:600px) {
+  .connect {
+    width: 80%;
+  }
+  .itemName {
+    width: 100% !important;
+    padding-right: 25px !important
+  }
+}
+
+/* Login/SignUp styling End */
