@@ -7,22 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <style>
-    .info {
-      background: lightblue;
-      height: 140px;
-    }
-
-    .sidebar {
-      background: lightcoral;
-      height: 500px
-    }
-
-    
-    h5 {
-      color: white;
-    }
-  </style>
+  <link href="/css/styles.css" rel="stylesheet">
 
   <title>FreeMarket</title>
 </head>
@@ -56,50 +41,83 @@
     <li><a href="./sampleSignUp.html">Sign Up</a></li>
   </ul>
 
-  <div class="container">
-    <div class="row">
-      <form class="col s12" id="createProfile">
-        <div class="row">
-          <h4>Create A Profile</h4>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="name" type="text" class="validate">
-            <label for="name">Name</label>
+  <div class="container connect">
+    <div class="box">
+      <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
+        <li class="tab"><a class="active" href="#loginBox">Login</a></li>
+        <li class="tab"><a href="#signUpBox">Sign Up</a></li>
+      </ul>
+      <div id="signUpBox" class="col s12">
+        <div class="card-panel">
+          <div class="headSpace">
+            <h1 class="center-align">Sign Up</h1>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">Email</label>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="nameS" type="text" class="validate">
+              <label for="nameS">Name</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="username" type="text" class="validate">
-            <label for="username">Username</label>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="emailS" type="email" class="validate">
+              <label for="emailS">Email</label>
+              <div id="invalidEmail"></div>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Password</label>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">phone</i>
+              <input id="phoneS" type="number" class="validate">
+              <label for="phoneS">Phone Number</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="phone" type="number" class="validate">
-            <label for="phone">Phone</label>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">create</i>
+              <input id="usernameS" type="text" class="validate">
+              <label for="usernameS">Username</label>
+              <div id="invalidUser"></div>
+            </div>
           </div>
-        </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action" id="profileSubmit">Submit
-          <i class="material-icons right">send</i>
-        </button>
-      </form>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">lock</i>
+              <input id="passwordS" type="password" class="validate">
+              <label for="passwordS">Password</label>
+            </div>
+          </div>
+          <button id="signUp" class="waves-effect waves-light btn">Sign Up</button>
+        </div> 
+      </div>
 
-      <div class="col s4"></div>
+      <div id="loginBox" class="col s12">
+        <div class="card-panel">
+          <div class="headSpace">
+            <h1 class="center-align">Login</h1>
+          </div>
+          <div id="invalid"></div>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">create</i>
+              <input id="usernameL" type="text" class="validate">
+              <label for="usernameL">Username</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">lock</i>
+              <input id="passwordL" type="password" class="validate">
+              <label for="passwordL">Password</label>
+            </div>
+          </div>
+          <button id="login" class="waves-effect waves-light btn">Login</button>
+        </div>
+      </div>
     </div>
   </div>
-
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
@@ -108,8 +126,15 @@
     $(document).ready(function () {
       $('.sidenav').sidenav();
     })
+
+    $(document).ready(function () {
+      $('.tabs').tabs();
+    });
+
+    
+
   </script>
-<script src="./js/index.js"></script>
+  <script src="./js/login.js"></script>
 </body>
 
 </html>
