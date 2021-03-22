@@ -10,7 +10,7 @@ const getListings = () => {
       listingElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable" id="cardItem">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -28,6 +28,7 @@ const getListings = () => {
 }
 
 getListings()
+
 
 document.getElementById('automotive').addEventListener('click', event => {
 
