@@ -35,3 +35,6 @@ app.use(require('./routes'))
 sequelize.sync({})
   .then(() => app.listen(process.env.PORT || PORT))
   .catch(err => console.log(err))
+
+
+// where: { id }, include: [Listing]

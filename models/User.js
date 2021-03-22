@@ -6,8 +6,8 @@ const sequelize = require('../db')
 const User = pls.defineUser(sequelize, {
   name: DataTypes.STRING,
   email: {
-    type: DataTypes.STRING, 
-    unique: true
+    type: DataTypes.STRING,
+    unique: true 
   },
   phone: DataTypes.BIGINT
 })

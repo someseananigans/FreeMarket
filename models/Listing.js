@@ -7,6 +7,7 @@ class Listing extends Model { }
 Listing.init({
   title: DataTypes.STRING,
   description: DataTypes.STRING,
+  category: DataTypes.STRING,
   image: DataTypes.STRING,
 }, { sequelize, modelName: 'listings' })
 
