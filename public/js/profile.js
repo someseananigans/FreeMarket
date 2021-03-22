@@ -38,6 +38,7 @@ document.getElementById('signOut').addEventListener('click', event => {
   window.location = '/login.html'
 })
 
+// creates form to edit profile name and username
 document.getElementById('editProfile').addEventListener('click', event => {
   document.getElementById('items').innerHTML = ''
   let getItemInfo = document.createElement('div')
@@ -151,6 +152,7 @@ document.getElementById('createItem').addEventListener('click', () => {
     </div>
   </div>
     `
+  
   document.getElementById('myItems').append(newItem)
   document.getElementById('items').innerHTML = ''
   document.getElementById('editPost').addEventListener('click', event => {
