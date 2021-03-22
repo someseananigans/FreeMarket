@@ -8,10 +8,22 @@ router.get('/user/auth', passport.authenticate('jwt'), (req, res) => {
   res.json(req.user)
 })
 
+router.get('/usersnames', (req, res) => {
+  User.findAll({})
+    .then(users => {
+      let usernames = []
+      users.forEach(user => {
+        usernames.push(user.username)
+      });
+      res.json(usernames)
+    })
+    .catch(err => res.json(err))
+})
+
 // Add new user (register)
 router.post('/user/register', (req, res) => {
-  const { name, email, username } = req.body 
-  User.register(new User({ name, email, username }), req.body.password, err => {
+  const { name, email, phone, username } = req.body 
+  User.register(new User({ name, email, phone, username }), req.body.password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })
