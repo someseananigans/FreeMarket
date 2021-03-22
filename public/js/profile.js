@@ -1,5 +1,4 @@
 
-
 const axios = window.axios
 
 // page load
@@ -12,7 +11,7 @@ const getMyListings = () => {
     })
   .then(({ data: { listings }}) => {
     console.log(listings)
-    document.getElementById('myItems').innerHTML = ''
+    document.getElementById('items').innerHTML = ''
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
         listingElem.className = 'col s9 l6'
@@ -27,7 +26,21 @@ const getMyListings = () => {
           </div>
           </div>
         `
-      document.getElementById('myItems').append(listingElem)
+      document.getElementById('items').append(listingElem)
+
+        document.getElementById('saveUpdate').addEventListener('click', event => {
+          const id = event.target.dataset.id
+          axios.put(`/api/listings/${id}`, {
+            title: document.getElementById('uTitle').value,
+            description: document.getElementById('uDescription').value,
+            img: document.getElementById('uImg').value
+          })
+            .then(() => {
+              getMyListings()
+            })
+            .catch(err => console.log(err))
+        })
+
       })
   })
   .catch(err => console.err(err))
@@ -75,10 +88,12 @@ document.getElementById('editProfile').addEventListener('click', event => {
 
     axios.put('/api/user', {
       name: document.getElementById('name').value,
-      email: document.getElementById('email').value
+      email: document.getElementById('email').value,
+      email: document.getElementById('username').value,
+      email: document.getElementById('phone').value
     })
       .then(() => {
-        getMyListings()
+        window.location = '/profile.html'
       })
       .catch(err => console.log(err))
   })
@@ -86,10 +101,10 @@ document.getElementById('editProfile').addEventListener('click', event => {
 
 // Creates form to create a post
 document.getElementById('create').addEventListener('click', () => {
-  document.getElementById('myItems').innerHTML = ''
+  document.getElementById('items').innerHTML = ''
 
   let getItemInfo = document.createElement('div')
-  getItemInfo.className =
+  // getItemInfo.className =
     getItemInfo.innerHTML = `
   
  <form class="col s12" id="getinfo">
@@ -100,14 +115,12 @@ document.getElementById('create').addEventListener('click', () => {
       </div>
     </div>
     <div class="row">
-      <form class="col s12">
         <div class="row">
           <div class="input-field col s12">
             <textarea id="description" class="materialize-textarea"></textarea>
             <label for="textarea1">Description</label>
           </div>
         </div>
-        <form action="#">
           <div class="file-field input-field">
             <div class="btn">
               <span>Image</span>
@@ -117,77 +130,49 @@ document.getElementById('create').addEventListener('click', () => {
               <input class="file-path validate" type="text">
             </div>
           </div>
-        </form>
       </div> 
     </div>
-  </form>
+     <div class="input-field col s12">
+    <select>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Materialize Select</label>
+  </div>
+  
  <button class="btn" type="submit" name="action" id="createItem">Create
  <i class="material-icons right">send</i>
  </button>
- 
+ </form>
  `
- 
   document.getElementById('items').append(getItemInfo)
-
-
-  // Creates card for created post
-document.getElementById('createItem').addEventListener('click', () => {
-  event.preventDefault()
-  let title = document.getElementById('title').value
-  let description = document.getElementById('description').value
-  let newItem = document.createElement('div')
-  newItem.className = 'card'
-  newItem.innerHTML =
-    `
-    <div class="col s12 m8">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">${title}</span>
-          <p>${description}</p>
-        </div>
-        <div class="card-action">
-          <a class="waves-effect waves-light btn modal-trigger" id="editPost" href="#modal1">Edit Post</a>
-        </div>
-      </div>
-    </div>
-  </div>
-    `
-  
-  document.getElementById('myItems').append(newItem)
-  document.getElementById('items').innerHTML = ''
-
-  
-  document.getElementById('saveUpdate').addEventListener('click', event => {
-    const id = event.target.dataset.id 
-    axios.put(`/api/listings/${id}`, {
-      title: document.getElementById('uTitle').value,
-      description: document.getElementById('uDescription').value,
-      img: document.getElementById('uImg').value
-    })
-    .then(() => {
-      getMyListings()
-    })
-    .catch(err => console.log(err))
-  })
 })
-
-
-})
+// global event listener
 document.addEventListener('click', event => {
+  // edit post event listener
   if (event.target.classList.contains('editPost')) {
-
-
     const id = event.target.dataset.id
     console.log(id)
     axios.get(`/api/listings/id/${id}`)
       .then(({ data: listing }) => {
-        console.log(listing)
         document.getElementById('uTitle').value = listing.title
         document.getElementById('uDescription').value = listing.description
       })
       .catch(err => console.log(err))
   }
+  // delete post event listener
+  if (event.target.classList.contains('deletePost')) {
+    const id = event.target.dataset.id
+    axios.delete(`api/listings/id/${id}`)
+      .then(() => {
+        event.target.parentNode.remove()
+      })
+      .catch(err => console.error(err))
+    }
 })
+
 
 
 // document.getElementById('editProfile').addEventListener('click', event => {
@@ -238,3 +223,6 @@ getMyListings()
 //          getMyListings()
 //       })
 //     .catch(err => console.error(err))
+
+
+

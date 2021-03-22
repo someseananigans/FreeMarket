@@ -66,86 +66,71 @@
           <a href="./profile.html" class="collection-item">My Listings</a>
         </div>
       </div>
-      <div class="col s9 l9" id="items">
-        <div class="row">
-        </div>
-      </div>
-      <div class="col s9 l6" >
-        <div class="row" id="myItems">
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 1</div>
-          </div> -->
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 2</div>
-          </div> -->
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 3</div>
-          </div> -->
-        </div>
-      </div>
+      <div id="items" class="col s6 l6">
+        <form>
+          <label for="">Title</label>
+          <input type="text" placeholder="">
+          <label for="">Description</label>
+          <input type="text" placeholder="">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>Image</span>
+              <input type="file" id="listingImg">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text">
+            </div>
+          <select name="" id="category">
+            <option value="" disabled selected>Choose your option</option>
+            <option>Automotive</option>
+            <option>Household</option>
+            <option>Decor</option>
+            <option>Apparel</option>
+            <option>Accessories</option>
+            <option>Technology</option>
+            <option>Pet</option>
+            <option>Random</option>
+          </select>
+          <button class="btn" type="submit" name="action" id="createItem">Create
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div> 
     </div>
   </div>
-<!-- Modal Structure -->
-<div id="modal1" class="modal">
-  <div class="modal-content">
-    <h4>Edit Post</h4>
-    <form>
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="uTitle" type="text" class="validate">
-          <label for="uTitle">Title</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="uDescription" type="text" class="validate">
-          <label for="uDescription">Description</label>
-        </div>
-      </div>
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Image</span>
-          <input type="file" id="uImg">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button class="btn modal-close waves-effect waves-green btn-flat" type="submit" name="action" id="saveUpdate">Save
-      <i class="material-icons right">send</i>
-    </button>
-  </div>
-</div>
-
-<div class="input-field col s12">
-  <select>
-    <option value="" disabled selected>Choose your option</option>
-    <option value="1">Option 1</option>
-    <option value="2">Option 2</option>
-    <option value="3">Option 3</option>
-  </select>
-  <label>Materialize Select</label>
-</div>
-
-  
+     
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  
-  
+
+
   <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var elems = document.querySelectorAll('select');
-    //     var instances = M.FormSelect.init(elems, options);
-    //   });
+    
+      $(document).ready(function () {
+        $('.modal').modal();
+        $('select').formSelect();
+      });
+</script>
 
-     
-  </script>
+<script>
+  const axios = window.axios
 
-<script src="./js/profile.js"></script>
+  document.getElementById('createItem').addEventListener('click', () => {
+      axios.post('/api/listings', {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        image: document.getElementById('listingImg').value,
+        category: document.getElementById('category').value
+      })
+        .then(() => {
+          window.location = '/profile.html'
+        })
+        .catch(err => console.error(err))
+    })
+</script>
+
+  <!-- <script src="./js/profile.js"></script> -->
 </body>
 
 </html>
