@@ -4,14 +4,14 @@ const axios = window.axios
 
 // page load
 const getMyListings = () => {
-  axios.get('/api/listings')
-  // , {
-  //   headers: {
-  //     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiaWF0IjoxNjE2Mjc3MDQyfQ.34dN3orR0dPHnGWzZBmD5HWITCVRePmpBLioQCrvJ4U"
-  //   }
-  //   })
-  .then(({ data: listings }) => {
-    // res.json(listings)
+  let token = localStorage.getItem('token')
+  axios.get('/api/user/auth', {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+    })
+  .then(({ data: { listings }}) => {
+    console.log(listings)
     document.getElementById('myItems').innerHTML = ''
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
@@ -22,8 +22,8 @@ const getMyListings = () => {
           <p>${listing.title}</p>
           <p>${listing.description}</p>
           <img src= "${listing.image}">
-          <a class="waves-effect waves-light btn modal-trigger" id="editPost" href="#modal1">Edit Post</a>
-          <a class="waves-effect waves-light btn modal-trigger" id="deletePost" href="#modal1">Delete Post</a>
+          <a class="waves-effect waves-light btn modal-trigger editPost" data-id=${listing.id}  href="#modal1">Edit Post</a>
+          <a class="waves-effect waves-light btn modal-trigger deletePost" data-id=${listing.id} href="#modal1">Delete Post</a>
           </div>
           </div>
         `
@@ -38,6 +38,7 @@ document.getElementById('signOut').addEventListener('click', event => {
   window.location = '/login.html'
 })
 
+// creates form to edit profile name and username
 document.getElementById('editProfile').addEventListener('click', event => {
   document.getElementById('items').innerHTML = ''
   let getItemInfo = document.createElement('div')
@@ -151,16 +152,11 @@ document.getElementById('createItem').addEventListener('click', () => {
     </div>
   </div>
     `
+  
   document.getElementById('myItems').append(newItem)
   document.getElementById('items').innerHTML = ''
-  document.getElementById('editPost').addEventListener('click', event => {
-      const title = event.target.dataset.title
-      axios.get(`/api/listings/${title}`)
-      .then(({ data: listing }) => {
-        document.getElementById('uTitle').value = listing.title
-        document.getElementById('uDescription').value = listing.description
-      })
-  })
+
+  
   document.getElementById('saveUpdate').addEventListener('click', event => {
     const id = event.target.dataset.id 
     axios.put(`/api/listings/${id}`, {
@@ -176,6 +172,21 @@ document.getElementById('createItem').addEventListener('click', () => {
 })
 
 
+})
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('editPost')) {
+
+
+    const id = event.target.dataset.id
+    console.log(id)
+    axios.get(`/api/listings/id/${id}`)
+      .then(({ data: listing }) => {
+        console.log(listing)
+        document.getElementById('uTitle').value = listing.title
+        document.getElementById('uDescription').value = listing.description
+      })
+      .catch(err => console.log(err))
+  }
 })
 
 
