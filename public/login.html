@@ -15,38 +15,20 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 valign-wrapper">
+  <nav class="nav-wrapper teal lighten-1 valign-wrapper header">
     <div class="container">
-      <a href="" class="sidenav-trigger" data-target="mobile-links">
-        <i class="material-icons">menu</i>
-      </a>
-      <a href="./index.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="./index.html">Listings</a></li>
-        <li><a href="./profile.html">My Profile</a></li>
-      </ul>
-
+      <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-links">
-    <li>
-      <input type="search">
-    </li>
-    <li>
-      <a href=""><i class="material-icons">search</i></a>
-    </li>
-    <li><a href="./sampleIndex.html">Home</a></li>
-    <li><a href="./sampleLogin.html">Login</a></li>
-    <li><a href="./sampleSignUp.html">Sign Up</a></li>
-  </ul>
-
+<!-- Login and Sign up Tabs -->
   <div class="container connect">
     <div class="box">
       <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
         <li class="tab"><a class="active" href="#loginBox">Login</a></li>
         <li class="tab"><a href="#signUpBox">Sign Up</a></li>
       </ul>
+      
       <div id="signUpBox" class="col s12">
         <div class="card-panel">
           <div class="headSpace">
@@ -127,9 +109,7 @@
       $('.sidenav').sidenav();
     })
 
-    $(document).ready(function () {
-      $('.tabs').tabs();
-    });
+    
 
     
 

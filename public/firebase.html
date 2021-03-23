@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <progress value="0" max="100" id="uploader">0%</progress>
+  <input type="file" value="upload" id="fileButton">
+
+ <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",
+        authDomain: "freemarket-3263e.firebaseapp.com",
+        projectId: "freemarket-3263e",
+        storageBucket: "freemarket-3263e.appspot.com",
+        databaseURL: "https://freemarket-3263e.firebaseio.com",
+        messagingSenderId: "623455406150",
+        appId: "1:623455406150:web:0f8d92b06ff3902fd16247",
+        measurementId: "G-ZSJ89JVWDF"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      console.log(firebase)
+
+      let uploader = document.getElementById('uploader')
+      let fileButton = document.getElementById('fileButton')
+
+      fileButton.addEventListener('change', event => {
+        let file = event.target.files[0]
+
+        let storageRef = firebase.storage().ref('images/' + file.name)
+        
+        let task = storageRef.put(file)
+
+        storageRef.getDownloadURL()
+        .then((url) => {
+          console.log(url)
+        })
+        .catch(err => console.log(err))
+
+        
+
+        
+        
+        task.on('state_changed', 
+        
+        function progress(snapshot) {
+          let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          uploader.value = percentage
+        },
+
+        function error(err) {
+
+        },
+
+        function complete() {
+          
+        }
+
+
+        )
+
+      })
+
+  </script>
+
+  <script src="./js/firebase.js"></script>
+
+</body>
+</html>

@@ -60,6 +60,14 @@ h5 {
   border-bottom: #f44336
 }
 
+.brand-logo {
+  margin-top: -30px;
+}
+
+.header {
+  height: 90px;
+}
+
 @media only screen and (max-width:600px) {
   .connect {
     width: 80%;
