@@ -73,8 +73,9 @@ router.get('/listings/id/:id', (req, res) => {
 
 // Add new listing
 router.post('/listings/', passport.authenticate('jwt'), (req, res) => {
+  let lowerCaseTitle = req.body.title.toLowerCase()
   Listing.create({
-    title: req.body.title,
+    title: lowerCaseTitle,
     description: req.body.description,
     image: req.body.image,
     uid: req.user.id

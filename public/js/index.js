@@ -5,6 +5,7 @@ const getListings = () => {
   .then(({ data: listings }) => {
     document.getElementById('listings').innerHTML = ''
     listings.forEach(listing => {
+      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
       const listingElem = document.createElement('div')
       listingElem.className = 'col s12 m6 l4'
       listingElem.innerHTML = `
@@ -15,7 +16,7 @@ const getListings = () => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -27,8 +28,6 @@ const getListings = () => {
   .catch(err => console.error(err))
 }
 
-getListings()
-
 document.getElementById('automotive').addEventListener('click', event => {
 
   axios.get(`/api/listings/category/automotive`)
@@ -36,6 +35,7 @@ document.getElementById('automotive').addEventListener('click', event => {
   .then(({ data: listings }) => {
     document.getElementById('listings').innerHTML = ''
     listings.forEach(listing => {
+      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
       const autoElem = document.createElement('div')
       autoElem.className = 'col s12 m6 l4'
       autoElem.innerHTML = `
@@ -46,7 +46,7 @@ document.getElementById('automotive').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -64,6 +64,7 @@ document.getElementById('household').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -74,7 +75,7 @@ document.getElementById('household').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -92,6 +93,7 @@ document.getElementById('decor').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -102,7 +104,7 @@ document.getElementById('decor').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -120,6 +122,7 @@ document.getElementById('apparel').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -130,7 +133,7 @@ document.getElementById('apparel').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -148,6 +151,7 @@ document.getElementById('accessories').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -158,7 +162,7 @@ document.getElementById('accessories').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -176,6 +180,7 @@ document.getElementById('technology').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -186,7 +191,7 @@ document.getElementById('technology').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -204,6 +209,7 @@ document.getElementById('pet').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -214,7 +220,7 @@ document.getElementById('pet').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -232,6 +238,7 @@ document.getElementById('random').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
@@ -242,7 +249,7 @@ document.getElementById('random').addEventListener('click', event => {
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -254,34 +261,46 @@ document.getElementById('random').addEventListener('click', event => {
     .catch(err => console.error(err))
 })
 
-document.getElementById('search').addEventListener('input', event => {
+document.getElementById('search1').addEventListener('input', event => {
 
-  axios.get(`/api/listings/search/`)
+  axios.get(`/api/listings/search/${document.getElementById('search1').value}`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
-      listings.forEach(listing => {
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m6 l4'
-        autoElem.innerHTML = `
-        <div class="row">
-         <div class="col s12 m7">
-           <div class="card hoverable">
-             <div class="card-image">
-                <img src="../images/${listing.image}" height="175px" width="auto">
-                
-              </div>
-              <span class="card-title">${listing.title}</span>
-            </div>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+      if (listings) {
 
-      })
+        listings.forEach(listing => {
+          const autoElem = document.createElement('div')
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          autoElem.className = 'col s12 m6 l4'
+          autoElem.innerHTML = `
+          <div class="row">
+          <div class="col s12 m7">
+          <div class="card hoverable">
+          <div class="card-image">
+          <img src="../images/${listing.image}" height="175px" width="auto">
+          
+          </div>
+          <span class="card-title">${listingTitle}</span>
+          </div>
+          </div>
+          </div>
+          `
+          document.getElementById('listings').append(autoElem)
+
+        })
+
+      } else {
+        
+        getListings()
+
+      }
     })
     .catch(err => console.error(err))
 })
+
+
+getListings()
 
 
 

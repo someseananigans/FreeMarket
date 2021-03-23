@@ -3,6 +3,10 @@ const validateEmail = (email) => {
   return re.test(String(email).toLowerCase());
 }
 
+$(document).ready(function () {
+  $('.tabs').tabs();
+});
+
 document.getElementById('signUp').addEventListener('click', event => {
   axios.get('/api/usersnames')
     .then(({ data: usernames }) => {
@@ -12,15 +16,18 @@ document.getElementById('signUp').addEventListener('click', event => {
         password: document.getElementById('passwordS').value,
         email: document.getElementById('emailS').value
       }
+      // confirms that email is a valid format
       if (!validateEmail(document.getElementById('emailS').value)) {
         document.getElementById('invalidEmail').innerHTML = 'Invalid email'
       }
+      // confirms that username doesn't already exist 
       if (!usernames.includes(document.getElementById('usernameS').value)) {
         newUser.username = document.getElementById('usernameS').value
       } else {
         document.getElementById('invalidUser').innerHTML = 'Username already exists'
         document.getElementById('usernameS').classList.add('invalid')
       }
+      // registers user if username is unique and email is valid
       if (newUser.email && newUser.username) {
         axios.post('/api/user/register', newUser)
           .then(() => window.location = '/login')
