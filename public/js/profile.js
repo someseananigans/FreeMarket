@@ -18,7 +18,7 @@ const getMyListings = () => {
         let listingElem = document.createElement('div')
         listingElem.className = 'col s9 l6'
         listingElem.innerHTML = `
-          <div class="row">
+          <div class="row card hoverable">
             <div class="input-field col s12">
           <p>${listing.title}</p>
           <p>${listing.description}</p>
