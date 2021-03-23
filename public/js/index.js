@@ -12,7 +12,7 @@ const getListings = () => {
          <div class="col s12 m7">
            <div class="card hoverable" id="cardItem">
              <div class="card-image">
-                <img src="../images/${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto">
                 
               </div>
               <span class="card-title">${listing.title}</span>
