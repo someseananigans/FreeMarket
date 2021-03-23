@@ -72,15 +72,7 @@
       </div>
       <div class="col s9 l6" >
         <div class="row" id="myItems">
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 1</div>
-          </div> -->
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 2</div>
-          </div> -->
-          <!-- <div class="col s12 m6 l4">
-            <div class="card info z-depth-3">My listing 3</div>
-          </div> -->
+
         </div>
       </div>
     </div>
@@ -113,7 +105,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn modal-close waves-effect waves-green btn-flat" type="submit" name="action" id="saveUpdate">Save
+    <button class="btn modal-close waves-effect waves-green btn-flat saveUpdate" type="submit" name="action">Save
       <i class="material-icons right">send</i>
     </button>
   </div>
@@ -137,10 +129,11 @@
   
   
   <script>
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var elems = document.querySelectorAll('select');
-    //     var instances = M.FormSelect.init(elems, options);
-    //   });
+
+         document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, {});
+          });
 
      
   </script>

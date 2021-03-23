@@ -1,4 +1,5 @@
 
+
 const axios = window.axios
 
 // page load
@@ -122,9 +123,13 @@ document.addEventListener('click', event => {
       })
       .catch(err => console.error(err))
     }
+  if (event.target.classList.contains('saveUpdate')) {
+    const id = event.target.dataset.id
+    console.log(id)
+  }
 })
 
-
+getMyListings()
 
 // document.getElementById('editProfile').addEventListener('click', event => {
 //   document.getElementById('myItems').innerHTML = ''
@@ -161,7 +166,7 @@ document.addEventListener('click', event => {
   
 // })
 
-getMyListings()
+
 
 
 
