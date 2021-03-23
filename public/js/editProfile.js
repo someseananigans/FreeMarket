@@ -7,46 +7,73 @@ const validateEmail = (email) => {
 
 let token = localStorage.getItem('token')
 
+// For phone number formatting
+let cleave = new Cleave(document.getElementById('phoneU'), {
+  phone: true,
+  phoneRegionCode: 'US'
+})
+
 axios.get('api/user/auth', {
   headers: {
     "Authorization": `Bearer ${token}`
   }
 })
   .then(({ data }) => {
-    console.log(data)
-    document.getElementById('name').value = data.name,
-      document.getElementById('email').value = data.email,
-      document.getElementById('username').value = data.username
-    document.getElementById('phone').value = data.phone
+    document.getElementById('nameU').value = data.name
+    document.getElementById('activeN').classList.add('active')
+    document.getElementById('emailU').value = data.email
+    document.getElementById('activeE').classList.add('active')
+    document.getElementById('usernameU').value = data.username
+    document.getElementById('activeU').classList.add('active')
+    document.getElementById('phoneU').value = data.phone
+    document.getElementById('activeP').classList.add('active')
+
+    let currentUsername = data.username
+
+    document.getElementById('updateProfile').addEventListener('click', event => {
+      axios.get('/api/usernames')
+        .then(({ data: usernames }) => {
+
+          let token = localStorage.getItem('token')
+          let auth = {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+          let update = {
+            name: document.getElementById('nameU').value,
+            email: document.getElementById('emailU').value,
+            phone: document.getElementById('phoneU').value
+          }
+
+          if (!validateEmail(document.getElementById('emailU').value)) {
+            document.getElementById('invalidEmail').innerHTML = 'Invalid email'
+          }
+          axios.get('api/user/auth', {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          })
+            .then(({ data }) => {
+              // confirms that username doesn't already exist 
+              if ((!usernames.includes(document.getElementById('usernameU').value)) || (document.getElementById('usernameU').value == currentUsername)) {
+                update.username = document.getElementById('usernameU').value
+              } else {
+                document.getElementById('invalidUser').innerHTML = 'Username already exists'
+                document.getElementById('usernameU').classList.add('invalid')
+              }
+              // updates user if username is unique and email is valid
+              if (validateEmail(update.email) && update.username) {
+                axios.put('/api/user', update, auth)
+                  .then(() => {
+                    window.location = '/profile'
+                  })
+                  .catch(err => console.log(err))
+              }
+            })
+            .catch(err => console.log(err))
+        })
+    })
   })
   .catch(err => console.log(err))
-
-let cleave = new Cleave(document.getElementById('phone'), {
-  phone: true,
-  phoneRegionCode: 'US'
-})
-
-document.getElementById('updateProfile').addEventListener('click', event => {
-  event.preventDefault()
-  let token = localStorage.getItem('token')
-  let auth = {
-    headers: {
-      "Authorization": `Bearer ${token}`
-    }
-  }
-  let body = {
-    name: document.getElementById('name').value,
-    email: document.getElementById('email').value,
-    username: document.getElementById('username').value,
-    phone: document.getElementById('phone').value
-  }
-
-  axios.put('/api/user', body, auth)
-    .then(() => {
-      window.location = '/profile.html'
-      // console.log(validateEmail(document.getElementById('email').value))
-    })
-    .catch(err => console.log(err))
-})
-
 
