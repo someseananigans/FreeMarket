@@ -28,8 +28,15 @@ router.get('/listings/search/:title', (req, res) => {
 })
 
 // Get listings by category
-router.get('/listings/:category', (req, res) => {
+router.get('/listings/category/:category', (req, res) => {
   Listing.findAll({ where: { category: req.params.category } })
+    .then(listing => res.json(listing))
+    .catch(listing => res.json(err))
+})
+// Get listings by category
+router.get('/listings/id/:id', (req, res) => {
+  console.log(req.params.id)
+  Listing.findOne({ where: { id: req.params.id } })
     .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
@@ -58,7 +65,7 @@ router.get('/listings/:category', (req, res) => {
 // })
 
 // // Get user listings
-// router.get('/listings/', passport.authenticate('jwt'), (req, res) => {
+// router.get('/listings/user', passport.authenticate('jwt'), (req, res) => {
 //   Listing.findAll({ where: { uid: req.body.user.id } })
 //     .then(listings => res.json(listings))
 //     .catch(err => res.json(err))

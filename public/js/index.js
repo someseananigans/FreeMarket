@@ -32,7 +32,7 @@ getListings()
 
 document.getElementById('automotive').addEventListener('click', event => {
 
-  axios.get(`/api/listings/automotive`)
+  axios.get(`/api/listings/category/automotive`)
     
   .then(({ data: listings }) => {
     document.getElementById('listings').innerHTML = ''
@@ -60,7 +60,7 @@ document.getElementById('automotive').addEventListener('click', event => {
 })
 document.getElementById('household').addEventListener('click', event => {
 
-  axios.get(`/api/listings/household`)
+  axios.get(`/api/listings/category/household`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -88,7 +88,7 @@ document.getElementById('household').addEventListener('click', event => {
 })
 document.getElementById('decor').addEventListener('click', event => {
 
-  axios.get(`/api/listings/decor`)
+  axios.get(`/api/listings/category/decor`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -116,7 +116,7 @@ document.getElementById('decor').addEventListener('click', event => {
 })
 document.getElementById('apparel').addEventListener('click', event => {
 
-  axios.get(`/api/listings/apparel`)
+  axios.get(`/api/listings/category/apparel`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -144,7 +144,7 @@ document.getElementById('apparel').addEventListener('click', event => {
 })
 document.getElementById('accessories').addEventListener('click', event => {
 
-  axios.get(`/api/listings/accessories`)
+  axios.get(`/api/listings/category/accessories`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -172,7 +172,7 @@ document.getElementById('accessories').addEventListener('click', event => {
 })
 document.getElementById('technology').addEventListener('click', event => {
 
-  axios.get(`/api/listings/technology`)
+  axios.get(`/api/listings/category/technology`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -200,7 +200,7 @@ document.getElementById('technology').addEventListener('click', event => {
 })
 document.getElementById('pet').addEventListener('click', event => {
 
-  axios.get(`/api/listings/pet`)
+  axios.get(`/api/listings/category/pet`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
@@ -228,7 +228,7 @@ document.getElementById('pet').addEventListener('click', event => {
 })
 document.getElementById('random').addEventListener('click', event => {
 
-  axios.get(`/api/listings/random`)
+  axios.get(`/api/listings/category/random`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
