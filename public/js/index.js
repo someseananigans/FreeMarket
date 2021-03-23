@@ -27,6 +27,7 @@ const getListings = () => {
   })
   .catch(err => console.error(err))
 }
+getListings()
 
 document.getElementById('automotive').addEventListener('click', event => {
 
@@ -300,7 +301,7 @@ document.getElementById('search1').addEventListener('input', event => {
 })
 
 
-getListings()
+
 
 
 
