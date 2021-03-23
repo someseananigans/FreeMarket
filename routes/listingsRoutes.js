@@ -70,7 +70,7 @@ router.post('/listings/', passport.authenticate('jwt'), (req, res) => {
     title: req.body.title,
     description: req.body.description,
     image: req.body.image,
-    category: req.body.image,
+    category: req.body.category,
     uid: req.user.id
   })
   .then(listing => res.json(listing))
