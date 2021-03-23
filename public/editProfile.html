@@ -75,14 +75,14 @@
       <input type="text" placeholder="">
       <label for="">Phone</label>
       <input type="text" placeholder="">
-      <button class="btn" type="submit" name="action" id="updateProhile">Save
+      <button class="btn" type="submit" name="action" id="updateProfile">Save
         <i class="material-icons right">send</i>
       </button>
       </div>
     </div>
   </div>
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <!-- <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Edit Post</h4>
       <form>
@@ -123,7 +123,7 @@
       <option value="3">Option 3</option>
     </select>
     <label>Materialize Select</label>
-  </div>
+  </div> -->
 
 
 
@@ -132,29 +132,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-  <script>
-     const axios = window.axios
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     var elems = document.querySelectorAll('select');
-    //     var instances = M.FormSelect.init(elems, options);
-    //   });
-
-  document.getElementById('updateProfile').addEventListener('click', event => {
-
-    axios.put('/api/user', {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      email: document.getElementById('username').value,
-      email: document.getElementById('phone').value
-    })
-      .then(() => {
-        window.location = '/profile.html'
-      })
-      .catch(err => console.log(err))
-  })
-  </script>
-
-  <!-- <script src="./js/profile.js"></script> -->
+  <script src="./js/editProfile.js"></script>
 </body>
 
 </html>

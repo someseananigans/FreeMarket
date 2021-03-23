@@ -69,9 +69,9 @@
       <div id="items" class="col s6 l6">
         <form>
           <label for="">Title</label>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" id="title">
           <label for="">Description</label>
-          <input type="text" placeholder="">
+          <input type="text" placeholder="" id="description">
           <div class="file-field input-field">
             <div class="btn">
               <span>Image</span>
@@ -113,24 +113,9 @@
       });
 </script>
 
-<script>
-  const axios = window.axios
 
-  document.getElementById('createItem').addEventListener('click', () => {
-      axios.post('/api/listings', {
-        title: document.getElementById('title').value,
-        description: document.getElementById('description').value,
-        image: document.getElementById('listingImg').value,
-        category: document.getElementById('category').value
-      })
-        .then(() => {
-          window.location = '/profile.html'
-        })
-        .catch(err => console.error(err))
-    })
-</script>
 
-  <!-- <script src="./js/profile.js"></script> -->
+  <script src="./js/createPost.js"></script>
 </body>
 
 </html>

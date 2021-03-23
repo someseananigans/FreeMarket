@@ -99,56 +99,7 @@ document.getElementById('editProfile').addEventListener('click', event => {
   })
 })
 
-// Creates form to create a post
-document.getElementById('create').addEventListener('click', () => {
-  document.getElementById('items').innerHTML = ''
 
-  let getItemInfo = document.createElement('div')
-  // getItemInfo.className =
-    getItemInfo.innerHTML = `
-  
- <form class="col s12" id="getinfo">
-    <div class="row">
-      <div class="input-field col s12">
-        <input id="title" type="text" class="validate">
-        <label for="title">Title</label>
-      </div>
-    </div>
-    <div class="row">
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="description" class="materialize-textarea"></textarea>
-            <label for="textarea1">Description</label>
-          </div>
-        </div>
-          <div class="file-field input-field">
-            <div class="btn">
-              <span>Image</span>
-              <input type="file" id="listingImg">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text">
-            </div>
-          </div>
-      </div> 
-    </div>
-     <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div>
-  
- <button class="btn" type="submit" name="action" id="createItem">Create
- <i class="material-icons right">send</i>
- </button>
- </form>
- `
-  document.getElementById('items').append(getItemInfo)
-})
 // global event listener
 document.addEventListener('click', event => {
   // edit post event listener
