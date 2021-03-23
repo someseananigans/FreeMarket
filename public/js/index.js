@@ -11,7 +11,7 @@ const getListings = () => {
       listingElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable" id="cardItem">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -42,7 +42,7 @@ document.getElementById('automotive').addEventListener('click', event => {
       autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -71,7 +71,7 @@ document.getElementById('household').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -100,7 +100,7 @@ document.getElementById('decor').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -129,7 +129,7 @@ document.getElementById('apparel').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -158,7 +158,7 @@ document.getElementById('accessories').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -187,7 +187,7 @@ document.getElementById('technology').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -216,7 +216,7 @@ document.getElementById('pet').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -245,7 +245,7 @@ document.getElementById('random').addEventListener('click', event => {
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings">
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
@@ -277,7 +277,7 @@ document.getElementById('search1').addEventListener('input', event => {
           autoElem.innerHTML = `
           <div class="row">
           <div class="col s12 m7">
-          <div class="card hoverable">
+          <div class="card hoverable listings">
           <div class="card-image">
           <img src="../images/${listing.image}" height="175px" width="auto">
           
@@ -300,75 +300,35 @@ document.getElementById('search1').addEventListener('input', event => {
     .catch(err => console.error(err))
 })
 
+document.addEventListener('click', event => {
+  if (event.target.classList.contains('listings')) {
+    const id = event.target.dataset.id
+    axios.get(`/api/listings/id/${id}`)
 
+    .then(({ data: listing }) => {
+      console.log(listing)
+      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+      document.getElementById('listFull').innerHTML = 
+      `
+      <div class="row">
+        <p id="listImage"><img src="../images/${listing.image}" height="175px" width="auto"></p>
+      </div>
+      <div class="row">
+        <h4 id="listTitle">${listingTitle}</h4>
+      </div>
+      <div class="row">
+        <p id="listDesc">${listing.description}</p>
+      </div>
+      <button class="btn modal-close waves-effect waves-green btn-flat" type="email" name="action">
+      <i class="material-icons right">email</i>
+      </button>
+      `
+      document.getElementById('listTitle').value = listingTitle
+      document.getElementById('listDesc').value = listing.description
+       
 
-
-
-
-// get all listings
-// let getAllListings = () => {
-
-//   axios.get('/api/listings')
-//   .then(({ data: listings }) => {
-//     console.log(listings)
-//     document.getElementById('allListings').innerHTML = ''
-//     listings.forEach(listing => {
-//       const listingElem = document.createElement('div')
-//       listingElem.className = 'col s12 m6 l4'
-//       listingElem.innerHTML = `
-//           <p>${listing.title}</p>
-//           <p>${listing.description}</p>
-//           <p>${image}
-//           <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
-//         `
-//         document.getElementById('allListings').append(listingElem)
-//     })
-//   })
-//   .catch(err => console.error(err))
-// }
-
-// getAllListings()
-
-// create new post
-
-// let listing = {
-//   title: ''
-//   discription: ''
-// }
-// axois.post('/api/listings', listing)
-// .then(({data}) => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// get specific listing
-
-// axios.get('/api/songs/1')
-// .then(({data}) => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// update certain listing
-
-// let updates = {
-//   description: ''
-// }
-// axois.put('/api/listings/1', updates)
-// .then(() => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// delete listing
-// axios.delete('/api/listings/1')
-//   .then(() => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
+        
+    })
+    .catch(err => console.log(err))
+  }
+})
