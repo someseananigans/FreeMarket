@@ -9,7 +9,7 @@ router.get('/listings', (req, res) => {
     .catch(err => res.json(listings))
 })
 
-// All listings under user can be grabbed via the user data itself
+// ------> All listings under user can be grabbed via the user data itself <------
 
 // search bar get via title input
 router.get('/listings/search/:title', (req, res) => {
