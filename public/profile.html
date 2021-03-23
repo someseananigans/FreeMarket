@@ -84,20 +84,20 @@
     <form>
       <div class="row">
         <div class="input-field col s6">
-          <input id="uTitle" type="text" class="validate">
           <label for="uTitle">Title</label>
+          <input id="uTitle" type="text" class="validate" id="title">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="uDescription" type="text" class="validate">
           <label for="uDescription">Description</label>
+          <input id="uDescription" type="text" class="validate" id="description">
         </div>
       </div>
       <div class="file-field input-field">
         <div class="btn">
           <span>Image</span>
-          <input type="file" id="uImg">
+          <input type="file" id="uImg" id="image">
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text">
@@ -105,7 +105,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn modal-close waves-effect waves-green btn-flat saveUpdate" type="submit" name="action">Save
+    <button class="btn modal-close waves-effect waves-green btn-flat" id="saveUpdate" type="submit" name="action">Save
       <i class="material-icons right">send</i>
     </button>
   </div>

@@ -9,7 +9,12 @@ document.getElementById('createItem').addEventListener('click', event => {
     category: document.getElementById('category').value
   }
   console.log(item)
-  axios.post('/api/listings', item)
+  let token = localStorage.getItem('token')
+  axios.post('/api/listings', item, {
+    headers: {
+      "Authorization": `Bearer ${token}`
+    }
+  })
     .then(() => {
       window.location = '/profile.html'
     })
