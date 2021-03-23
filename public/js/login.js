@@ -81,3 +81,5 @@ document.getElementById('login').addEventListener('click', event => {
 //       </form>
 //   `
 // })
+
+module.exports = validateEmail
