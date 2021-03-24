@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
   <style>
     .info {
       background: lightblue;
@@ -29,15 +30,15 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 valign-wrapper">
+  <nav class="nav-wrapper teal lighten-1 header">
     <div class="container">
       <a href="" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons">menu</i>
       </a>
-      <a href="./index.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
+      <a href="./index" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="./index.html">Home Page</a></li>
-        <li><a href="./index.html" id="signOut">Log Out</a></li>
+        <li><a href="./index">Home Page</a></li>
+        <li><a href="./index" id="signOut">Log Out</a></li>
 
       </ul>
 
@@ -51,87 +52,67 @@
     <li>
       <a href=""><i class="material-icons">search</i></a>
     </li>
-    <li><a href="./sampleLogin.html">Home</a></li>
-    <li><a href="./sampleProfile.html">My Profile</a></li>
-    <li><a href="./sampleListings.html">My Listings</a></li>
+    <li><a href="./login">Home</a></li>
+    <li><a href="./profile">My Listings</a></li>
   </ul>
 
 
-  <div class="container" id='profileTools'>
+  <div class="container" id='profileTools'> 
     <div class="row">
       <div class="col s3 sidebar">
         <div class="collection">
-          <a href="./editProfile.html" class="collection-item" id="editProfile">Edit My Profile</a>
-          <a href="./createPost.html" class="collection-item" id="create">Create Post</a>
-          <a href="./profile.html" class="collection-item">My Listings</a>
+          <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
+          <a href="./createPost" class="collection-item" id="create">Create Post</a>
+          <a href="./profile" class="collection-item">My Listings</a>
         </div>
       </div>
-      <div class="col s6 l6" id="items">
-      <label for="">Name</label>
-      <input type="text" placeholder="">
-      <label for="">Email</label>
-      <input type="email" placeholder="">
-      <label for="">Username</label>
-      <input type="text" placeholder="">
-      <label for="">Phone</label>
-      <input type="text" placeholder="">
-      <button class="btn" type="submit" name="action" id="updateProfile">Save
-        <i class="material-icons right">send</i>
-      </button>
+      <div class="col s9 l9" id="items">
+
+        <div class="card-panel">
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="nameU" type="text" class="validate">
+              <label id="activeN" for="nameU">Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">email</i>
+              <input id="emailU" type="email" class="validate">
+              <label id="activeE" for="emailU">Email</label>
+              <div id="invalidEmail"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">phone</i>
+              <input id="phoneU" type="tel" class="validate">
+              <label id="activeP" for="phoneU">Phone Number</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="itemName input-field col s12">
+              <i class="material-icons prefix">create</i>
+              <input id="usernameU" type="text" class="validate">
+              <label id="activeU" for="usernameU">Username</label>
+              <div id="invalidUser"></div>
+            </div>
+          </div>
+          <button class="waves-effect waves-light btn" type="submit" name="action" id="updateProfile">Save
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-  <!-- Modal Structure -->
-  <!-- <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Edit Post</h4>
-      <form>
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="uTitle" type="text" class="validate">
-            <label for="uTitle">Title</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="uDescription" type="text" class="validate">
-            <label for="uDescription">Description</label>
-          </div>
-        </div>
-        <div class="file-field input-field">
-          <div class="btn">
-            <span>Image</span>
-            <input type="file" id="uImg">
-          </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text">
-          </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <button class="btn modal-close waves-effect waves-green btn-flat" type="submit" name="action" id="saveUpdate">Save
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  </div>
-
-  <div class="input-field col s12">
-    <select>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
-    </select>
-    <label>Materialize Select</label>
-  </div> -->
-
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/addons/cleave-phone.us.js"></script>
   <script src="./js/editProfile.js"></script>
 </body>
 

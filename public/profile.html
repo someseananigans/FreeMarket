@@ -34,10 +34,10 @@
       <a href="" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons">menu</i>
       </a>
-      <a href="./index.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
+      <a href="./index" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="./index.html">Home Page</a></li>
-        <li><a href="./index.html" id="signOut">Log Out</a></li>
+        <li><a href="./index">Home Page</a></li>
+        <li><a href="./index" id="signOut">Log Out</a></li>
 
       </ul>
 
@@ -51,9 +51,8 @@
     <li>
       <a href=""><i class="material-icons">search</i></a>
     </li>
-    <li><a href="./sampleLogin.html">Home</a></li>
-    <li><a href="./sampleProfile.html">My Profile</a></li>
-    <li><a href="./sampleListings.html">My Listings</a></li>
+    <li><a href="./login">Home</a></li>
+    <li><a href="./profile">My Listings</a></li>
   </ul>
 
 
@@ -61,9 +60,9 @@
     <div class="row">
       <div class="col s3 sidebar">
         <div class="collection">
-          <a href="./editProfile.html" class="collection-item" id="editProfile">Edit My Profile</a>
-          <a href="./createPost.html" class="collection-item" id="create">Create Post</a>
-          <a href="./profile.html" class="collection-item">My Listings</a>
+          <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
+          <a href="./createPost" class="collection-item" id="create">Create Post</a>
+          <a href="./profile" class="collection-item">My Listings</a>
         </div>
       </div>
       <div class="col s9 l9" id="items">
@@ -84,20 +83,20 @@
     <form>
       <div class="row">
         <div class="input-field col s6">
-          <input id="uTitle" type="text" class="validate">
           <label for="uTitle">Title</label>
+          <input id="uTitle" type="text" class="validate" id="title">
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="uDescription" type="text" class="validate">
           <label for="uDescription">Description</label>
+          <input id="uDescription" type="text" class="validate" id="description">
         </div>
       </div>
       <div class="file-field input-field">
         <div class="btn">
           <span>Image</span>
-          <input type="file" id="uImg">
+          <input type="file" id="uImg" id="image">
         </div>
         <div class="file-path-wrapper">
           <input class="file-path validate" type="text">
@@ -105,7 +104,7 @@
     </form>
   </div>
   <div class="modal-footer">
-    <button class="btn modal-close waves-effect waves-green btn-flat saveUpdate" type="submit" name="action">Save
+    <button class="btn modal-close waves-effect waves-green btn-flat" id="saveUpdate" type="submit" name="action">Save
       <i class="material-icons right">send</i>
     </button>
   </div>

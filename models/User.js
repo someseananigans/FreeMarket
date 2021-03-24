@@ -9,7 +9,7 @@ const User = pls.defineUser(sequelize, {
     type: DataTypes.STRING,
     unique: true 
   },
-  phone: DataTypes.BIGINT
+  phone: DataTypes.STRING
 })
 
 module.exports = User

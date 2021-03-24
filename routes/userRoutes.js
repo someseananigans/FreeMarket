@@ -8,7 +8,7 @@ router.get('/user/auth', passport.authenticate('jwt'), (req, res) => {
   res.json(req.user)
 })
 
-router.get('/usersnames', (req, res) => {
+router.get('/usernames', (req, res) => {
   User.findAll({})
     .then(users => {
       let usernames = []
@@ -40,6 +40,7 @@ router.post('/user/login', (req, res) => {
 
 // Update current user (needs update)
 router.put('/user', passport.authenticate('jwt'), (req, res) => {
+  console.log(req.body)
   User.update(req.body, { where: { id: req.user.id} })
     .then(() => res.sendStatus(200))
     .catch(err => res.json(err))
