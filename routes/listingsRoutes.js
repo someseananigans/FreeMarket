@@ -1,10 +1,20 @@
 const router = require('express').Router()
 const { Listing } = require('../models')
+const { User } = require('../models')
 const passport = require('passport')
 
 // Get all listings (No authentication necessary)
 router.get('/listings', (req, res) => {
-  Listing.findAll({})
+
+  Listing.findAll({
+    include: [
+      {
+      model: User,
+      attributes: ['name', 'email', 'phone']
+
+      }
+    ]
+  })
     .then(listings => res.json(listings))
     .catch(err => res.json(listings))
 })
@@ -13,7 +23,15 @@ router.get('/listings', (req, res) => {
 
 // search bar get via title input
 router.get('/listings/search/:title', (req, res) => {
-  Listing.findAll({})
+  Listing.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ['name', 'email', 'phone']
+
+      }
+    ]
+  })
     .then(listing => {
       let searchResults = []
       for (let i = 0; i<listing.length; i++) {
@@ -29,7 +47,11 @@ router.get('/listings/search/:title', (req, res) => {
 
 // Get listings by category
 router.get('/listings/category/:category', (req, res) => {
-  Listing.findAll({ where: { category: req.params.category } })
+  Listing.findAll({
+    where: { category: req.params.category }, 
+    include: {model: User, attributes: ['name', 'email', 'phone']}
+
+  })
     .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
