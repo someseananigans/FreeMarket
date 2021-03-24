@@ -60,10 +60,6 @@ h5 {
   border-bottom: #f44336
 }
 
-.brand-logo {
-  margin-top: 10px;
-}
-
 .header {
   height: 80px;
 }
@@ -79,3 +75,49 @@ h5 {
 }
 
 /* Login/SignUp styling End */
+
+.card {
+  height: 250px;
+  width: 200px;
+}
+
+.filter {
+  height: 40px;
+  width: 85%;
+  color: teal;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.listing {
+  margin-left: 200px;
+}
+
+.logo {
+  margin-top: 10px;
+  width: 150px;
+  height: auto;
+}
+
+@media (max-width: 670px) {
+  .listing {
+    margin-left: 100px;
+  }
+  .logo {
+    margin-top: 10px;
+    width: 120px;
+    height: auto;
+  }
+}
+
+.itemModal {
+  width: 400px;
+}
+
+.cardTitle {
+  color: rgb(4, 131, 110);
+}
+
+/* Index page styling */

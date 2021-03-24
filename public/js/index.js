@@ -5,17 +5,18 @@ const getListings = () => {
   .then(({ data: listings }) => {
     document.getElementById('listings').innerHTML = ''
     listings.forEach(listing => {
+      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
       const listingElem = document.createElement('div')
       listingElem.className = 'col s12 m6 l4'
       listingElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable" id="cardItem">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <h3 class="card-title center cardTitle">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -26,9 +27,7 @@ const getListings = () => {
   })
   .catch(err => console.error(err))
 }
-
 getListings()
-
 
 document.getElementById('automotive').addEventListener('click', event => {
 
@@ -37,17 +36,18 @@ document.getElementById('automotive').addEventListener('click', event => {
   .then(({ data: listings }) => {
     document.getElementById('listings').innerHTML = ''
     listings.forEach(listing => {
+      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
       const autoElem = document.createElement('div')
       autoElem.className = 'col s12 m6 l4'
       autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -65,17 +65,18 @@ document.getElementById('household').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -93,17 +94,18 @@ document.getElementById('decor').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -121,17 +123,18 @@ document.getElementById('apparel').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -149,17 +152,18 @@ document.getElementById('accessories').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -177,17 +181,18 @@ document.getElementById('technology').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -205,17 +210,18 @@ document.getElementById('pet').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -233,17 +239,18 @@ document.getElementById('random').addEventListener('click', event => {
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
       listings.forEach(listing => {
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
         autoElem.className = 'col s12 m6 l4'
         autoElem.innerHTML = `
         <div class="row">
          <div class="col s12 m7">
-           <div class="card hoverable">
+           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
               </div>
-              <span class="card-title">${listing.title}</span>
+              <span class="card-title">${listingTitle}</span>
             </div>
           </div>
         </div>
@@ -255,103 +262,111 @@ document.getElementById('random').addEventListener('click', event => {
     .catch(err => console.error(err))
 })
 
-document.getElementById('search').addEventListener('input', event => {
+document.getElementById('search1').addEventListener('input', event => {
 
-  axios.get(
-    `/api/listings/search/`
-    )
+  axios.get(`/api/listings/search/${document.getElementById('search1').value}`)
 
     .then(({ data: listings }) => {
       document.getElementById('listings').innerHTML = ''
-      listings.forEach(listing => {
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m6 l4'
-        autoElem.innerHTML = `
-        <div class="row">
-         <div class="col s12 m7">
-           <div class="card hoverable">
-             <div class="card-image">
+      if (!(listings)) {
+
+        
+
+      } else {
+        listings.forEach(listing => {
+          const autoElem = document.createElement('div')
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          autoElem.className = 'col s12 m6 l4'
+          autoElem.innerHTML = `
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+                <div class="card-image">
                 <img src="../images/${listing.image}" height="175px" width="auto">
                 
+                </div>
+                <span class="card-title">${listingTitle}</span>
               </div>
-              <span class="card-title">${listing.title}</span>
             </div>
           </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+         `
+          document.getElementById('listings').append(autoElem)
 
-      })
+        })
+
+      }
+    })
+    .catch(err => console.error(err))
+})
+document.getElementById('search2').addEventListener('input', event => {
+
+  axios.get(`/api/listings/search/${document.getElementById('search2').value}`)
+
+    .then(({ data: listings }) => {
+      document.getElementById('listings').innerHTML = ''
+      if (!(listings)) {
+
+
+
+      } else {
+        listings.forEach(listing => {
+          const autoElem = document.createElement('div')
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          autoElem.className = 'col s12 m6 l4'
+          autoElem.innerHTML = `
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+                <div class="card-image">
+                <img src="../images/${listing.image}" height="175px" width="auto">
+                
+                </div>
+                <span class="card-title">${listingTitle}</span>
+              </div>
+            </div>
+          </div>
+         `
+          document.getElementById('listings').append(autoElem)
+
+        })
+
+      }
     })
     .catch(err => console.error(err))
 })
 
+document.addEventListener('click', event => {
 
+  if (localStorage.getItem('token')) {
 
-// get all listings
-// let getAllListings = () => {
+    if (event.target.classList.contains('listings')) {
+      const id = event.target.dataset.id
+      axios.get(`/api/listings/id/${id}`)
 
-//   axios.get('/api/listings')
-//   .then(({ data: listings }) => {
-//     console.log(listings)
-//     document.getElementById('allListings').innerHTML = ''
-//     listings.forEach(listing => {
-//       const listingElem = document.createElement('div')
-//       listingElem.className = 'col s12 m6 l4'
-//       listingElem.innerHTML = `
-//           <p>${listing.title}</p>
-//           <p>${listing.description}</p>
-//           <p>${image}
-//           <button data-target="modal1" class="btn modal-trigger">Contact Owner</button>
-//         `
-//         document.getElementById('allListings').append(listingElem)
-//     })
-//   })
-//   .catch(err => console.error(err))
-// }
+        .then(({ data: listing }) => {
+          console.log(listing)
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          document.getElementById('listFull').innerHTML =
+            `
+      <div class="row center">
+        <p id="listImage"><img src="../images/${listing.image}" height="175px" width="auto"></p>
+      </div>
+      <div class="row">
+        <h4 id="listTitle">${listingTitle}</h4>
+      </div>
+      <div class="row">
+        <p id="listDesc">${listing.description}</p>
+      </div>
+      <button class="btn modal-close waves-effect waves-green" type="email" name="action">
+      <i class="material-icons right">email</i>
+      </button>
+      `
+      })
+      .catch(err => console.log(err))
+    } else {}
 
-// getAllListings()
-
-// create new post
-
-// let listing = {
-//   title: ''
-//   discription: ''
-// }
-// axois.post('/api/listings', listing)
-// .then(({data}) => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// get specific listing
-
-// axios.get('/api/songs/1')
-// .then(({data}) => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// update certain listing
-
-// let updates = {
-//   description: ''
-// }
-// axois.put('/api/listings/1', updates)
-// .then(() => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
-
-
-
-// delete listing
-// axios.delete('/api/listings/1')
-//   .then(() => {
-//   console.log(data)
-// })
-// .catch(err => console.error(err))
+  } else {
+    window.location = '/login.html'
+  }
+  
+})
