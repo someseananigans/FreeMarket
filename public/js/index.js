@@ -300,15 +300,18 @@ document.getElementById('search1').addEventListener('input', event => {
 })
 
 document.addEventListener('click', event => {
-  if (event.target.classList.contains('listings')) {
-    const id = event.target.dataset.id
-    axios.get(`/api/listings/id/${id}`)
 
-    .then(({ data: listing }) => {
-      console.log(listing)
-      let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-      document.getElementById('listFull').innerHTML = 
-      `
+  if (localStorage.getItem('token')) {
+
+    if (event.target.classList.contains('listings')) {
+      const id = event.target.dataset.id
+      axios.get(`/api/listings/id/${id}`)
+
+        .then(({ data: listing }) => {
+          console.log(listing)
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          document.getElementById('listFull').innerHTML =
+            `
       <div class="row center">
         <p id="listImage"><img src="../images/${listing.image}" height="175px" width="auto"></p>
       </div>
@@ -322,7 +325,12 @@ document.addEventListener('click', event => {
       <i class="material-icons right">email</i>
       </button>
       `
-    })
-    .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
+    } else {}
+
+  } else {
+    window.location = '/login.html'
   }
+  
 })
