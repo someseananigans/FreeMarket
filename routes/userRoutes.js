@@ -8,7 +8,7 @@ router.get('/user/auth', passport.authenticate('jwt'), (req, res) => {
   res.json(req.user)
 })
 
-router.get('/usersnames', (req, res) => {
+router.get('/usernames', (req, res) => {
   User.findAll({})
     .then(users => {
       let usernames = []

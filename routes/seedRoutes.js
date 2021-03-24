@@ -53,25 +53,29 @@ let listings = [
   {
     title: 'item1',
     description: 'description',
-    image: 'image1',
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2FFree2021?alt=media&token=24ee4eb0-6a19-4c57-b043-8c874f98c424',
+    category:"",
     uid: 1
   },
   {
     title: 'item2',
     description: 'description',
-    image: 'image2',
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2FFree1616523445770?alt=media&token=aae0eff9-ba98-435a-a407-214ba70bbd09',
+    category: "",
     uid: 2
   },
   {
     title: 'item3',
     description: 'description',
-    image: 'image3',
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2FFree1616523428519?alt=media&token=af8ea66e-629d-40be-b9d0-d859247baf11',
+    category:"",
     uid: 3
   },
   {
     title: 'item4',
     description: 'description',
-    image: 'image4',
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2FFree1616522923798?alt=media&token=891c0a3a-3fdb-4d2f-8324-ac75457786eb',
+    category:"",
     uid: 1
   }
 ]
