@@ -1,4 +1,18 @@
 const axios = window.axios
+// ----> set variables within the .env <----
+const firebaseConfig = {
+  apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",
+  authDomain: "freemarket-3263e.firebaseapp.com",
+  projectId: "freemarket-3263e",
+  storageBucket: "freemarket-3263e.appspot.com",
+  databaseURL: "https://freemarket-3263e.firebaseio.com",
+  messagingSenderId: "623455406150",
+  appId: "1:623455406150:web:0f8d92b06ff3902fd16247",
+  measurementId: "G-ZSJ89JVWDF"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
 
 let imageUrl = ''
 
@@ -22,22 +36,6 @@ document.getElementById('createItem').addEventListener('click', event => {
     })
     .catch(err => console.error(err))
 })
-
-// ----> set variables within the .env <----
-const firebaseConfig = {
-  apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",
-  authDomain: "freemarket-3263e.firebaseapp.com",
-  projectId: "freemarket-3263e",
-  storageBucket: "freemarket-3263e.appspot.com",
-  databaseURL: "https://freemarket-3263e.firebaseio.com",
-  messagingSenderId: "623455406150",
-  appId: "1:623455406150:web:0f8d92b06ff3902fd16247",
-  measurementId: "G-ZSJ89JVWDF"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
 
 // firebase file upload
 document.getElementById('fileButton').addEventListener('change', event => {

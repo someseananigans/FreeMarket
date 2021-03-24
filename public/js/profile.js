@@ -1,5 +1,4 @@
 const axios = window.axios
-
 // ----> set variables within the .env <----
 const firebaseConfig = {
   apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",

@@ -105,18 +105,20 @@ progress {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
-
 /* Login/SignUp styling End */
 
-/* modal button */
+/* nav header */
+nav {
+  line-height: 78px;
+}
 
+/* modal button */
 .btn-flat {
   background-color: #26a69a;
   color: white;
 }
 
 /* Index page styling start */
-
 .card {
   height: 250px;
   width: 200px;
