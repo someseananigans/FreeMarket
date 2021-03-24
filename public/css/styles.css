@@ -96,6 +96,7 @@ h5 {
 }
 
 .logo {
+  margin-top: 10px;
   width: 150px;
   height: auto;
 }
@@ -105,13 +106,18 @@ h5 {
     margin-left: 100px;
   }
   .logo {
+    margin-top: 10px;
     width: 120px;
     height: auto;
   }
 }
 
-#itemModal {
-  width: 50%;
-  
+.itemModal {
+  width: 400px;
 }
+
+.cardTitle {
+  color: rgb(4, 131, 110);
+}
+
 /* Index page styling */
