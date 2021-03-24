@@ -10,41 +10,7 @@
   <style>
 
 
-    .card {
-      height: 250px;
-      width: 200px;
-    }
-
-    .filter {
-      height: 40px;
-      width: 85%;
-      color:teal;
-      font-size: 18px;
-      margin-top: 10px;
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    .listing {
-      margin-left: 200px;
-    }
-
-    .logo {
-      width: 150px;
-      height:auto;
-    }
-
-    @media (max-width: 670px ) {
-      .listing {
-        margin-left: 100px;
-      }
-
-      .logo {
-        width:120px;
-        height:auto;
-      }
-      
-    }
+    
     
   </style>
   <link rel="stylesheet" href="./css/styles.css">
@@ -62,7 +28,7 @@
       <ul class="right hide-on-med-and-down">
 
         <li>
-          <input type="search" id="search">
+          <input type="search" id="search1">
         </li>
         <li>
           <a href=""><i class="material-icons">search</i></a>
@@ -73,7 +39,7 @@
   
   <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   <ul id="slide-out" class="sidenav">
-    <div class="row teal lighten-1 center"><a href="index"><img src="./freeMarketLogo.png" width="150px" height="auto"></a></div>
+    <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a></div>
         <div class="container">
           <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
           <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
@@ -100,18 +66,30 @@
     </div>
   </div>
 
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal itemModal">
+    <div class="modal-content" id="listFull">
+      
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     $(document).ready(function () {
       $('.sidenav').sidenav();
     })
-  </script>
-<script src="js/index.js">
-</script>
+    </script>
+    <script src="js/index.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+          var elems = document.querySelectorAll('.modal');
+          var instances = M.Modal.init(elems, {});
+        })
+    </script>
 </body>
 
 </html>
