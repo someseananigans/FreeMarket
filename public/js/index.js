@@ -298,6 +298,42 @@ document.getElementById('search1').addEventListener('input', event => {
     })
     .catch(err => console.error(err))
 })
+document.getElementById('search2').addEventListener('input', event => {
+
+  axios.get(`/api/listings/search/${document.getElementById('search2').value}`)
+
+    .then(({ data: listings }) => {
+      document.getElementById('listings').innerHTML = ''
+      if (!(listings)) {
+
+
+
+      } else {
+        listings.forEach(listing => {
+          const autoElem = document.createElement('div')
+          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+          autoElem.className = 'col s12 m6 l4'
+          autoElem.innerHTML = `
+          <div class="row">
+            <div class="col s12 m7">
+              <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+                <div class="card-image">
+                <img src="../images/${listing.image}" height="175px" width="auto">
+                
+                </div>
+                <span class="card-title">${listingTitle}</span>
+              </div>
+            </div>
+          </div>
+         `
+          document.getElementById('listings').append(autoElem)
+
+        })
+
+      }
+    })
+    .catch(err => console.error(err))
+})
 
 document.addEventListener('click', event => {
 
