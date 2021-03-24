@@ -30,32 +30,58 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 header">
+  <nav class="teal lighten-1 header">
     <div class="container">
-      <a href="" class="sidenav-trigger" data-target="mobile-links">
-        <i class="material-icons">menu</i>
-      </a>
+      <!-- ***NEEDS TO BE EDITED*** -->
+      <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul id="slide-out" class="sidenav">
+        <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
+              class="logo"></a>
+        </div>
+        <div class="container">
+          <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
+          <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
+          <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
+          <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
+          <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
+          <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
+          <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
+          <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
+          <li class="input-field white">
+            <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+          </li>
+          <li class="filter">
+            <a href="./login">Sign up/Login</a>
+            <a href="./profile">My Profile</a>
+          </li>
+        </div>
+      </ul>
+  
+      <!-- <a class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="sidenav" id="mobile-links">
+            <li>
+              <input type="search">
+            </li>
+            <li>
+              <a href=""><i class="material-icons">search</i></a>
+            </li>
+            <li><a href="./login">Home</a></li>
+            <li><a href="./profile">My Listings</a></li>
+          </ul> -->
+  
       <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
       <ul class="right hide-on-med-and-down">
         <li><a href="./index">Home Page</a></li>
         <li><a href="./index" id="signOut">Log Out</a></li>
-
+  
       </ul>
-
+  
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-links">
-    <li>
-      <input type="search">
-    </li>
-    <li>
-      <a href=""><i class="material-icons">search</i></a>
-    </li>
-    <li><a href="./login">Home</a></li>
-    <li><a href="./profile">My Listings</a></li>
-  </ul>
 
 
   <div class="container" id='profileTools'>
@@ -100,7 +126,8 @@
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="editBtn">Edit<i class="material-icons right">edit</i></button>
+          <button class="waves-effect waves-light btn" type="submit" name="action" id="editBtn">Edit<i
+              class="material-icons right">edit</i></button>
         </div>
       </div>
     </div>
@@ -112,6 +139,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/addons/cleave-phone.us.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
   <script src="./js/editProfile.js"></script>
 </body>
 
