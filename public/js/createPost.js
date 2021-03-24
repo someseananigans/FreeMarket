@@ -20,3 +20,18 @@ document.getElementById('createItem').addEventListener('click', event => {
     })
     .catch(err => console.error(err))
 })
+// go to edit profile page
+document.getElementById('editMyProfile').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/editProfile.html'
+})
+// go to create a post page
+document.getElementById('createListing').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/createPost.html'
+})
+// go to my profile page
+document.getElementById('myListings').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/profile.html'
+})

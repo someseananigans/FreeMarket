@@ -15,7 +15,7 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 header">
+  <nav class="nav-wrapper blue darken-1 header">
     <div class="container">
       <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
     </div>
@@ -25,14 +25,14 @@
   <div class="container connect">
     <div class="box">
       <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
-        <li class="tab"><a class="active" href="#loginBox">Login</a></li>
-        <li class="tab"><a href="#signUpBox">Sign Up</a></li>
+        <li class="tab" id="logInTab"><a class="active" href="#loginBox">Login</a></li>
+        <li class="tab" id="signUpTab"><a href="#signUpBox">Sign Up</a></li>
       </ul>
       
       <div id="signUpBox" class="col s12">
         <div class="card-panel">
           <div class="headSpace">
-            <h1 class="center-align">Sign Up</h1>
+            <h1 class="center-align" id="signUpHeader">Sign Up</h1>
           </div>
           <div class="row">
             <div class="itemName input-field col s12">
@@ -71,14 +71,14 @@
               <label for="passwordS">Password</label>
             </div>
           </div>
-          <button id="signUp" class="waves-effect waves-light btn">Sign Up</button>
+          <button id="signUp" class="waves-effect waves-light btn yellow darken-3">Sign Up</button>
         </div> 
       </div>
 
       <div id="loginBox" class="col s12">
         <div class="card-panel">
           <div class="headSpace">
-            <h1 class="center-align">Login</h1>
+            <h1 class="center-align" id="logInHeader">Login</h1>
           </div>
           <div id="invalid"></div>
           <div class="row">
@@ -95,7 +95,7 @@
               <label for="passwordL">Password</label>
             </div>
           </div>
-          <button id="login" class="waves-effect waves-light btn">Login</button>
+          <button id="login" class="waves-effect waves-light btn yellow darken-3">Login</button>
         </div>
       </div>
     </div>

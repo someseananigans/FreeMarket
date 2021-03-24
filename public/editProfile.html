@@ -30,7 +30,7 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 header">
+  <nav class="nav-wrapper blue darken-1 header">
     <div class="container">
       <a href="" class="sidenav-trigger" data-target="mobile-links">
         <i class="material-icons">menu</i>
@@ -56,16 +56,19 @@
     <li><a href="./profile">My Listings</a></li>
   </ul>
 
+<a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <ul id="slide-out" class="sidenav ">
+    <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+    </div>
+    <div class="container">
+      <li class="collection-item filter  waves-effect waves-red" id="editMyProfile">Edit My Profile</li>
+      <li class="collection-item filter waves-effect waves-red" id="createListing">Create a Listing</li>
+      <li class="collection-item filter waves-effect waves-red" id="myListings">My Listings</li>
+    </div>
+  </ul>
 
   <div class="container" id='profileTools'> 
     <div class="row">
-      <div class="col s3 sidebar">
-        <div class="collection">
-          <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
-          <a href="./createPost" class="collection-item" id="create">Create Post</a>
-          <a href="./profile" class="collection-item">My Listings</a>
-        </div>
-      </div>
       <div class="col s9 l9" id="items">
 
         <div class="card-panel">
@@ -99,7 +102,7 @@
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="updateProfile">Save
+          <button class="waves-effect waves-light btn yellow darken-3" type="submit" name="action" id="updateProfile">Save
             <i class="material-icons right">send</i>
           </button>
         </div>
@@ -114,6 +117,13 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/addons/cleave-phone.us.js"></script>
   <script src="./js/editProfile.js"></script>
+
+  <script>
+
+     $(document).ready(function () {
+        $('.sidenav').sidenav();
+      })
+  </script>
 </body>
 
 </html>

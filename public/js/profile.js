@@ -18,13 +18,15 @@ const getMyListings = () => {
         let listingElem = document.createElement('div')
         listingElem.className = 'col s9 l6'
         listingElem.innerHTML = `
-          <div class="row card hoverable">
+          <div class="row card hoverable profileListing">
             <div class="input-field col s12">
           <p>${listing.title}</p>
           <p>${listing.description}</p>
           <img src= "${listing.image}">
-          <a class="waves-effect waves-light btn modal-trigger editPost" data-id=${listing.id}  href="#modal1">Edit Post</a>
-          <a class="waves-effect waves-light btn deletePost" data-id=${listing.id} href="#">Delete Post</a>
+          <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
+          <br>
+          <br>
+          <a class="waves-effect waves-light btn deletePost yellow darken-3" data-id=${listing.id} href="#">Delete Post</a>
           </div>
           </div>
         `
@@ -38,6 +40,22 @@ const getMyListings = () => {
 document.getElementById('signOut').addEventListener('click', event => {
   localStorage.removeItem('token')
   window.location = '/login.html'
+})
+
+// go to edit profile page
+document.getElementById('editMyProfile').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/editProfile.html'
+})
+// go to create a post page
+document.getElementById('createListing').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/createPost.html'
+})
+// go to my profile page
+document.getElementById('myListings').addEventListener('click', event => {
+  console.log('ping')
+  window.location = '/profile.html'
 })
 
 // global event listener
