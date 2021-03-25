@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
   <style>
     .info {
       background: lightblue;
@@ -30,34 +30,61 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="nav-wrapper teal lighten-1 header">
+  <nav class="teal lighten-1 header">
+    <!-- ***NEEDS TO BE EDITED*** -->
+    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
+            class="logo"></a>
+      </div>
+      <div class="container">
+        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
+        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
+        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
+        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
+        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
+        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
+        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
+        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
+        <li class="input-field white">
+          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+        </li>
+        <li class="filter">
+          <a href="./login">Sign up/Login</a>
+          <a href="./profile">My Profile</a>
+        </li>
+      </div>
+    </ul>
     <div class="container">
-      <a href="" class="sidenav-trigger" data-target="mobile-links">
-        <i class="material-icons">menu</i>
+  
+      <!-- <a class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="sidenav" id="mobile-links">
+            <li>
+              <input type="search">
+            </li>
+            <li>
+              <a href=""><i class="material-icons">search</i></a>
+            </li>
+            <li><a href="./login">Home</a></li>
+            <li><a href="./profile">My Listings</a></li>
+          </ul> -->
+  
+      <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
-      <a href="./index" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="./index">Home Page</a></li>
         <li><a href="./index" id="signOut">Log Out</a></li>
-
+  
       </ul>
-
+  
     </div>
   </nav>
 
-  <ul class="sidenav" id="mobile-links">
-    <li>
-      <input type="search">
-    </li>
-    <li>
-      <a href=""><i class="material-icons">search</i></a>
-    </li>
-    <li><a href="./login">Home</a></li>
-    <li><a href="./profile">My Listings</a></li>
-  </ul>
 
 
-  <div class="container" id='profileTools'> 
+  <div class="container" id='profileTools'>
     <div class="row">
       <div class="col s3 sidebar">
         <div class="collection">
@@ -67,19 +94,19 @@
         </div>
       </div>
       <div class="col s9 l9" id="items">
-
+        <h1 style="text-align: center; font-weight: 100;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
             <div class="itemName input-field col s12">
               <i class="material-icons prefix">account_circle</i>
-              <input id="nameU" type="text" class="validate">
+              <input id="nameU" type="text" class="validate" disabled>
               <label id="activeN" for="nameU">Name</label>
             </div>
           </div>
           <div class="row">
             <div class="itemName input-field col s12">
               <i class="material-icons prefix">email</i>
-              <input id="emailU" type="email" class="validate">
+              <input id="emailU" type="email" class="validate" disabled>
               <label id="activeE" for="emailU">Email</label>
               <div id="invalidEmail"></div>
             </div>
@@ -87,21 +114,20 @@
           <div class="row">
             <div class="itemName input-field col s12">
               <i class="material-icons prefix">phone</i>
-              <input id="phoneU" type="tel" class="validate">
+              <input id="phoneU" type="tel" class="validate" disabled>
               <label id="activeP" for="phoneU">Phone Number</label>
             </div>
           </div>
           <div class="row">
             <div class="itemName input-field col s12">
               <i class="material-icons prefix">create</i>
-              <input id="usernameU" type="text" class="validate">
+              <input id="usernameU" type="text" class="validate" disabled>
               <label id="activeU" for="usernameU">Username</label>
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="updateProfile">Save
-            <i class="material-icons right">send</i>
-          </button>
+          <button class="waves-effect waves-light btn" type="submit" name="action" id="editBtn">Edit<i
+              class="material-icons right">edit</i></button>
         </div>
       </div>
     </div>
@@ -113,6 +139,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/cleave.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.5.10/addons/cleave-phone.us.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
   <script src="./js/editProfile.js"></script>
 </body>
 

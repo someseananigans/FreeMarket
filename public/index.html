@@ -10,8 +10,8 @@
   <style>
 
 
-    
-    
+
+
   </style>
   <link rel="stylesheet" href="./css/styles.css">
 
@@ -19,9 +19,31 @@
 </head>
 
 <body>
-  
 
-  <nav class="nav-wrapper teal lighten-1 header">
+
+  <nav class="teal lighten-1 header">
+    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+      </div>
+      <div class="container">
+        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
+        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
+        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
+        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
+        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
+        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
+        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
+        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
+        <li class="input-field white">
+          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+        </li>
+        <li class="filter">
+          <a href="./login">Sign up/Login</a>
+          <a href="./profile">My Profile</a>
+        </li>
+      </div>
+    </ul>
     <div class="container">
       <a href="./index.html" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
@@ -31,6 +53,7 @@
       </ul>
     </div>
   </nav>
+
   
   <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   <ul id="slide-out sideList" class="sidenav">
@@ -55,7 +78,8 @@
   </ul>
    
 
-  <div class="container listing">  
+
+  <div class="container listing">
     <div class="col s9 l9">
       <div class="row" id="listings"></div>
     </div>
@@ -64,7 +88,7 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal itemModal">
     <div class="modal-content" id="listFull">
-      
+
     </div>
     <div class="modal-footer">
     </div>
@@ -77,18 +101,14 @@
     $(document).ready(function () {
       $('.sidenav').sidenav();
     })
-    </script>
-    <script src="js/index.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          var elems = document.querySelectorAll('.modal');
-          var instances = M.Modal.init(elems, {});
-        })
-    </script>
+  </script>
+  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    })
+  </script>
 </body>
 
 </html>
-
-
-
-
