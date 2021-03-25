@@ -1,4 +1,22 @@
 
+// if (localStorage.getItem('token')) {
+//   const signOut = document.createElement('li')
+//   signOut.className = 'collection-item filter waves-effect waves-red'
+//   signOut.id = 'signOut'
+//   signOut.innerHTML = `<a href="">Sign Out</a>`
+
+//   document.getElementById('sideList').append(signOut)
+
+// } else {
+//   const signIn = document.createElement('li')
+//   signOut.className = 'collection-item filter waves-effect waves-red'
+//   signOut.id = 'signOut'
+//   signOut.innerHTML = `<a href="./login.html">Sign Up/Sign In</a>`
+
+//   document.getElementById('sideList').append(signOut)
+
+// }
+
 
 const getListings = () => {
   axios.get('/api/listings')
@@ -73,10 +91,10 @@ document.getElementById('household').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -101,10 +119,10 @@ document.getElementById('decor').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -129,10 +147,10 @@ document.getElementById('apparel').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -157,10 +175,10 @@ document.getElementById('accessories').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -185,10 +203,10 @@ document.getElementById('technology').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -213,10 +231,10 @@ document.getElementById('pet').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -241,10 +259,10 @@ document.getElementById('random').addEventListener('click', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -271,10 +289,10 @@ document.getElementById('search1').addEventListener('input', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
@@ -306,10 +324,10 @@ document.getElementById('search2').addEventListener('input', event => {
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
              <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+                <img src="${listing.image}" height="175px" width="auto" class="listings">
                 
               </div>
-              <h3 class="card-title center cardTitle">${listingTitle}</h3>
+              <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
           </div>
         </div>
