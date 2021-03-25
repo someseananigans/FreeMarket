@@ -10,8 +10,8 @@
   <style>
 
 
-    
-    
+
+
   </style>
   <link rel="stylesheet" href="./css/styles.css">
 
@@ -19,9 +19,9 @@
 </head>
 
 <body>
-  
 
   <nav class="nav-wrapper blue darken-1 header">
+    
     <div class="container">
       <a href="./index.html" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
@@ -31,6 +31,7 @@
       </ul>
     </div>
   </nav>
+
   
   <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   <ul id="slide-out" class="sidenav ">
@@ -55,7 +56,8 @@
   </ul>
    
 
-  <div class="container listing">  
+
+  <div class="container listing">
     <div class="col s9 l9">
       <div class="row" id="listings"></div>
     </div>
@@ -64,7 +66,7 @@
   <!-- Modal Structure -->
   <div id="modal1" class="modal itemModal">
     <div class="modal-content" id="listFull">
-      
+
     </div>
     <div class="modal-footer">
     </div>
@@ -77,18 +79,14 @@
     $(document).ready(function () {
       $('.sidenav').sidenav();
     })
-    </script>
-    <script src="js/index.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-          var elems = document.querySelectorAll('.modal');
-          var instances = M.Modal.init(elems, {});
-        })
-    </script>
+  </script>
+  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    })
+  </script>
 </body>
 
 </html>
-
-
-
-
