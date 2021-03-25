@@ -319,11 +319,11 @@ document.addEventListener('click', event => {
     if (event.target.parentNode.classList.contains('listings')) {
       id = event.target.parentNode.dataset.id
     }
-    if (event.target.parentNode.classList.contains('listings')) {
+    if (event.target.classList.contains('listings')) {
       id = event.target.dataset.id
     }
+    // testing
     axios.get(`/api/listings/id/${id}`)
-
       .then(({ data: listing }) => {
         console.log(listing)
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
