@@ -108,9 +108,11 @@ progress {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
 /* Login/SignUp styling End */
 
 /* nav header */
+
 /* nav {
   line-height: 78px;
 } */
@@ -127,6 +129,18 @@ progress {
   width: 200px;
 }
 
+.listings {
+  text-align: center;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-image {
+  height: 175px;
+  width: auto;
+}
+
 .filter {
   height: 40px;
   width: 85%;
@@ -138,7 +152,7 @@ progress {
 }
 
 .listing {
-  margin-left: 200px;
+  /* margin-left: 250px; */
 }
 
 .logo {
@@ -147,9 +161,10 @@ progress {
   height: auto;
 }
 
+
 @media (max-width: 670px) {
   .listing {
-    margin-left: 100px;
+    /* margin-left: 100px; */
   }
   .logo {
     margin-top: 10px;
@@ -188,6 +203,9 @@ progress {
 
 #apparel {
   color: #1e88e5;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-top: 17px;
 }
 
 #accessories {
@@ -224,4 +242,23 @@ progress {
 #search1 {
   align-self: baseline;
 }
+
 /* Index page styling */
+
+/* scroll bar updates */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -20,42 +20,35 @@
 
 <body>
 
-  <nav class="nav-wrapper blue darken-1 header">
-    
-    <div class="container">
+
+  <nav class="blue darken-1 header">
+    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+      </div>
+      <div class="sideNavCont">
+        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
+        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
+        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
+        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
+        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
+        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
+        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
+        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
+        <li class="input-field white">
+          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+        </li>
+      </div>
+    </ul>
+    <div class="navContain">
       <a href="./index.html" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
-      <ul class="right">
-        <li><input type="search" id="search1"></li>
-        <li><a href=""><i class="material-icons left">search</i></a></li>
+      <ul class="right" id="navList">
+        <li><input type="search" id="search1" class="hide-on-med-and-down"></li>
+        <li><a href=""><i class="material-icons left hide-on-med-and-down">search</i></a></li>
       </ul>
     </div>
   </nav>
-
-  
-  <a data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  <ul id="slide-out" class="sidenav ">
-    <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a></div>
-        <div class="container">
-          <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
-          <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
-          <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
-          <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
-          <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
-          <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
-          <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
-          <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
-          <li class="input-field white">
-            <input type="search"  id="search2" placeholder="Search"><i class="material-icons">search</i>
-          </li>
-          <li class="filter">
-            <a href="./login.html">Sign up/Login</a>
-            <a href="./profile.html">My Profile</a>
-          </li>
-        </div>
-  </ul>
-   
-
 
   <div class="container listing">
     <div class="col s9 l9">
@@ -73,7 +66,7 @@
   </div>
 
 
-  
+
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
   </script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
