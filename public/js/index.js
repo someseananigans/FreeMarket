@@ -1,23 +1,4 @@
 
-// if (localStorage.getItem('token')) {
-//   const signOut = document.createElement('li')
-//   signOut.className = 'collection-item filter waves-effect waves-red'
-//   signOut.id = 'signOut'
-//   signOut.innerHTML = `<a href="">Sign Out</a>`
-
-//   document.getElementById('sideList').append(signOut)
-
-// } else {
-//   const signIn = document.createElement('li')
-//   signOut.className = 'collection-item filter waves-effect waves-red'
-//   signOut.id = 'signOut'
-//   signOut.innerHTML = `<a href="./login.html">Sign Up/Sign In</a>`
-
-//   document.getElementById('sideList').append(signOut)
-
-// }
-
-
 const getListings = () => {
   axios.get('/api/listings')
 
@@ -43,6 +24,33 @@ const getListings = () => {
 }
 
 getListings()
+
+
+const status1 = () => {
+
+  if (localStorage.getItem('token')) {
+    let signOut = document.createElement('li')
+    signOut.id = 'signOut'
+    signOut.innerHTML = `<a href="">Sign Out</a>`
+
+    let myProf = document.createElement('li')
+    myProf.innerHTML = `<a href="/profile">My Profile</a>`
+
+    document.getElementById('navList').append(myProf)
+    document.getElementById('navList').append(signOut)
+
+
+  } else {
+    let signIn = document.createElement('li')
+    signIn.id = 'signOut'
+    signIn.innerHTML = `<a href="./login.html">Sign Up/Sign In</a>`
+
+    document.getElementById('navList').append(signIn)
+
+
+  }
+}
+status1()
 
 document.getElementById('automotive').addEventListener('click', event => {
 
@@ -289,6 +297,10 @@ document.getElementById('search2').addEventListener('input', event => {
   }
 })
 
+document.getElementById('signOut').addEventListener('click', event => {
+  localStorage.removeItem('token')
+})
+
 document.addEventListener('click', event => {
 
   if (localStorage.getItem('token')) {
@@ -344,9 +356,10 @@ document.addEventListener('click', event => {
       </button>
       </a>
       `
-        })
-        .catch(err => console.log(err))
-    }
+      })
+      .catch(err => console.log(err))
+   }
+
 
   } else {
     window.location = '/login.html'

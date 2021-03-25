@@ -135,7 +135,7 @@ progress {
 }
 
 .listing {
-  margin-left: 200px;
+  margin-left: 250px;
 }
 
 .logo {
@@ -143,6 +143,7 @@ progress {
   width: 150px;
   height: auto;
 }
+
 
 @media (max-width: 670px) {
   .listing {
