@@ -163,4 +163,7 @@ progress {
   color: rgb(4, 131, 110);
 }
 
+#search1 {
+  align-self: baseline;
+}
 /* Index page styling */
