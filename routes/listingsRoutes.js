@@ -58,7 +58,9 @@ router.get('/listings/category/:category', (req, res) => {
 // Get listings by category
 router.get('/listings/id/:id', (req, res) => {
   console.log(req.params.id)
-  Listing.findOne({ where: { id: req.params.id } })
+  Listing.findOne({ 
+    where: { id: req.params.id },
+    include: { model: User, attributes: ['name', 'email', 'phone'] } })
     .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
