@@ -1,4 +1,8 @@
-/* Login/SignUp/listing styling Start */
+body {
+  background-color: rgb(243, 239, 239);
+}
+
+/* Login/SignUp styling Start */
 
 .connect {
   margin-top: 100px;
@@ -18,8 +22,7 @@
 }
 
 .sidebar {
-  background: lightcoral;
-  height: 500px
+  height: 500px;
 }
 
 h5 {
@@ -170,17 +173,72 @@ progress {
   }
 }
 
+#logInHeader {
+  color: #1e88e5;
+}
+#signUpHeader {
+  color: #1e88e5;
+}
+
+
 .itemModal {
   width: 400px;
 }
 
 .cardTitle {
-  color: rgb(4, 131, 110);
+  color: #1e88e5;
+}
+
+#automotive {
+  color: #1e88e5;
+}
+
+#household {
+  color: #1e88e5;
+}
+
+#decor {
+  color: #1e88e5;
+}
+
+#apparel {
+  color: #1e88e5;
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-top: 17px;
 }
 
+#accessories {
+  color: #1e88e5;
+}
+
+#technology {
+  color: #1e88e5;
+}
+
+#pet {
+  color: #1e88e5;
+}
+
+#random {
+  color: #1e88e5;
+}
+
+/* Index page styling */
+
+/* profile page styling */
+
+#editMyProfile {
+  color: #1e88e5;
+}
+
+#createListing {
+  color: #1e88e5;
+}
+
+#myListings {
+  color: #1e88e5;
+}
 #search1 {
   align-self: baseline;
 }

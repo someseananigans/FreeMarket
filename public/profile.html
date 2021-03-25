@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="./css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
   <style>
     .info {
       background: lightblue;
@@ -28,30 +28,17 @@
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
 
-  <nav class="nav-wrapper teal lighten-1 header">
-    <!-- ***NEEDS TO BE EDITED*** -->
+  <nav class="nav-wrapper blue darken-1 valign-wrapper">
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
     <ul id="slide-out" class="sidenav">
-      <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
       </div>
       <div class="container">
-        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
-        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
-        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
-        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
-        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
-        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
-        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
-        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
-        <li class="input-field white">
-          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
-        </li>
-        <li class="filter">
-          <a href="./login">Sign up/Login</a>
-          <a href="./profile">My Profile</a>
-        </li>
+        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
+        <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
+        <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
       </div>
     </ul>
     <div class="container">
@@ -60,33 +47,11 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="./index">Home Page</a></li>
         <li><a href="./index" id="signOut">Log Out</a></li>
-
       </ul>
-
     </div>
   </nav>
-
-  <ul class="sidenav" id="mobile-links">
-    <li>
-      <input type="search">
-    </li>
-    <li>
-      <a href=""><i class="material-icons">search</i></a>
-    </li>
-    <li><a href="./login">Home</a></li>
-    <li><a href="./profile">My Listings</a></li>
-  </ul>
-
-
   <div class="container" id='profileTools'>
     <div class="row">
-      <div class="col s3 sidebar">
-        <div class="collection">
-          <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
-          <a href="./createPost" class="collection-item" id="create">Create Post</a>
-          <a href="./profile" class="collection-item">My Listings</a>
-        </div>
-      </div>
       <div class="col s9 l9" id="items">
         <div class="row">
         </div>
@@ -111,7 +76,7 @@
           </div>
         </div>
         <div class="file-field input-field">
-          <div class="btn">
+          <div class="btn yellow darken-3">
             <span>Image</span>
             <input value="upload" type="file" id="fileButton">
           </div>
@@ -122,7 +87,7 @@
       </form>
     </div>
     <div class="modal-footer">
-      <button class="btn modal-close waves-effect waves-green btn-flat" id="saveUpdate" type="submit" name="action">Save
+      <button class="btn modal-close waves-effect yellow darken-3 btn-flat" id="saveUpdate" type="submit" name="action">Save
         <i class="material-icons right">send</i>
       </button>
     </div>
@@ -144,11 +109,15 @@
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
 
 
+     
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var elems = document.querySelectorAll('.modal');
       var instances = M.Modal.init(elems, {});
     });
+    $(document).ready(function () {
+        $('.sidenav').sidenav();
+      })
   </script>
 
   <script src="./js/profile.js"></script>

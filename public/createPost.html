@@ -12,31 +12,15 @@
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-  <nav class="teal lighten-1 header">
-    <!-- ***NEEDS TO BE EDITED*** -->
+  <nav class="nav-wrapper blue darken-1 valign-wrapper">
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
     <ul id="slide-out" class="sidenav">
-      <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
-            class="logo"></a>
+      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
       </div>
       <div class="container">
-        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
-        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
-        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
-        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
-        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
-        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
-        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
-        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
-        <li class="input-field white">
-          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
-        </li>
-        <li class="filter">
-          <a href="./login">Sign up/Login</a>
-          <a href="./profile">My Profile</a>
-        </li>
+        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
+        <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
+        <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
       </div>
     </ul>
     <div class="container">
@@ -60,26 +44,31 @@
       <ul class="right hide-on-med-and-down">
         <li><a href="./index">Home Page</a></li>
         <li><a href="./index" id="signOut">Log Out</a></li>
-  
       </ul>
-  
     </div>
   </nav>
 
-  
-
-
+  <!-- <ul class="sidenav" id="mobile-links">
+    <li>
+      <input type="search">
+    </li>
+    <li>
+      <a href=""><i class="material-icons">search</i></a>
+    </li>
+    <li><a href="./login">Home</a></li>
+    <li><a href="./profile">My Listings</a></li>
+  </ul> -->
   <div class="container" id='profileTools'>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col s3 sidebar">
         <div class="collection">
           <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
           <a href="./createPost" class="collection-item" id="create">Create Post</a>
           <a href="./profile" class="collection-item">My Listings</a>
         </div>
-      </div>
+      </div> -->
       <div id="items" class="col s9 l9">
-        <h1 style="text-align: center; font-weight: 100;">New Listing</h1>
+        <h1 style="text-align: center; font-weight: 100; color: #1e88e5;" >New Listing</h1>
         <div class="card-panel">
 
           <div class="itemName input-field">
@@ -113,7 +102,7 @@
 
           <form action="#" class="itemName">
             <div class="file-field input-field">
-              <div class="btn grey">
+              <div class="btn yellow darken-3">
                 <span>Image</span>
                 <input id="fileButton" value="upload" type="file">
               </div>
@@ -124,7 +113,7 @@
             </div>
           </form>
 
-          <button class="btn" type="submit" name="action" id="createItem">Create
+          <button class="btn yellow darken-3" type="submit" name="action" id="createItem">Create
             <i class="material-icons right">send</i>
           </button>
         </div>
@@ -148,14 +137,15 @@
 
 
   <script>
-    $(document).ready(function () {
-      $('.modal').modal();
-      $('select').formSelect();
-    });
-    $(document).ready(function () {
-      $('.sidenav').sidenav();
-    })
-  </script>
+    
+      $(document).ready(function () {
+        $('.modal').modal();
+        $('select').formSelect();
+      });
+       $(document).ready(function () {
+          $('.sidenav').sidenav();
+        })
+</script>
 
 
 

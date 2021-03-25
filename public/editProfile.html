@@ -30,29 +30,17 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="teal lighten-1 header">
+  <nav class="blue darken-1 header">
     <!-- ***NEEDS TO BE EDITED*** -->
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
     <ul id="slide-out" class="sidenav">
-      <div class="row teal lighten-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
+      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
             class="logo"></a>
       </div>
       <div class="container">
-        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
-        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
-        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
-        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
-        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
-        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
-        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
-        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
-        <li class="input-field white">
-          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
-        </li>
-        <li class="filter">
-          <a href="./login">Sign up/Login</a>
-          <a href="./profile">My Profile</a>
-        </li>
+        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
+        <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
+        <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
       </div>
     </ul>
     <div class="container">
@@ -82,19 +70,10 @@
     </div>
   </nav>
 
-
-
   <div class="container" id='profileTools'>
     <div class="row">
-      <div class="col s3 sidebar">
-        <div class="collection">
-          <a href="./editProfile" class="collection-item" id="editProfile">Edit My Profile</a>
-          <a href="./createPost" class="collection-item" id="create">Create Post</a>
-          <a href="./profile" class="collection-item">My Listings</a>
-        </div>
-      </div>
       <div class="col s9 l9" id="items">
-        <h1 style="text-align: center; font-weight: 100;">My Profile</h1>
+        <h1 style="text-align: center; font-weight: 100; color: #1e88e5;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
             <div class="itemName input-field col s12">
@@ -126,8 +105,11 @@
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="editBtn">Edit<i
-              class="material-icons right">edit</i></button>
+          <!-- <button class="waves-effect waves-light btn yellow darken-3" type="submit" name="action" id="updateProfile">Save
+            <i class="material-icons right">send</i>
+          </button> -->
+          <button class="waves-effect waves-light btn yellow darken-3" type="submit" name="action" id="editBtn">Edit<i
+              class="material-icons right yellow darken-3">edit</i></button>
         </div>
       </div>
     </div>
@@ -145,6 +127,13 @@
     })
   </script>
   <script src="./js/editProfile.js"></script>
+
+  <script>
+
+     $(document).ready(function () {
+        $('.sidenav').sidenav();
+      })
+  </script>
 </body>
 
 </html>
