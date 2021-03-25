@@ -31,14 +31,11 @@ const getListings = () => {
       listingElem.innerHTML = `
 
            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-             <div class="card-image">
-                <img src="${listing.image}" height="175px" width="auto">
+
+            <img src="${listing.image}" height="175px" width="auto" class="card-image center">
                 
-              </div>
               <h3 class="card-title center cardTitle">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
       `
       document.getElementById('listings').append(listingElem)
 
@@ -68,8 +65,6 @@ document.getElementById('automotive').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
       `
       document.getElementById('listings').append(autoElem)
 
@@ -96,8 +91,7 @@ document.getElementById('household').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -124,8 +118,7 @@ document.getElementById('decor').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -152,8 +145,7 @@ document.getElementById('apparel').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -180,8 +172,7 @@ document.getElementById('accessories').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -208,8 +199,7 @@ document.getElementById('technology').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -236,8 +226,7 @@ document.getElementById('pet').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
 
@@ -264,8 +253,6 @@ document.getElementById('random').addEventListener('click', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
       `
         document.getElementById('listings').append(autoElem)
 
@@ -294,8 +281,7 @@ document.getElementById('search1').addEventListener('input', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+
       `
         document.getElementById('listings').append(autoElem)
         
@@ -329,8 +315,7 @@ document.getElementById('search2').addEventListener('input', event => {
               </div>
               <h3 class="card-title center cardTitle listings">${listingTitle}</h3>
             </div>
-          </div>
-        </div>
+         
       `
         document.getElementById('listings').append(autoElem)
         
@@ -348,8 +333,8 @@ document.addEventListener('click', event => {
 
   if (localStorage.getItem('token')) {
 
-    if (event.target.classList.contains('listings')) {
-      const id = event.target.dataset.id
+    if (event.target.parentNode.classList.contains('listings')) {
+      const id = event.target.parentNode.dataset.id
       axios.get(`/api/listings/id/${id}`)
 
         .then(({ data: listing }) => {
