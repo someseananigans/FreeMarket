@@ -343,7 +343,7 @@ document.addEventListener('click', event => {
         <p id="listDesc">${listing.description}</p>
       </div>
       <a href="mailto:${listing.User.email}">
-      <button class="btn modal-close waves-effect waves-green" type="email" name="action">
+      <button class="btn modal-close waves-effect yellow darken-3" type="email" name="action">
       <i class="material-icons right">email</i>
       </button>
       </a>
