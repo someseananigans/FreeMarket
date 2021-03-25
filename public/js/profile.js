@@ -18,11 +18,16 @@ const getMyListings = () => {
         let listingElem = document.createElement('div')
         listingElem.className = 'col s9 l6'
         listingElem.innerHTML = `
-          <div class="row card hoverable profileListing">
-            <div class="input-field col s12">
-          <p>${listing.title}</p>
-          <p>${listing.description}</p>
-          <img src= "${listing.image}">
+           <div class="row">
+            <div class="col s12 m7">
+              <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+                <div class="card-image">
+                <img src="${listing.image}" height="175px" width="auto">
+                </div>
+                <span class="card-title">${listing.title}</span>
+              </div>
+            </div>
+          </div>
           <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
           <br>
           <br>
