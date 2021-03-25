@@ -13,7 +13,7 @@ const getListings = () => {
         listingElem.innerHTML = `
 
           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-            <img class="card-iamge" src="${listing.image}" height="175px" width="auto">
+            <img class="card-image" src="${listing.image}" height="175px" width="auto">
             <h3 class="card-title center cardTitle">${listingTitle}</h3>
           </div>
       `

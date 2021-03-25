@@ -105,9 +105,11 @@ progress {
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
 }
+
 /* Login/SignUp styling End */
 
 /* nav header */
+
 /* nav {
   line-height: 78px;
 } */
@@ -122,6 +124,16 @@ progress {
 .card {
   height: 250px;
   width: 200px;
+}
+
+.listings {
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-image {
+  height: 175px;
+  width: auto;
 }
 
 .filter {
@@ -161,9 +173,31 @@ progress {
 
 .cardTitle {
   color: rgb(4, 131, 110);
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-top: 17px;
 }
 
 #search1 {
   align-self: baseline;
 }
+
 /* Index page styling */
+
+/* scroll bar updates */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
