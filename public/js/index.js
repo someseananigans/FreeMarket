@@ -314,35 +314,14 @@ document.addEventListener('click', event => {
     window.location = './index'
   }
 
-  if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
-    const id = event.target.parentNode.dataset.id
-    axios.get(`/api/listings/id/${id}`)
-
-      .then(({ data: listing }) => {
-        console.log(listing)
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        document.getElementById('listFull').innerHTML =
-          `
-      <div class="row center">
-        <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
-      </div>
-      <div class="row">
-        <h4 id="listTitle">${listingTitle}</h4>
-      </div>
-      <div class="row">
-        <p id="listDesc">${listing.description}</p>
-      </div>
-      <a href="mailto:${listing.User.email}">
-      <button class="btn modal-close waves-effect waves-green" type="email" name="action">
-      <i class="material-icons right">email</i>
-      </button>
-      </a>
-      `
-      })
-      .catch(err => console.log(err))
-  }
-  else if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
-    const id = event.target.dataset.id
+  let id = ''
+  if (localStorage.getItem('token')) {
+    if (event.target.parentNode.classList.contains('listings')) {
+      id = event.target.parentNode.dataset.id
+    }
+    if (event.target.parentNode.classList.contains('listings')) {
+      id = event.target.dataset.id
+    }
     axios.get(`/api/listings/id/${id}`)
 
       .then(({ data: listing }) => {
