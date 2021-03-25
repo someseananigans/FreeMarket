@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .info {
+      background: lightblue;
+      height: 140px;
+    }
+
+    .sidebar {
+      background: lightcoral;
+      height: 500px
+    }
+
+    h5 {
+      color: white;
+    }
+
+    .headSpace {
+      background-color: lightcoral;
+      padding: 10px;
+      margin-bottom: 30px;
+    }
+
+    .headSpace h1 {
+      margin: 0;
+      color: white;
+    }
+
+    .itemName {
+      width: 80% !important;
+      float: none !important;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card-panel {
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+    }
+  </style>
+
+  <title>FreeMarket</title>
+</head>
+
+<body>
+  <nav class="nav-wrapper teal lighten-1 valign-wrapper">
+    <div class="container">
+      <a href="" class="sidenav-trigger" data-target="mobile-links">
+        <i class="material-icons">menu</i>
+      </a>
+      <a href="./sampleIndex.html" class="brand-logo"><img src="./freeMarketLogo.png" width="150px" height="auto"></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <input type="search">
+        </li>
+        <li>
+          <a href=""><i class="material-icons">search</i></a>
+        </li>
+        <li><a href="./sampleProfile.html">My Profile</a></li>
+        <li><a href="./sampleListings.html">My Listings</a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-links">
+    <li><a href="./sampleLogin.html">Home</a></li>
+    <li><a href="./sampleProfile.html">My Profile</a></li>
+    <li><a href="./sampleListings.html">My Listings</a></li>
+  </ul>
+
+
+  <div class="card-panel">
+    <div class="headSpace">
+      <h1 class="center-align">Post an Item</h1>
+    </div>
+    <div class="row">
+      <div class="itemName input-field col s12">
+        <input id="item" type="text" class="validate">
+        <label for="item">Item Name</label>
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="input-field col s6">
+              <textarea id="details" type="text" class="materialize-textarea"></textarea>
+              <label for="details">Item Details</label>
+            </div>
+            <div class="input-field col s6">
+              <textarea id="notes" type="text" class="materialize-textarea"></textarea>
+              <label for="notes">Extra Notes</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="col s6">
+              <div class="chips chips-placeholder"></div>
+              <div class="file-field input-field"></div>
+            </div>
+            <div class="input-field col s6">
+              <form action="#">
+                <div class="file-field input-field">
+                  <div class="btn grey">
+                    <span>File</span>
+                    <input name="myImage" type="file">
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <button type="submit" class="btn right">Post</button>
+      </form>
+    </div>
+  </div>
+
+    <script>
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    </script>
+    <script>
+      $(document).ready(function () {
+        $('.sidenav').sidenav();
+      })
+      const tags = document.querySelectorAll(".chips")
+      M.Chips.init(tags, {});
+
+      const tag_holder = document.querySelectorAll(".chips-placeholder")
+      M.Chips.init(tag_holder, {
+        placeholder: 'Enter Item Tags',
+        secondaryPlaceholder: '+ Add more'
+      });
+    </script>
+
+</body>
+
+</html>

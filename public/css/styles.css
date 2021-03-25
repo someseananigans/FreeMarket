@@ -1,0 +1,264 @@
+body {
+  background-color: rgb(243, 239, 239);
+}
+
+/* Login/SignUp styling Start */
+
+.connect {
+  margin-top: 100px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#invalid {
+  margin-top: -20px;
+  margin-bottom: 30px
+}
+
+.info {
+  background: lightblue;
+  height: 140px;
+}
+
+.sidebar {
+  height: 500px;
+}
+
+h5 {
+  color: white;
+}
+
+.headSpace {
+  /* background-color: lightcoral; */
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.headSpace h1 {
+  font-weight: 100;
+  margin: 0;
+  color: rgb(4, 131, 110);
+}
+
+.itemName {
+  width: 90% !important;
+  float: none !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 35px !important;
+  margin-bottom: 2px;
+}
+
+.card-panel {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+}
+
+.card-panel .row {
+  margin-bottom: -5px;
+}
+
+.invalid {
+  border-bottom: #f44336
+}
+
+.header {
+  height: 80px;
+}
+
+@media only screen and (max-width:600px) {
+  .connect {
+    width: 80%;
+  }
+  .itemName {
+    width: 100% !important;
+    padding-right: 25px !important;
+  }
+}
+
+.input-field p, .input-field .select-wrapper {
+  display: inline-block;
+  clear: both;
+  float: none;
+}
+
+.loadField {
+  margin-bottom: -6px !important;
+}
+
+progress {
+  width: 100%;
+  -webkit-appearance: none;
+  border-radius: 20px;
+}
+
+::-webkit-progress-value {
+  background-color: rgb(36, 165, 133);
+  border-radius: 20px;
+}
+
+::-webkit-progress-bar {
+  background-color: gainsboro;
+  height: 6px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+/* Login/SignUp styling End */
+
+/* nav header */
+
+/* nav {
+  line-height: 78px;
+} */
+
+/* modal button */
+.btn-flat {
+  background-color: #26a69a;
+  color: white;
+}
+
+/* Index page styling start */
+.card {
+  height: 250px;
+  width: 200px;
+}
+
+.listings {
+  text-align: center;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-image {
+  height: 175px;
+  width: auto;
+}
+
+.filter {
+  height: 40px;
+  width: 85%;
+  color: teal;
+  font-size: 18px;
+  margin-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.listing {
+  /* margin-left: 250px; */
+}
+
+.logo {
+  margin-top: 10px;
+  width: 150px;
+  height: auto;
+}
+
+
+@media (max-width: 670px) {
+  .listing {
+    /* margin-left: 100px; */
+  }
+  .logo {
+    margin-top: 10px;
+    width: 120px;
+    height: auto;
+  }
+}
+
+#logInHeader {
+  color: #1e88e5;
+}
+#signUpHeader {
+  color: #1e88e5;
+}
+
+
+.itemModal {
+  width: 400px;
+}
+
+.cardTitle {
+  color: #1e88e5;
+}
+
+#automotive {
+  color: #1e88e5;
+}
+
+#household {
+  color: #1e88e5;
+}
+
+#decor {
+  color: #1e88e5;
+}
+
+#apparel {
+  color: #1e88e5;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-top: 17px;
+}
+
+#accessories {
+  color: #1e88e5;
+}
+
+#technology {
+  color: #1e88e5;
+}
+
+#pet {
+  color: #1e88e5;
+}
+
+#random {
+  color: #1e88e5;
+}
+
+/* Index page styling */
+
+/* profile page styling */
+
+#editMyProfile {
+  color: #1e88e5;
+}
+
+#createListing {
+  color: #1e88e5;
+}
+
+#myListings {
+  color: #1e88e5;
+}
+#search1 {
+  align-self: baseline;
+}
+
+/* Index page styling */
+
+/* scroll bar updates */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

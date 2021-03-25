@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+
+
+
+
+  </style>
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <title>Free Market</title>
+</head>
+
+<body>
+
+
+  <nav class="blue darken-1 header">
+    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+    <ul id="slide-out" class="sidenav">
+      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+      </div>
+      <div class="sideNavCont">
+        <li class="collection-item filter  waves-effect waves-red" id="automotive">Automotive</li>
+        <li class="collection-item filter waves-effect waves-red" id="household">Household</li>
+        <li class="collection-item filter waves-effect waves-red" id="decor">Decor</li>
+        <li class="collection-item filter waves-effect waves-red" id="apparel">Apparel</li>
+        <li class="collection-item filter waves-effect waves-red" id="accessories">Accessories</li>
+        <li class="collection-item filter waves-effect waves-red" id="technology">Technology</li>
+        <li class="collection-item filter waves-effect waves-red" id="pet">Pet</li>
+        <li class="collection-item filter waves-effect waves-red" id="random">Random</li>
+        <li class="input-field white">
+          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+        </li>
+      </div>
+    </ul>
+    <div class="navContain">
+      <a href="./index.html" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
+      </a>
+      <ul class="right" id="navList">
+        <li><input type="search" id="search1" class="hide-on-med-and-down"></li>
+        <li><a href=""><i class="material-icons left hide-on-med-and-down">search</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container listing">
+    <div class="col s9 l9">
+      <div class="row" id="listings"></div>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal itemModal">
+    <div class="modal-content" id="listFull">
+
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
+  <script src="js/index.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.modal');
+      var instances = M.Modal.init(elems, {});
+    })
+  </script>
+</body>
+
+</html>
