@@ -8,7 +8,7 @@ const getListings = () => {
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const listingElem = document.createElement('div')
-        listingElem.className = 'col s12 m6 l4'
+        listingElem.className = 'col s12 m6 l4 xl3'
         listingElem.innerHTML = `
 
           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
@@ -29,15 +29,27 @@ getListings()
 const status1 = () => {
 
   if (localStorage.getItem('token')) {
+    // main nav
     let signOut = document.createElement('li')
-    signOut.id = 'signOut'
+    signOut.classList = 'hide-on-small-only signOut'
     signOut.innerHTML = `<a href="">Sign Out</a>`
 
     let myProf = document.createElement('li')
-    myProf.innerHTML = `<a href="/profile">My Profile</a>`
+    myProf.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
 
     document.getElementById('navList').append(myProf)
     document.getElementById('navList').append(signOut)
+
+    // side out nav
+    let signout = document.createElement('li')
+    signout.classList = 'hide-on-small-only signOut'
+    signout.innerHTML = `<a href="">Sign Out</a>`
+
+    let myprof = document.createElement('li')
+    myprof.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
+
+    document.getElementById('slide-out').append(myprof)
+    document.getElementById('slide-out').append(signout)
 
 
   } else {
@@ -297,13 +309,14 @@ document.getElementById('search2').addEventListener('input', event => {
   }
 })
 
-document.getElementById('signOut').addEventListener('click', event => {
-  localStorage.removeItem('token')
-})
-
 document.addEventListener('click', event => {
 
   if (localStorage.getItem('token')) {
+
+    if (event.target.parentNode.classList.contains('signOut')) {
+      console.log('dumb')
+      localStorage.removeItem('token')
+    }
 
     if (event.target.parentNode.classList.contains('listings')) {
       const id = event.target.parentNode.dataset.id

@@ -129,6 +129,8 @@ progress {
 .listings {
   text-align: center;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .card-image {
@@ -147,7 +149,7 @@ progress {
 }
 
 .listing {
-  margin-left: 250px;
+  /* margin-left: 250px; */
 }
 
 .logo {
@@ -159,7 +161,7 @@ progress {
 
 @media (max-width: 670px) {
   .listing {
-    margin-left: 100px;
+    /* margin-left: 100px; */
   }
   .logo {
     margin-top: 10px;
