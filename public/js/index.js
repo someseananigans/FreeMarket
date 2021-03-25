@@ -32,7 +32,7 @@ const status1 = () => {
     // main nav
     let signOut = document.createElement('li')
     signOut.classList = 'hide-on-small-only signOut'
-    signOut.innerHTML = `<a href="">Sign Out</a>`
+    signOut.innerHTML = `<a class="signOut" >Sign Out</a>`
 
     let myProf = document.createElement('li')
     myProf.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
@@ -43,7 +43,7 @@ const status1 = () => {
     // side out nav
     let signout = document.createElement('li')
     signout.classList = 'hide-on-small-only signOut'
-    signout.innerHTML = `<a href="">Sign Out</a>`
+    signout.innerHTML = `<a class="signOut" >Sign Out</a>`
 
     let myprof = document.createElement('li')
     myprof.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
@@ -58,8 +58,6 @@ const status1 = () => {
     signIn.innerHTML = `<a href="./login.html">Sign Up/Sign In</a>`
 
     document.getElementById('navList').append(signIn)
-
-
   }
 }
 status1()
@@ -311,49 +309,20 @@ document.getElementById('search2').addEventListener('input', event => {
 
 document.addEventListener('click', event => {
 
-  if (localStorage.getItem('token')) {
+  if ((event.target.classList.contains('signOut')) && (localStorage.getItem('token'))) {
+    localStorage.removeItem('token')
+    window.location = './index'
+  }
 
-    if (event.target.parentNode.classList.contains('signOut')) {
-      console.log('dumb')
-      localStorage.removeItem('token')
-    }
+  if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
+    const id = event.target.parentNode.dataset.id
+    axios.get(`/api/listings/id/${id}`)
 
-    if (event.target.parentNode.classList.contains('listings')) {
-      const id = event.target.parentNode.dataset.id
-      axios.get(`/api/listings/id/${id}`)
-
-        .then(({ data: listing }) => {
-          console.log(listing)
-          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-          document.getElementById('listFull').innerHTML =
-            `
-      <div class="row center">
-        <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
-      </div>
-      <div class="row">
-        <h4 id="listTitle">${listingTitle}</h4>
-      </div>
-      <div class="row">
-        <p id="listDesc">${listing.description}</p>
-      </div>
-      <a href="mailto:${listing.User.email}">
-      <button class="btn modal-close waves-effect waves-green" type="email" name="action">
-      <i class="material-icons right">email</i>
-      </button>
-      </a>
-      `
-        })
-        .catch(err => console.log(err))
-    }
-    else if (event.target.classList.contains('listings')) {
-      const id = event.target.dataset.id
-      axios.get(`/api/listings/id/${id}`)
-
-        .then(({ data: listing }) => {
-          console.log(listing)
-          let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-          document.getElementById('listFull').innerHTML =
-            `
+      .then(({ data: listing }) => {
+        console.log(listing)
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+        document.getElementById('listFull').innerHTML =
+          `
       <div class="row center">
         <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
       </div>
@@ -371,11 +340,35 @@ document.addEventListener('click', event => {
       `
       })
       .catch(err => console.log(err))
-   }
-
-
-  } else {
-    window.location = '/login.html'
   }
+  else if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
+    const id = event.target.dataset.id
+    axios.get(`/api/listings/id/${id}`)
 
+      .then(({ data: listing }) => {
+        console.log(listing)
+        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+        document.getElementById('listFull').innerHTML =
+          `
+      <div class="row center">
+        <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
+      </div>
+      <div class="row">
+        <h4 id="listTitle">${listingTitle}</h4>
+      </div>
+      <div class="row">
+        <p id="listDesc">${listing.description}</p>
+      </div>
+      <a href="mailto:${listing.User.email}">
+      <button class="btn modal-close waves-effect waves-green" type="email" name="action">
+      <i class="material-icons right">email</i>
+      </button>
+      </a>
+      `
+      })
+      .catch(err => console.log(err))
+  }
+  else if ((event.target.parentNode.classList.contains('listings')) && (!localStorage.getItem('token'))) {
+    window.location = './login'
+  }
 })
