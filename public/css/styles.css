@@ -118,12 +118,14 @@ progress {
 } */
 
 /* modal button */
+
 .btn-flat {
   background-color: #26a69a;
   color: white;
 }
 
 /* Index page styling start */
+
 .card {
   height: 250px;
   width: 200px;
@@ -161,7 +163,6 @@ progress {
   height: auto;
 }
 
-
 @media (max-width: 670px) {
   .listing {
     /* margin-left: 100px; */
@@ -176,10 +177,10 @@ progress {
 #logInHeader {
   color: #1e88e5;
 }
+
 #signUpHeader {
   color: #1e88e5;
 }
-
 
 .itemModal {
   width: 400px;
@@ -189,7 +190,30 @@ progress {
   color: #1e88e5;
 }
 
-#automotive {
+.input-field .prefix.active {
+  color: #1e88e5;
+}
+
+.material-icons .prefix {
+  color: #1e88e5;
+}
+
+input.valid[type=text]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+textarea.valid[type=text]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+.select-wrapper input.select-dropdown:focus {
+  border-bottom: 1px solid;
+  color: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+.dropdown-content #automotive {
   color: #1e88e5;
 }
 
@@ -239,6 +263,7 @@ progress {
 #myListings {
   color: #1e88e5;
 }
+
 #search1 {
   align-self: baseline;
 }
@@ -246,19 +271,27 @@ progress {
 /* Index page styling */
 
 /* scroll bar updates */
+
 /* width */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 /* Track */
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
+
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }

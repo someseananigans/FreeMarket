@@ -40,7 +40,7 @@ axios.get('api/user/auth', {
   .catch(err => console.log(err))
 
 document.getElementById('editBtn').addEventListener('click', event => {
-  document.getElementById('items').innerHTML = `<h1 style="text-align: center; font-weight: 100;">My Profile</h1>
+  document.getElementById('items').innerHTML = `<h1 style="text-align: center; font-weight: 100; color: #1e88e5;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
             <div class="itemName input-field col s12">
@@ -72,7 +72,7 @@ document.getElementById('editBtn').addEventListener('click', event => {
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="updateProfile">Save
+          <button class="waves-effect yellow darken-3 btn" type="submit" name="action" id="updateProfile">Save
             <i class="material-icons right">send</i>
           </button>
         </div>`
