@@ -14,7 +14,7 @@ let users = [
   {
     name: "Joseph",
     email: "JosephDoe@gmail.com",
-    username: "Joeseph",
+    username: "Joseph",
     password: "Admin"
   },
   {
@@ -60,8 +60,8 @@ let listings = [
   {
     title: 'Dog Food',
     description: 'Our dog has grown out of this type of dog food. It expires 04/21/2022.',
-    image: 'pet',
-    category: "https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2Fpetfood.jpg?alt=media&token=f56c0caf-b3d8-4852-96d9-501586b49b11",
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2Fpetfood.jpg?alt=media&token=f56c0caf-b3d8-4852-96d9-501586b49b11',
+    category: "pet",
     uid: 1
   },
   {
@@ -123,8 +123,8 @@ let listings = [
   {
     title: 'Lebraun Lakers Funko Pop',
     description: 'I got a spare. It has some box damage, but still in good condition. Free or first offer by the end of march.',
-    image: '',
-    category:"https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2Ffunkopop.jpg?alt=media&token=f2a48ba4-8e3c-4ceb-97da-8953a5e69ab5",
+    image: 'https://firebasestorage.googleapis.com/v0/b/freemarket-3263e.appspot.com/o/images%2Ffunkopop.jpg?alt=media&token=f2a48ba4-8e3c-4ceb-97da-8953a5e69ab5',
+    category:"random",
     uid: 3
   },
   {
@@ -235,6 +235,9 @@ router.post('/users', (req, res) => {
 router.post('/listings', (req, res) => {
   Listing.destroy({ where: {} })
     .then(() => {
+      listings.forEach(listing => {
+        listing.title = listing.title.toLowerCase()
+      });
       Listing.bulkCreate(listings)
         .then(() => {
           res.sendStatus(200)
@@ -243,6 +246,5 @@ router.post('/listings', (req, res) => {
     })
     .catch(err => console.log(err))
 })
-
 
 module.exports = router
