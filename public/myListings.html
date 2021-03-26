@@ -7,41 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- font package -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
-  <style>
-    .info {
-      background: lightblue;
-      height: 140px;
-    }
-
-    .sidebar {
-      background: lightcoral;
-      height: 500px
-    }
-
-    h5 {
-      color: white;
-    }
-  </style>
 
   <title>FreeMarket</title>
 </head>
 
 <body>
-  
 
-  <nav class="nav-wrapper blue darken-1 valign-wrapper">
+  <nav class="blue darken-1">
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-    <ul id="slide-out" class="sidenav">
-      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png" class="logo"></a>
+    <ul id="slide-out" class="sidenav header center invesible-top">
+      <div class="row blue darken-1 center hide-on-med-and-up">
+        <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
       </div>
-      <div class="container">
-        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
-        <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
-        <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
+      <div class="navContain">
+        <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
+        <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
+        <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
       </div>
     </ul>
-    <div class="container">
+    <div class="sideNavCont">
       <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
       <ul class="right hide-on-med-and-down">
@@ -57,11 +45,12 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <h4>Edit Post</h4>
+      <h4>Edit Listing</h4>
       <form>
         <div class="row">
           <div class="input-field col s6">
@@ -120,7 +109,7 @@
       })
   </script>
 
-  <script src="./js/profile.js"></script>
+  <script src="./js/myListings.js"></script>
 </body>
 
 </html>

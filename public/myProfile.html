@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- font package -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="./css/styles.css" rel="stylesheet">
   <style>
     .info {
@@ -30,49 +33,30 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="blue darken-1 header">
-    <!-- ***NEEDS TO BE EDITED*** -->
+  <nav class="blue darken-1">
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-    <ul id="slide-out" class="sidenav">
-      <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
-            class="logo"></a>
+    <ul id="slide-out" class="sidenav header center invesible-top">
+      <div class="row blue darken-1 center hide-on-med-and-up">
+        <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
       </div>
-      <div class="container">
-        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
-        <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
-        <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
+      <div class="navContain">
+        <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
+        <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
+        <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
       </div>
     </ul>
-    <div class="container">
-  
-      <!-- <a class="sidenav-trigger" data-target="mobile-links">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="sidenav" id="mobile-links">
-            <li>
-              <input type="search">
-            </li>
-            <li>
-              <a href=""><i class="material-icons">search</i></a>
-            </li>
-            <li><a href="./login">Home</a></li>
-            <li><a href="./profile">My Listings</a></li>
-          </ul> -->
-  
+    <div class="sideNavCont">
       <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
       </a>
       <ul class="right hide-on-med-and-down">
         <li><a href="./index">Home Page</a></li>
         <li><a href="./index" id="signOut">Log Out</a></li>
-  
       </ul>
-  
     </div>
   </nav>
 
   <div class="container" id='profileTools'>
-    <div class="row">
-      <div class="col s9 l9" id="items">
+      <div class="col" id="items">
         <h1 style="text-align: center; font-weight: 100; color: #1e88e5;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
@@ -108,11 +92,10 @@
           <!-- <button class="waves-effect waves-light btn yellow darken-3" type="submit" name="action" id="updateProfile">Save
             <i class="material-icons right">send</i>
           </button> -->
-          <button class="waves-effect waves-light btn yellow darken-3" type="submit" name="action" id="editBtn">Edit<i
-              class="material-icons right yellow darken-3">edit</i></button>
+          <button class="waves-effect yellow darken-3 btn" type="submit" name="action" id="editBtn">Edit<i
+              class="material-icons right">edit</i></button>
         </div>
       </div>
-    </div>
   </div>
 
 
@@ -126,7 +109,7 @@
       $('.sidenav').sidenav();
     })
   </script>
-  <script src="./js/editProfile.js"></script>
+  <script src="./js/myProfile.js"></script>
 
   <script>
 

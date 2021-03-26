@@ -11,7 +11,6 @@ router.get('/listings', (req, res) => {
       {
       model: User,
       attributes: ['name', 'email', 'phone']
-
       }
     ]
   })
@@ -28,7 +27,6 @@ router.get('/listings/search/:title', (req, res) => {
       {
         model: User,
         attributes: ['name', 'email', 'phone']
-
       }
     ]
   })
@@ -55,7 +53,7 @@ router.get('/listings/category/:category', (req, res) => {
     .then(listing => res.json(listing))
     .catch(listing => res.json(err))
 })
-// Get listings by category
+// Get listing
 router.get('/listings/id/:id', (req, res) => {
   console.log(req.params.id)
   Listing.findOne({ 

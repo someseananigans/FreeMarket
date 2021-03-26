@@ -6,18 +6,15 @@ const validateEmail = (email) => {
 }
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/editProfile.html'
+  window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/createPost.html'
+  window.location = '/createListing'
 })
-// go to my profile page
+// go to my listings page
 document.getElementById('myListings').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/profile.html'
+  window.location = '/myListings'
 })
 
 let token = localStorage.getItem('token')
@@ -40,7 +37,7 @@ axios.get('api/user/auth', {
   .catch(err => console.log(err))
 
 document.getElementById('editBtn').addEventListener('click', event => {
-  document.getElementById('items').innerHTML = `<h1 style="text-align: center; font-weight: 100;">My Profile</h1>
+  document.getElementById('items').innerHTML = `<h1 style="text-align: center; font-weight: 100; color: #1e88e5;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
             <div class="itemName input-field col s12">
@@ -72,7 +69,7 @@ document.getElementById('editBtn').addEventListener('click', event => {
               <div id="invalidUser"></div>
             </div>
           </div>
-          <button class="waves-effect waves-light btn" type="submit" name="action" id="updateProfile">Save
+          <button class="waves-effect yellow darken-3 btn" type="submit" name="action" id="updateProfile">Save
             <i class="material-icons right">send</i>
           </button>
         </div>`
