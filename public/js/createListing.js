@@ -39,7 +39,7 @@ document.getElementById('createItem').addEventListener('click', event => {
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
   console.log('ping')
-  window.location = '/editProfile.html'
+  window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {

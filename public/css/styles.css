@@ -214,6 +214,18 @@ span {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  #profileTools {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  #profileTools {
+    width: 75% !important;
+  }
+}
+
 #logInHeader {
   color: #1e88e5;
 }
@@ -264,6 +276,38 @@ textarea.valid[type=text]:not(.browser-default) {
   color: #1e88e5;
 }
 
+.dropdown-content li>span {
+  color: rgb(0, 162, 255)
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=text]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+textarea:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+textarea:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+textarea:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
 /* Index page styling end */
 
 /* Listing page styling start */
@@ -298,12 +342,15 @@ textarea.valid[type=text]:not(.browser-default) {
 .deletePost {
   width: 95px;
 }
+
 .listingTitle {
   padding-top: 4px;
 }
+
 #profileTools {
   margin-top: 10px;
 }
+
 /* Listing page styling end */
 
 /* Index page styling */
@@ -341,4 +388,3 @@ textarea.valid[type=text]:not(.browser-default) {
     top: 64px;
   }
 }
-
