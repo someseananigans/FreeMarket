@@ -58,20 +58,20 @@ const getMyListings = () => {
         listingElem.className = 'col s9 l6'
         listingElem.innerHTML = `
            <div class="row">
-            <div class="col s12 m7">
-              <div class="card hoverable listings" id="cardItem" data-target="modal1" data-id=${listing.id}>
+            <div class="col s6 m4">
+              <div class="card hoverable listings cardItem" data-target="modal1" data-id=${listing.id}>
                 <div class="card-image">
                 <img src="${listing.image}" height="175px" width="auto">
                 </div>
+                <div class="listingTitle">
                 <span class="card-title">${listing.title}</span>
+                <div>
+                <div class="myListingsBtn">
+                 <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
+          <a class="waves-effect waves-light btn deletePost yellow darken-3" data-id=${listing.id} href="#">Delete Post</a>
+                </div>
               </div>
             </div>
-          </div>
-          <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
-          <br>
-          <br>
-          <a class="waves-effect waves-light btn deletePost yellow darken-3" data-id=${listing.id} href="#">Delete Post</a>
-          </div>
           </div>
         `
       document.getElementById('items').append(listingElem)

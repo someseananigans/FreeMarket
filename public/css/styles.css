@@ -271,6 +271,30 @@ textarea.valid[type=text]:not(.browser-default) {
   }
 }
 
+.cardItem {
+  height: 270px;
+  width: 235px !important;
+}
+
+.myListingsBtn {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 7px;
+}
+
+.editPost {
+  width: 95px;
+}
+
+.deletePost {
+  width: 95px;
+}
+.listingTitle {
+  padding-top: 4px;
+}
+#profileTools {
+  margin-top: 10px;
+}
 /* Listing page styling end */
 
 /* Index page styling */
@@ -308,3 +332,4 @@ textarea.valid[type=text]:not(.browser-default) {
     top: 64px;
   }
 }
+
