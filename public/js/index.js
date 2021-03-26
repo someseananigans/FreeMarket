@@ -4,11 +4,11 @@ const getListings = () => {
 
     .then(({ data: listings }) => {
       console.log(listings)
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Recent Listings</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const listingElem = document.createElement('div')
-        listingElem.className = 'col s12 m6 l4 xl3'
+        listingElem.className = 'col s12 m4 l3 xl3'
         listingElem.innerHTML = `
 
           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
@@ -35,18 +35,18 @@ const status1 = () => {
     signOut.innerHTML = `<a class="signOut" >Sign Out</a>`
 
     let myProf = document.createElement('li')
-    myProf.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
+    myProf.innerHTML = `<a class="hide-on-small-only" href="/myProfile">My Profile</a>`
 
     document.getElementById('navList').append(myProf)
     document.getElementById('navList').append(signOut)
 
     // side out nav
     let signout = document.createElement('li')
-    signout.classList = 'hide-on-small-only signOut'
+    signout.classList = 'hide-on-med-and-up signOut'
     signout.innerHTML = `<a class="signOut" >Sign Out</a>`
 
     let myprof = document.createElement('li')
-    myprof.innerHTML = `<a class="hide-on-small-only" href="/profile">My Profile</a>`
+    myprof.innerHTML = `<a class="hide-on-med-and-up" href="/myProfile">My Profile</a>`
 
     document.getElementById('slide-out').append(myprof)
     document.getElementById('slide-out').append(signout)
@@ -253,7 +253,7 @@ document.getElementById('search1').addEventListener('input', event => {
     axios.get(`/api/listings/search/${document.getElementById('search1').value}`)
 
       .then(({ data: listings }) => {
-        document.getElementById('listings').innerHTML = ''
+        document.getElementById('listings').innerHTML = `<h3>Search Results: <span>${document.getElementById('search1').value}</span></h3>`
         listings.forEach(listing => {
           const autoElem = document.createElement('div')
           let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
@@ -283,7 +283,7 @@ document.getElementById('search2').addEventListener('input', event => {
     axios.get(`/api/listings/search/${document.getElementById('search2').value}`)
 
       .then(({ data: listings }) => {
-        document.getElementById('listings').innerHTML = ''
+        document.getElementById('listings').innerHTML = `<h3>Search Results: <span>${document.getElementById('search1').value}</span></h3>`
         listings.forEach(listing => {
           const autoElem = document.createElement('div')
           let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
@@ -314,37 +314,16 @@ document.addEventListener('click', event => {
     window.location = './index'
   }
 
-  if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
-    const id = event.target.parentNode.dataset.id
+  let id = ''
+  if (localStorage.getItem('token')) {
+    if (event.target.parentNode.classList.contains('listings')) {
+      id = event.target.parentNode.dataset.id
+    }
+    if (event.target.classList.contains('listings')) {
+      id = event.target.dataset.id
+    }
+    // testing
     axios.get(`/api/listings/id/${id}`)
-
-      .then(({ data: listing }) => {
-        console.log(listing)
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        document.getElementById('listFull').innerHTML =
-          `
-      <div class="row center">
-        <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
-      </div>
-      <div class="row">
-        <h4 id="listTitle">${listingTitle}</h4>
-      </div>
-      <div class="row">
-        <p id="listDesc">${listing.description}</p>
-      </div>
-      <a href="mailto:${listing.User.email}">
-      <button class="btn modal-close waves-effect yellow darken-3" type="email" name="action">
-      <i class="material-icons right">email</i>
-      </button>
-      </a>
-      `
-      })
-      .catch(err => console.log(err))
-  }
-  else if ((event.target.parentNode.classList.contains('listings')) && (localStorage.getItem('token'))) {
-    const id = event.target.dataset.id
-    axios.get(`/api/listings/id/${id}`)
-
       .then(({ data: listing }) => {
         console.log(listing)
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)

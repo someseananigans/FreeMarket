@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- font package -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="./css/styles.css" rel="stylesheet">
   <style>
     .info {
@@ -30,20 +33,20 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-  <nav class="blue darken-1 header">
+  <nav class="blue darken-1">
     <!-- ***NEEDS TO BE EDITED*** -->
     <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
     <ul id="slide-out" class="sidenav">
       <div class="row blue darken-1 center header"><a href="index.html"><img src="./freeMarketLogo.png"
             class="logo"></a>
       </div>
-      <div class="container">
-        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">Edit My Profile</li>
+      <div class="sideNavCont">
+        <li class="collection-item filter  waves-effect waves-blue" id="editMyProfile">My Profile</li>
         <li class="collection-item filter waves-effect waves-blue" id="createListing">Create a Listing</li>
         <li class="collection-item filter waves-effect waves-blue" id="myListings">My Listings</li>
       </div>
     </ul>
-    <div class="container">
+    <div class="navContain">
   
       <!-- <a class="sidenav-trigger" data-target="mobile-links">
             <i class="material-icons">menu</i>
@@ -71,8 +74,7 @@
   </nav>
 
   <div class="container" id='profileTools'>
-    <div class="row">
-      <div class="col s9 l9" id="items">
+      <div class="col" id="items">
         <h1 style="text-align: center; font-weight: 100; color: #1e88e5;">My Profile</h1>
         <div class="card-panel">
           <div class="row">
@@ -112,7 +114,6 @@
               class="material-icons right">edit</i></button>
         </div>
       </div>
-    </div>
   </div>
 
 
@@ -126,7 +127,7 @@
       $('.sidenav').sidenav();
     })
   </script>
-  <script src="./js/editProfile.js"></script>
+  <script src="./js/myProfile.js"></script>
 
   <script>
 

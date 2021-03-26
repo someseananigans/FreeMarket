@@ -6,18 +6,15 @@ const validateEmail = (email) => {
 }
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/editProfile.html'
+  window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/createPost.html'
+  window.location = '/createListing'
 })
-// go to my profile page
+// go to my listings page
 document.getElementById('myListings').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/profile.html'
+  window.location = '/myListings'
 })
 
 let token = localStorage.getItem('token')

@@ -44,12 +44,12 @@ document.getElementById('editMyProfile').addEventListener('click', event => {
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
   console.log('ping')
-  window.location = '/createPost.html'
+  window.location = '/createListing'
 })
 // go to my profile page
 document.getElementById('myListings').addEventListener('click', event => {
   console.log('ping')
-  window.location = '/profile.html'
+  window.location = '/myListings'
 })
 
 // firebase file upload
