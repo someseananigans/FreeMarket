@@ -178,7 +178,9 @@ span {
 
 .card-image {
   height: 175px;
-  width: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .listing {
@@ -226,6 +228,13 @@ span {
 
 .cardTitle {
   color: #1e88e5;
+  margin: 0;
+}
+
+.titleBox {
+  height: 75px;
+  display: flex;
+  justify-content: center;
 }
 
 .input-field .prefix.active {
