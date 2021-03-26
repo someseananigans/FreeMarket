@@ -1,5 +1,6 @@
-body {
+body, .container {
   background-color: rgb(243, 239, 239);
+  font-family: 'Bebas Neue', cursive;
 }
 
 /* Login/SignUp styling Start */
@@ -119,7 +120,7 @@ nav {
   z-index: 999;
 }
 
-.sideHead { 
+.sideHead {
   height: 100px;
   justify-content: center;
 }
