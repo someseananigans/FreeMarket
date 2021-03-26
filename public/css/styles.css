@@ -64,10 +64,6 @@ h5 {
   border-bottom: #f44336
 }
 
-.header {
-  height: 80px;
-}
-
 @media only screen and (max-width:600px) {
   .connect {
     width: 80%;
@@ -113,17 +109,60 @@ progress {
 
 /* nav header */
 
+nav .input-field {
+  height: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+nav {
+  z-index: 999;
+}
+
+.sideHead { 
+  height: 100px;
+  justify-content: center;
+}
+
+.input-field input[type=search]~.material-icons {
+  color: #4ea3ee;
+}
+
+.filter {
+  /* height: 40px; */
+  width: 85%;
+  color: #1e88e5;
+  font-size: 18px;
+  /* margin-top: 10px; */
+  text-align: center;
+  /* vertical-align: middle; */
+}
+
+.sidenav .row {
+  margin-bottom: 0;
+}
+
 /* nav {
   line-height: 78px;
 } */
 
 /* modal button */
+
 .btn-flat {
   background-color: #26a69a;
   color: white;
 }
 
 /* Index page styling start */
+
+#search1 {
+  align-self: baseline;
+}
+
+span {
+  font-weight: 100;
+}
+
 .card {
   height: 250px;
   width: 200px;
@@ -141,45 +180,44 @@ progress {
   width: auto;
 }
 
-.filter {
-  height: 40px;
-  width: 85%;
-  color: teal;
-  font-size: 18px;
-  margin-top: 10px;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .listing {
-  /* margin-left: 250px; */
+  width: 850px;
 }
 
 .logo {
-  margin-top: 10px;
-  width: 150px;
+  margin-top: 5px;
+  width: 136px;
   height: auto;
 }
 
-
-@media (max-width: 670px) {
+@media (max-width: 992px) {
   .listing {
-    /* margin-left: 100px; */
+    width: 575px;
+  }
+  .card {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .listing {
+    width: 90%;
+  }
+  .card {
+    width: 300px;
   }
   .logo {
-    margin-top: 10px;
     width: 120px;
-    height: auto;
   }
 }
 
 #logInHeader {
   color: #1e88e5;
 }
+
 #signUpHeader {
   color: #1e88e5;
 }
-
 
 .itemModal {
   width: 400px;
@@ -189,76 +227,56 @@ progress {
   color: #1e88e5;
 }
 
-#automotive {
-  color: #1e88e5;
+/* Index page styling end */
+
+/* Listing page styling start */
+
+#items .card-panel {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#household {
-  color: #1e88e5;
+@media (max-width: 700px) {
+  #items .card-panel {
+    width: 95%;
+  }
 }
 
-#decor {
-  color: #1e88e5;
-}
-
-#apparel {
-  color: #1e88e5;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-top: 17px;
-}
-
-#accessories {
-  color: #1e88e5;
-}
-
-#technology {
-  color: #1e88e5;
-}
-
-#pet {
-  color: #1e88e5;
-}
-
-#random {
-  color: #1e88e5;
-}
-
-/* Index page styling */
-
-/* profile page styling */
-
-#editMyProfile {
-  color: #1e88e5;
-}
-
-#createListing {
-  color: #1e88e5;
-}
-
-#myListings {
-  color: #1e88e5;
-}
-#search1 {
-  align-self: baseline;
-}
+/* Listing page styling end */
 
 /* Index page styling */
 
 /* scroll bar updates */
+
 /* width */
+
 ::-webkit-scrollbar {
   width: 10px;
 }
+
 /* Track */
+
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
+
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* TEST */
+
+@media only screen and (min-width: 600px) {
+  .invesible-top {
+    top: 64px;
+  }
 }
