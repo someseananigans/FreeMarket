@@ -67,7 +67,7 @@ document.getElementById('automotive').addEventListener('click', event => {
   axios.get(`/api/listings/category/automotive`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Automotive</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -90,7 +90,7 @@ document.getElementById('household').addEventListener('click', event => {
   axios.get(`/api/listings/category/household`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Household</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -113,7 +113,7 @@ document.getElementById('decor').addEventListener('click', event => {
   axios.get(`/api/listings/category/decor`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Decor</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -136,7 +136,7 @@ document.getElementById('apparel').addEventListener('click', event => {
   axios.get(`/api/listings/category/apparel`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Apparel</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -159,7 +159,7 @@ document.getElementById('accessories').addEventListener('click', event => {
   axios.get(`/api/listings/category/accessories`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Accessories</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -182,7 +182,7 @@ document.getElementById('technology').addEventListener('click', event => {
   axios.get(`/api/listings/category/technology`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Technology</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -205,7 +205,7 @@ document.getElementById('pet').addEventListener('click', event => {
   axios.get(`/api/listings/category/pet`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>Pet</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
@@ -228,7 +228,7 @@ document.getElementById('random').addEventListener('click', event => {
   axios.get(`/api/listings/category/random`)
 
     .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = ''
+      document.getElementById('listings').innerHTML = '<h3>random</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
         const autoElem = document.createElement('div')
