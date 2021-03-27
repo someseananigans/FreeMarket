@@ -13,17 +13,17 @@ main {
   flex: 1 0 auto;
 }
 
-.container {
-  min-height: 84.5vh;
-}
-
 .footer-copyright {
   background-color: rgb(243, 239, 239);
+  justify-content: center;
   height: 25px;
 }
 
 .page-footer {
   background-color: rgb(243, 239, 239);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 #footerContent {
