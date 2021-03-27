@@ -1,6 +1,39 @@
 body, .container {
   background-color: rgb(243, 239, 239);
   font-family: 'Bebas Neue', cursive;
+  min-height: 76.5vh;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.page-footer {
+  background-color: rgb(243, 239, 239);
+}
+
+#footerContent {
+  /* background-color: rgb(243, 239, 239); */
+  color: rgb(153, 150, 150);
+  display: flex;
+  justify-content: center;
+}
+
+.page-footer {
+ height: 25px;
+}
+
+#footerContent {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
 }
 
 /* Login/SignUp styling Start */
