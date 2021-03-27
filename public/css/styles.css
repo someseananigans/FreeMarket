@@ -21,7 +21,7 @@ main {
 
 .page-footer {
   background-color: rgb(243, 239, 239);
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   width: 100%;
 }
