@@ -1,7 +1,6 @@
 body, .container {
   background-color: rgb(243, 239, 239);
   font-family: 'Bebas Neue', cursive;
-  min-height: 76.5vh;
 }
 
 body {
@@ -14,6 +13,15 @@ main {
   flex: 1 0 auto;
 }
 
+.container {
+  min-height: 84.5vh;
+}
+
+.footer-copyright {
+  background-color: rgb(243, 239, 239);
+  height: 25px;
+}
+
 .page-footer {
   background-color: rgb(243, 239, 239);
 }
@@ -23,10 +31,6 @@ main {
   color: rgb(153, 150, 150);
   display: flex;
   justify-content: center;
-}
-
-.page-footer {
- height: 25px;
 }
 
 #footerContent {
