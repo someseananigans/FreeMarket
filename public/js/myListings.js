@@ -84,17 +84,14 @@ document.getElementById('signOut').addEventListener('click', event => {
 
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/createListing'
 })
 // go to my listings page
 document.getElementById('myListings').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/myListings'
 })
 

@@ -3,7 +3,6 @@ const getListings = () => {
   axios.get('/api/listings')
 
     .then(({ data: listings }) => {
-      console.log(listings)
       document.getElementById('listings').innerHTML = '<h3>Recent Listings</h3>'
       listings.forEach(listing => {
         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
