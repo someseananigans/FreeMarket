@@ -24,7 +24,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgb(201, 201, 201);
+  background-color: rgb(223, 223, 223);
   display: flex;
   justify-content: center;
   height: 50px;
@@ -318,6 +318,16 @@ input.valid[type=text]:not(.browser-default) {
   box-shadow: 0 1px 0 0 rgb(0, 162, 255);
 }
 
+input.valid[type=email]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input.valid[type=tel]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
 textarea.valid[type=text]:not(.browser-default) {
   border-bottom: 1px solid rgb(0, 162, 255);
   box-shadow: 0 1px 0 0 rgb(0, 162, 255);
@@ -347,6 +357,34 @@ input[type=text]:not(.browser-default):focus.valid~label {
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+input[type=email]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=email]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=email]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=tel]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly])+label {
   color: #1e88e5;
 }
 
