@@ -7,67 +7,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!-- font package -->
+  <!-- font package -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
-  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styles.css">
 
   <title>Free Market</title>
 </head>
 
 <body>
-  
-  <nav class="blue darken-1">
-    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-    <!-- TEST sidenav-fixed invesible-top -->
-    <ul id="slide-out" class="sidenav header center invesible-top">
-      <li>
-        <div class="row blue darken-1 center hide-on-med-and-up">
-          <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
-        </div>
-      </li>
-      <li class="collection-item filter waves-effect waves-orange" id="automotive">Automotive</li>
-      <li class="collection-item filter waves-effect waves-orange" id="household">Household</li>
-      <li class="collection-item filter waves-effect waves-orange" id="decor">Decor</li>
-      <li class="collection-item filter waves-effect waves-orange" id="apparel">Apparel</li>
-      <li class="collection-item filter waves-effect waves-orange" id="accessories">Accessories</li>
-      <li class="collection-item filter waves-effect waves-orange" id="technology">Technology</li>
-      <li class="collection-item filter waves-effect waves-orange" id="pet">Pet</li>
-      <li class="collection-item filter waves-effect waves-orange" id="random">Random</li>
-      <li class="input-field white">
-        <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
-      </li>
-    </ul>
-    <div class="navContain">
-      <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
-      </a>
-      <ul class="right" id="navList">
-        <li><input type="search" id="search1" class="hide-on-med-and-down"></li>
-        <li><a href=""><i class="material-icons left hide-on-med-and-down">search</i></a></li>
+  <div class="container-fluid">
+    <nav class="blue darken-1">
+      <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+      <!-- TEST sidenav-fixed invesible-top -->
+      <ul id="slide-out" class="sidenav header center invesible-top">
+        <li>
+          <div class="row blue darken-1 center hide-on-med-and-up">
+            <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
+          </div>
+        </li>
+        <li class="collection-item filter waves-effect waves-orange" id="automotive">Automotive</li>
+        <li class="collection-item filter waves-effect waves-orange" id="household">Household</li>
+        <li class="collection-item filter waves-effect waves-orange" id="decor">Decor</li>
+        <li class="collection-item filter waves-effect waves-orange" id="apparel">Apparel</li>
+        <li class="collection-item filter waves-effect waves-orange" id="accessories">Accessories</li>
+        <li class="collection-item filter waves-effect waves-orange" id="technology">Technology</li>
+        <li class="collection-item filter waves-effect waves-orange" id="pet">Pet</li>
+        <li class="collection-item filter waves-effect waves-orange" id="random">Random</li>
+        <li class="input-field white">
+          <input type="search" id="search2" placeholder="Search"><i class="material-icons">search</i>
+        </li>
       </ul>
+      <div class="navContain">
+        <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
+        </a>
+        <ul class="right" id="navList">
+          <li><input type="search" id="search1" class="hide-on-med-and-down"></li>
+          <li><a href=""><i class="material-icons left hide-on-med-and-down">search</i></a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container listing">
+      <div class="col s9 l9">
+        <div class="row" id="listings"></div>
+      </div>
     </div>
-  </nav>
 
-  <div class="container listing">
-    <div class="col s9 l9">
-      <div class="row" id="listings"></div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal itemModal">
+      <div class="modal-content" id="listFull"></div>
+      <div class="modal-footer"></div>
     </div>
-  </div>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal itemModal">
-    <div class="modal-content" id="listFull"></div>
-    <div class="modal-footer"></div>
+    <footer class="footer-copyright">
+      <p id="footerContent"> © Created by Sean Nguyen, Joseph Neilson, and Kyle Ohlwiler</p>
+    </footer>
   </div>
-
-<footer class="page-footer">
-  
-  <div class="footer-copyright">
-   <span id="footerContent"> © Created by Sean Nguyen, Joseph Neilson, and Kyle Ohlwiler</span>
-  </div>
-
-</footer>
 
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
