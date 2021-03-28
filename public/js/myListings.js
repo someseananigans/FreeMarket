@@ -52,26 +52,22 @@ const getMyListings = () => {
     })
     // grabs all listings from user and posts in a card
   .then(({ data: { listings }}) => {
-    document.getElementById('items').innerHTML = ''
+    document.getElementById('items').innerHTML = '<h3>My Listings</h3>'
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
-        listingElem.className = 'col s9 l6'
+        listingElem.className = 'col s12 m6 l4 xl3'
         listingElem.innerHTML = `
-           <div class="row">
-            <div class="col s12 m7">
-              <div class="card hoverable listings" id="cardItem" data-target="modal1" data-id=${listing.id}>
+              <div class="card hoverable listings cardItem" data-target="modal1" data-id=${listing.id}>
                 <div class="card-image">
                 <img src="${listing.image}" height="175px" width="auto">
                 </div>
+                <div class="listingTitle">
                 <span class="card-title">${listing.title}</span>
-              </div>
-            </div>
-          </div>
-          <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
-          <br>
-          <br>
+                <div>
+                <div class="myListingsBtn">
+                 <a class="waves-effect waves-light btn modal-trigger editPost yellow darken-3" data-id=${listing.id}  href="#modal1">Edit Post</a>
           <a class="waves-effect waves-light btn deletePost yellow darken-3" data-id=${listing.id} href="#">Delete Post</a>
-          </div>
+                </div>
           </div>
         `
       document.getElementById('items').append(listingElem)
@@ -88,17 +84,14 @@ document.getElementById('signOut').addEventListener('click', event => {
 
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/createListing'
 })
 // go to my listings page
 document.getElementById('myListings').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/myListings'
 })
 

@@ -28,5 +28,9 @@
     "passport-jwt": "^4.0.0",
     "passport-local-sequelize": "^0.9.0",
     "sequelize": "^6.5.1"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }

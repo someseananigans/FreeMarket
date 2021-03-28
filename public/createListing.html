@@ -15,31 +15,33 @@
 </head>
 
 <body>
-  <nav class="blue darken-1">
-    <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-    <ul id="slide-out" class="sidenav header center invesible-top">
-      <div class="row blue darken-1 center hide-on-med-and-up">
-        <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
-      </div>
-      <div class="navContain">
-        <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
-        <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
-        <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
-      </div>
-    </ul>
-    <div class="sideNavCont">
-      <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
-      </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="./index">Home Page</a></li>
-        <li><a href="./index" id="signOut">Log Out</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <div class="container" id='profileTools'>
+  <div class="container-fluid">
+    <nav class="blue darken-1">
+      <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+      <ul id="slide-out" class="sidenav header center invesible-top">
+        <div class="row blue darken-1 center hide-on-med-and-up">
+          <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
+        </div>
+        <div class="navContain">
+          <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
+          <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
+          <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
+        </div>
+      </ul>
+      <div class="sideNavCont">
+        <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="./index">Home Page</a></li>
+          <li><a href="./index" id="signOut">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container" id='profileTools'>
       <div id="items" class="col">
-        <h1 style="text-align: center; font-weight: 100; color: #1e88e5;" >New Listing</h1>
+        <h1 style="text-align: center; font-weight: 100; color: #1e88e5;">New Listing</h1>
         <div class="card-panel">
 
           <div class="itemName input-field">
@@ -50,7 +52,7 @@
 
           <div class="itemName input-field">
             <i class="material-icons prefix">description</i>
-            <textarea id="description" type="text" class="materialize-textarea"></textarea>
+            <textarea id="description" type="text" class="materialize-textarea validate"></textarea>
             <label for="description">Description</label>
           </div>
 
@@ -90,9 +92,13 @@
         </div>
       </div>
     </div>
+    
+    
+    <footer class="footer-copyright">
+      <p id="footerContent"> © Created by Sean Nguyen, Joseph Nielson, and Kyle Ohlwiler</p>
+    </footer>
   </div>
-
-
+    
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -108,15 +114,15 @@
 
 
   <script>
-    
-      $(document).ready(function () {
-        $('.modal').modal();
-        $('select').formSelect();
-      });
-       $(document).ready(function () {
-          $('.sidenav').sidenav();
-        })
-</script>
+
+    $(document).ready(function () {
+      $('.modal').modal();
+      $('select').formSelect();
+    });
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+    })
+  </script>
 
 
 

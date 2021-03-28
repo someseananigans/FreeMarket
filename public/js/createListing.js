@@ -38,17 +38,14 @@ document.getElementById('createItem').addEventListener('click', event => {
 })
 // go to edit profile page
 document.getElementById('editMyProfile').addEventListener('click', event => {
-  console.log('ping')
-  window.location = '/editProfile.html'
+  window.location = '/myProfile'
 })
 // go to create a post page
 document.getElementById('createListing').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/createListing'
 })
 // go to my profile page
 document.getElementById('myListings').addEventListener('click', event => {
-  console.log('ping')
   window.location = '/myListings'
 })
 
@@ -71,7 +68,6 @@ document.getElementById('fileButton').addEventListener('change', event => {
     function complete() {
       imageRef.getDownloadURL()
         .then((url) => {
-          console.log(url)
           imageUrl = url
         })
         .catch(err => console.log(err))

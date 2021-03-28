@@ -3,6 +3,44 @@ body, .container {
   font-family: 'Bebas Neue', cursive;
 }
 
+body {
+  display: flex;
+  /* min-height: 100vh; */
+  flex-direction: column;
+  height: 100%;
+}
+
+.container-fluid {
+  min-height: 100vh;
+  position: relative;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer-copyright {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(223, 223, 223);
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  clear: both;
+}
+
+#footerContent {
+  /* background-color: rgb(243, 239, 239); */
+  color: rgb(153, 150, 150);
+  display: flex;
+  justify-content: center;
+}
+
 /* Login/SignUp styling Start */
 
 .connect {
@@ -55,6 +93,7 @@ h5 {
   margin-top: 15px;
   width: 100%;
   text-align: center;
+  margin-bottom: 55px;
 }
 
 .card-panel .row {
@@ -214,6 +253,18 @@ span {
   }
 }
 
+@media only screen and (min-width: 1200px) {
+  #profileTools {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 993px) {
+  #profileTools {
+    width: 75% !important;
+  }
+}
+
 #logInHeader {
   color: #1e88e5;
 }
@@ -250,6 +301,16 @@ input.valid[type=text]:not(.browser-default) {
   box-shadow: 0 1px 0 0 rgb(0, 162, 255);
 }
 
+input.valid[type=email]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input.valid[type=tel]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
 textarea.valid[type=text]:not(.browser-default) {
   border-bottom: 1px solid rgb(0, 162, 255);
   box-shadow: 0 1px 0 0 rgb(0, 162, 255);
@@ -261,6 +322,66 @@ textarea.valid[type=text]:not(.browser-default) {
 }
 
 .dropdown-content #automotive {
+  color: #1e88e5;
+}
+
+.dropdown-content li>span {
+  color: rgb(0, 162, 255)
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=text]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+input[type=email]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=email]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=email]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=tel]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=tel]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+textarea:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+textarea:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+textarea:not(.browser-default):focus:not([readonly])+label {
   color: #1e88e5;
 }
 
@@ -279,6 +400,30 @@ textarea.valid[type=text]:not(.browser-default) {
     width: 95%;
   }
 }
+
+.cardItem {
+  height: 270px;
+  width: 235px !important;
+}
+
+.myListingsBtn {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 7px;
+}
+
+.editPost {
+  width: 95px;
+}
+
+.deletePost {
+  width: 95px;
+}
+
+.listingTitle {
+  padding-top: 4px;
+}
+
 
 /* Listing page styling end */
 
