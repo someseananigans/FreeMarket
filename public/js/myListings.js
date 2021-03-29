@@ -79,7 +79,7 @@ const getMyListings = () => {
 // sign Out
 document.getElementById('signOut').addEventListener('click', event => {
   localStorage.removeItem('token')
-  window.location = '/login.html'
+  window.location = '/login'
 })
 
 // go to edit profile page
