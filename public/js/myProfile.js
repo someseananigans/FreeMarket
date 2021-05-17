@@ -143,3 +143,7 @@ document.getElementById('editBtn').addEventListener('click', event => {
     .catch(err => console.log(err))
 })
 
+document.getElementById('signOut').addEventListener('click', event => {
+  localStorage.removeItem('token')
+  window.location = '/login'
+})

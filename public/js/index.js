@@ -258,7 +258,7 @@ document.getElementById('random').addEventListener('click', event => {
 document.getElementById('search1').addEventListener('input', event => {
 
   if (document.getElementById('search1').value) {
-    axios.get(`/api/listings/search/${document.getElementById('search1').value}`)
+    axios.get(`/api/listings/search/${document.getElementById('search1').value.toLowerCase()}`)
 
       .then(({ data: listings }) => {
         document.getElementById('listings').innerHTML = `<h3>Search Results: <span>${document.getElementById('search1').value}</span></h3>`
@@ -290,7 +290,7 @@ document.getElementById('search1').addEventListener('input', event => {
 document.getElementById('search2').addEventListener('input', event => {
 
   if (document.getElementById('search2').value) {
-    axios.get(`/api/listings/search/${document.getElementById('search2').value}`)
+    axios.get(`/api/listings/search/${document.getElementById('search2').value.toLowerCase()}`)
 
       .then(({ data: listings }) => {
         document.getElementById('listings').innerHTML = `<h3>Search Results: <span>${document.getElementById('search1').value}</span></h3>`

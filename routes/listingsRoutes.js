@@ -5,7 +5,6 @@ const passport = require('passport')
 
 // Get all listings (No authentication necessary)
 router.get('/listings', (req, res) => {
-
   Listing.findAll({
     include: [
       {
