@@ -1,6 +1,7 @@
 body, .container {
   background-color: rgb(243, 239, 239);
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
 }
 
 body {
@@ -19,10 +20,6 @@ body {
   padding-bottom: 50px;
 }
 
-main {
-  flex: 1 0 auto;
-}
-
 .footer-copyright {
   position: absolute;
   bottom: 0;
@@ -31,14 +28,13 @@ main {
   display: flex;
   justify-content: center;
   height: 50px;
-  clear: both;
 }
 
 #footerContent {
   /* background-color: rgb(243, 239, 239); */
   color: rgb(153, 150, 150);
-  display: flex;
-  justify-content: center;
+  font-family: ;
+  font-weight: 100;
 }
 
 /* Login/SignUp styling Start */
@@ -149,10 +145,13 @@ progress {
 
 /* nav header */
 
-nav .input-field {
-  height: auto;
-  margin-left: 15px;
-  margin-right: 15px;
+.dropdown-content {
+  top: 65px !important;
+  width: 105px !important;
+}
+
+.dropdown-content li>a, .dropdown-content li>span nav .input-field {
+  color: #1e88e5;
 }
 
 nav {
@@ -182,6 +181,10 @@ nav {
   margin-bottom: 0;
 }
 
+.navbar-fixed {
+  z-index: 999;
+}
+
 /* nav {
   line-height: 78px;
 } */
@@ -195,6 +198,23 @@ nav {
 
 /* Index page styling start */
 
+.spiel {
+  text-align: center;
+  height: 200px;
+  background-image: linear-gradient(rgba(170, 213, 255, 0.966), rgba(191, 223, 255, 0.747),  rgba(234, 247, 255, 0.308));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spiel p {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  /* font-family: 'Sacramento', cursive; */
+  font-weight: 500;
+}
+
 #search1 {
   align-self: baseline;
 }
@@ -206,6 +226,11 @@ span {
 .card {
   height: 250px;
   width: 200px;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  -ms-border-radius: 0px;
+  -o-border-radius: 0px;
 }
 
 .listings {
@@ -220,6 +245,10 @@ span {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+#listings {
+  text-align: center;
 }
 
 .listing {
@@ -250,6 +279,12 @@ span {
   }
   .logo {
     width: 120px;
+  }
+  .spiel p {
+    font-size: 1.75rem;
+  }
+  .spiel {
+    height: 170px;
   }
 }
 
@@ -282,10 +317,16 @@ span {
   margin: 0;
 }
 
+.card-title {
+  color: #1e88e5;
+}
+
 .titleBox {
   height: 75px;
   display: flex;
   justify-content: center;
+  padding-left: 7px;
+  padding-right: 7px;
 }
 
 .input-field .prefix.active {
@@ -302,6 +343,11 @@ input.valid[type=text]:not(.browser-default) {
 }
 
 input.valid[type=email]:not(.browser-default) {
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input.valid[type=password]:not(.browser-default) {
   border-bottom: 1px solid rgb(0, 162, 255);
   box-shadow: 0 1px 0 0 rgb(0, 162, 255);
 }
@@ -343,6 +389,20 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label {
   color: #1e88e5;
 }
 
+input[type=search]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=search]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=search]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
 input[type=email]:not(.browser-default):focus:not([readonly]) {
   color: black;
   border-bottom: 1px solid rgb(0, 162, 255);
@@ -354,6 +414,20 @@ input[type=email]:not(.browser-default):focus.valid~label {
 }
 
 input[type=email]:not(.browser-default):focus:not([readonly])+label {
+  color: #1e88e5;
+}
+
+input[type=password]:not(.browser-default):focus:not([readonly]) {
+  color: black;
+  border-bottom: 1px solid rgb(0, 162, 255);
+  box-shadow: 0 1px 0 0 rgb(0, 162, 255);
+}
+
+input[type=password]:not(.browser-default):focus.valid~label {
+  color: #1e88e5;
+}
+
+input[type=password]:not(.browser-default):focus:not([readonly])+label {
   color: #1e88e5;
 }
 
@@ -406,6 +480,10 @@ textarea:not(.browser-default):focus:not([readonly])+label {
   width: 235px !important;
 }
 
+#items {
+  text-align: center;
+}
+
 .myListingsBtn {
   display: flex;
   justify-content: space-evenly;
@@ -423,7 +501,6 @@ textarea:not(.browser-default):focus:not([readonly])+label {
 .listingTitle {
   padding-top: 4px;
 }
-
 
 /* Listing page styling end */
 

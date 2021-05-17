@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const { join } = require('path')
 
-router.get('/myProfile', (req, res) => {
+router.get('/myProfile/', (req, res) => {
   res.sendFile(join(__dirname, '..', 'public', 'myProfile.html'))
 })
 

@@ -9,7 +9,8 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- font package -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
   <link href="./css/styles.css" rel="stylesheet">
   <title>FreeMarket</title>
 </head>
@@ -17,27 +18,29 @@
 <body>
 
   <div class="container-fluid">
-    <nav class="blue darken-1">
-      <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-      <ul id="slide-out" class="sidenav header center invesible-top">
-        <div class="row blue darken-1 center hide-on-med-and-up">
-          <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
-        </div>
-        <div class="navContain">
-          <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
-          <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
-          <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
-        </div>
-      </ul>
-      <div class="sideNavCont">
-        <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="./index">Home Page</a></li>
-          <li><a href="./index" id="signOut">Log Out</a></li>
+    <div class="navbar-fixed">
+      <nav class="blue darken-1">
+        <a data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+        <ul id="slide-out" class="sidenav header center invesible-top">
+          <div class="row blue darken-1 center hide-on-med-and-up">
+            <a href="index" class="valign-wrapper sideHead"><img src="./freeMarketLogo.png" class="logo"></a>
+          </div>
+          <div class="navContain">
+            <li class="collection-item filter waves-effect waves-orange" id="editMyProfile">My Profile</li>
+            <li class="collection-item filter waves-effect waves-orange" id="createListing">Create a Listing</li>
+            <li class="collection-item filter waves-effect waves-orange" id="myListings">My Listings</li>
+          </div>
         </ul>
-      </div>
-    </nav>
+        <div class="sideNavCont">
+          <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="./index">Home Page</a></li>
+            <li><a href="./index" id="signOut">Log Out</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
     <div class="container" id='profileTools'>
       <div id="items" class="col">
@@ -92,13 +95,13 @@
         </div>
       </div>
     </div>
-    
-    
+
+
     <footer class="footer-copyright">
       <p id="footerContent"> © Created by Sean Nguyen, Joseph Nielson, and Kyle Ohlwiler</p>
     </footer>
   </div>
-    
+
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
