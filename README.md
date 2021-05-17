@@ -1,9 +1,8 @@
 # FreeMarket
 
+## Description
 As fellow hoarders, we understand the difficulty of separating from goods. This web application was built to support hoarders find new owners for their items without having to deal with the struggle of a price tag.
-
-## Deployed Link
-
+### Deployed Link
 [FreeMarket](https://mighty-coast-38363.herokuapp.com/)
 
 ## FreeMarket Users Can...
@@ -20,10 +19,14 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 
 ## Preview
 
-Home
+- Home
 ![alt screenshot](screenshots/preview1.png)
-Profile
+- Profile
 ![alt screenshot](screenshots/preview2.png)
+
+Home                                         |  Profile
+:-------------------------------------------:|:-------------------------------------------:
+![alt screenshot](screenshots/preview1.png)  |  ![alt screenshot](screenshots/preview2.png)
 
 ## Questions
 
