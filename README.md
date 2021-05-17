@@ -19,9 +19,9 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 
 ## Preview
 
-Home
+- Home
 ![alt screenshot](screenshots/preview1.png)
-Profile
+- Profile
 ![alt screenshot](screenshots/preview2.png)
 
 ## Questions
