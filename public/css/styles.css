@@ -148,6 +148,7 @@ progress {
 .dropdown-content {
   top: 65px !important;
   width: 140px !important;
+  text-align-last: center !important;
 }
 
 .dropdown-content li>a, .dropdown-content li>span nav .input-field {
@@ -201,7 +202,7 @@ nav {
 .spiel {
   text-align: center;
   height: 200px;
-  background-image: linear-gradient(rgba(170, 213, 255, 0.966), rgba(191, 223, 255, 0.747),  rgba(234, 247, 255, 0.308));
+  background-image: linear-gradient(rgba(170, 213, 255, 0.966), rgba(191, 223, 255, 0.747), rgba(234, 247, 255, 0.308));
   display: flex;
   align-items: center;
   justify-content: center;
