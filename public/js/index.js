@@ -55,7 +55,7 @@ const status1 = () => {
   } else {
     let signIn = document.createElement('li')
     signIn.id = 'signOut'
-    signIn.innerHTML = `<a href="./login.html">Sign Up/Log In</a>`
+    signIn.innerHTML = `<a href="./login.html">SignUp/Login</a>`
 
     document.getElementById('navList').append(signIn)
   }
