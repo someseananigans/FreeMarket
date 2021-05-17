@@ -12,18 +12,18 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 - Click on cards for more information including connecting with listing owners
 - Create and manage their user accounts
 
+## Project Members
+
+- [@someseananigans](https://github.com/someseananigans)
+- [@josephmnielson](https://github.com/josephmnielson)
+- [@Ohskie3](https://github.com/Ohskie3)
+
 ## Preview
 
 Home
 ![alt screenshot](screenshots/preview1.png)
 Profile
 ![alt screenshot](screenshots/preview2.png)
-
-## Project Members
-
-- [@someseananigans](https://github.com/someseananigans)
-- [@josephmnielson](https://github.com/josephmnielson)
-- [@Ohskie3](https://github.com/Ohskie3)
 
 ## Questions
 
