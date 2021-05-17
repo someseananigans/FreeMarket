@@ -1,6 +1,6 @@
 # FreeMarket
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+![badmath](https://img.shields.io/github/languages/top/someseananigans/freemarket)
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen)
 
