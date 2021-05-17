@@ -24,6 +24,10 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 - Profile
 ![alt screenshot](screenshots/preview2.png)
 
+Home           |  Profile
+:-------------------------:|:-------------------------:
+![alt screenshot](screenshots/preview1.png)  |  ![alt screenshot](screenshots/preview2.png)
+
 ## Questions
 
 Feel free to contact me with any questions via the information below:
