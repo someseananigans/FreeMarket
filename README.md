@@ -1,6 +1,7 @@
 # FreeMarket
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen)
 
 As fellow hoarders, we understand the difficulty of separating from goods. This web application was built to support hoarders find new owners for their items without having to deal with the struggle of a price tag.
