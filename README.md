@@ -14,7 +14,7 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 ## Project Members
 
 - [@someseananigans](https://github.com/someseananigans)
-- [@josephmnielson](https://github.com/josephmnielson)
+- [@josephmnielsen](https://github.com/josephmnielsen)
 - [@Ohskie3](https://github.com/Ohskie3)
 
 ## Preview
