@@ -36,10 +36,17 @@ document.getElementById('signUp').addEventListener('click', event => {
       // registers user if username is unique and email is valid
       if (validateEmail(newUser.email) && newUser.username) {
         axios.post('/api/user/register', newUser)
-          .then(() => window.location = '/login')
-          .catch(err => {
-            console.log(err)
+          .then(({ data: token }) => {
+            if (token) {
+              localStorage.setItem('token', token)
+              window.location = '/'
+            } else {
+              document.getElementById('invalid').innerHTML = "Username and/or Password were incorrect. Please try again."
+              document.getElementById('usernameL').classList.add('invalid')
+              document.getElementById('passwordL').classList.add('invalid')
+            }
           })
+          .catch(err => console.log(err))
       }
     })
     .catch(err => console.error(err))
