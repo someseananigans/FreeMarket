@@ -14,15 +14,10 @@ As fellow hoarders, we understand the difficulty of separating from goods. This 
 ## Project Members
 
 - [@someseananigans](https://github.com/someseananigans)
-- [@josephmnielson](https://github.com/josephmnielson)
+- [@josephmnielsen](https://github.com/josephmnielsen)
 - [@Ohskie3](https://github.com/Ohskie3)
 
 ## Preview
-
-- Home
-![alt screenshot](screenshots/preview1.png)
-- Profile
-![alt screenshot](screenshots/preview2.png)
 
 Home                                         |  Profile
 :-------------------------------------------:|:-------------------------------------------:
@@ -30,8 +25,14 @@ Home                                         |  Profile
 
 ## Questions
 
-Feel free to contact me with any questions via the information below:
+Feel free to contact us with any questions via github or email:
 
-GitHub: [@someseananigans](https://github.com/someseananigans)
+GitHub:  
+- [@someseananigans](https://github.com/someseananigans)
+- [@josephmnielsen](https://github.com/josephmnielsen)
+- [@Ohskie3](https://github.com/Ohskie3)
 
-Email: [nsean321@gmail.com](nsean321@gmail.com)
+Email: 
+- [nsean321@gmail.com](nsean321@gmail.com)
+- [josephmnielsen@gmail.com](josephmnielsen@gmail.com)
+- [kyleohlwiler@gmail.com](kyleohlwiler@gmail.com)
