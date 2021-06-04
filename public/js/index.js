@@ -31,8 +31,7 @@ const status1 = () => {
   if (localStorage.getItem('token')) {
     // main nav
     let signOut = document.createElement('li')
-    signOut.classList = 'hide-on-small-only signOut'
-    signOut.innerHTML = `<a class="signOut" >Log Out</a>`
+    signOut.innerHTML = `<a class="hide-on-small-only signOut" >Log Out</a>`
 
     let myProf = document.createElement('li')
     myProf.innerHTML = `<a class="hide-on-small-only" href="/myProfile">My Profile</a>`
@@ -42,8 +41,7 @@ const status1 = () => {
 
     // side out nav
     let signout = document.createElement('li')
-    signout.classList = 'hide-on-med-and-up signOut'
-    signout.innerHTML = `<a class="signOut" >Log Out</a>`
+    signout.innerHTML = `<a class="hide-on-med-and-up signOut" >Log Out</a>`
 
     let myprof = document.createElement('li')
     myprof.innerHTML = `<a class="hide-on-med-and-up" href="/myProfile">My Profile</a>`
@@ -58,6 +56,11 @@ const status1 = () => {
     signIn.innerHTML = `<a href="./login.html">SignUp/Login</a>`
 
     document.getElementById('navList').append(signIn)
+
+    let signin = document.createElement('li')
+    signin.innerHTML = `<a href="./login.html">SignUp/Login</a>`
+
+    document.getElementById('slide-out').append(signin)
   }
 }
 status1()
