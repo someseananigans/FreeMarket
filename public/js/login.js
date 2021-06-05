@@ -13,6 +13,21 @@ let cleave = new Cleave(document.getElementById('phoneS'), {
   phoneRegionCode: 'US'
 })
 
+
+document.getElementById("passwordL").addEventListener("keyup", event => {
+  event.preventDefault()
+  if (event.keyCode === 13) {
+    document.getElementById('login').click()
+  }
+})
+
+document.getElementById("passwordS").addEventListener("keyup", event => {
+  event.preventDefault()
+  if (event.keyCode === 13) {
+    document.getElementById('signUp').click()
+  }
+})
+
 document.getElementById('signUp').addEventListener('click', event => {
   // axios.get('/api/usersnames')
   //   .then(({ data: usernames }) => {
@@ -23,34 +38,7 @@ document.getElementById('signUp').addEventListener('click', event => {
     password: document.getElementById('passwordS').value,
     email: document.getElementById('emailS').value
   }
-  //     // confirms that email is a valid format
-  //     if (!validateEmail(document.getElementById('emailS').value)) {
-  //       document.getElementById('invalidEmail').innerHTML = 'Invalid email'
-  //     }
-  //     // confirms that username doesn't already exist 
-  //     if (!usernames.includes(document.getElementById('usernameS').value)) {
-  //       newUser.username = document.getElementById('usernameS').value
-  //     } else {
-  //       document.getElementById('invalidUser').innerHTML = 'Username already exists'
-  //       document.getElementById('usernameS').classList.add('invalid')
-  //     }
-  //     // registers user if username is unique and email is valid
-  //     if (validateEmail(newUser.email) && newUser.username) {
-  //       axios.post('/api/user/register', newUser)
-  //         .then(({ data: token }) => {
-  //           if (token) {
-  //             localStorage.setItem('token', token)
-  //             window.location = '/'
-  //           } else {
-  //             document.getElementById('invalid').innerHTML = "Username and/or Password were incorrect. Please try again."
-  //             document.getElementById('usernameL').classList.add('invalid')
-  //             document.getElementById('passwordL').classList.add('invalid')
-  //           }
-  //         })
-  //         .catch(err => console.log(err))
-  //     }
-  //   })
-  //   .catch(err => console.error(err))
+
 
   axios.post('/api/user/register', newUser)
     .then(({ data }) => {
