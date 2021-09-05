@@ -508,6 +508,10 @@ textarea:not(.browser-default):focus:not([readonly])+label {
   padding-top: 4px;
 }
 
+.yellow {
+  margin-top: 10px;
+}
+
 /* Listing page styling end */
 
 /* Index page styling */

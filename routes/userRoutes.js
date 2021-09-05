@@ -29,6 +29,7 @@ router.post('/user/register', (req, res) => {
     username: '',
     password: ''
   }
+  console.log(status)
   const { name, email, phone, username, password } = req.body
   const lowerCaseUsername = username.toLowerCase()
 

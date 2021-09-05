@@ -65,201 +65,200 @@ const status1 = () => {
 }
 status1()
 
-document.getElementById('automotive').addEventListener('click', event => {
+// document.getElementById('automotive').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/automotive`)
+//   axios.get(`/api/listings/category/automotive`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Automotive</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Automotive</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('household').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('household').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/household`)
+//   axios.get(`/api/listings/category/household`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Household</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Household</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('decor').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('decor').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/decor`)
+//   axios.get(`/api/listings/category/decor`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Decor</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Decor</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('apparel').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('apparel').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/apparel`)
+//   axios.get(`/api/listings/category/apparel`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Apparel</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Apparel</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('accessories').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('accessories').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/accessories`)
+//   axios.get(`/api/listings/category/accessories`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Accessories</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Accessories</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('technology').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('technology').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/technology`)
+//   axios.get(`/api/listings/category/technology`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Technology</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Technology</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('pet').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('pet').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/pet`)
+//   axios.get(`/api/listings/category/pet`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>Pet</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>Pet</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
-document.getElementById('random').addEventListener('click', event => {
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
+// document.getElementById('random').addEventListener('click', event => {
 
-  axios.get(`/api/listings/category/random`)
+//   axios.get(`/api/listings/category/random`)
 
-    .then(({ data: listings }) => {
-      document.getElementById('listings').innerHTML = '<h3>random</h3>'
-      listings.forEach(listing => {
-        let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
-        const autoElem = document.createElement('div')
-        autoElem.className = 'col s12 m4 l3 xl3'
-        autoElem.innerHTML = `
-          <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
-          <div class="card-image" style="background-image: url(${listing.image})"></div>
-          <div class="titleBox valign-wrapper">
-            <h3 class="card-title center cardTitle">${listingTitle}</h3>
-          </div>
-        </div>
-      `
-        document.getElementById('listings').append(autoElem)
+//     .then(({ data: listings }) => {
+//       document.getElementById('listings').innerHTML = '<h3>random</h3>'
+//       listings.forEach(listing => {
+//         let listingTitle = listing.title.charAt(0).toUpperCase() + listing.title.slice(1)
+//         const autoElem = document.createElement('div')
+//         autoElem.className = 'col s12 m4 l3 xl3'
+//         autoElem.innerHTML = `
+//           <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+//           <div class="card-image" style="background-image: url(${listing.image})"></div>
+//           <div class="titleBox valign-wrapper">
+//             <h3 class="card-title center cardTitle">${listingTitle}</h3>
+//           </div>
+//         </div>
+//       `
+//         document.getElementById('listings').append(autoElem)
 
-      })
-    })
-    .catch(err => console.error(err))
-})
+//       })
+//     })
+//     .catch(err => console.error(err))
+// })
 
 document.getElementById('search1').addEventListener('input', event => {
-
   if (document.getElementById('search1').value) {
     axios.get(`/api/listings/search/${document.getElementById('search1').value.toLowerCase()}`)
 
@@ -324,6 +323,33 @@ document.getElementById('search2').addEventListener('input', event => {
 
 document.addEventListener('click', event => {
 
+  let categoryID = event.target.id
+
+  let categories = ['automotive', 'household', 'decor', 'apparel', 'accessories', 'technology', 'pet', 'random']
+
+  if (categories.includes(categoryID)) {
+    console.log('hit')
+    axios.get(`/api/listings/category/${categoryID}`)
+      .then(({ data: listings }) => {
+        document.getElementById('listings').innerHTML = `<h3>${categoryID}</h3>`
+        listings.forEach(listing => {
+          const categoryElem = document.createElement('div')
+          categoryElem.className = 'col s12 m4 l3 xl3'
+          categoryElem.innerHTML = `
+            <div class="card hoverable listings modal-trigger" id="cardItem" data-target="modal1" data-id=${listing.id}>
+              <div class="card-image" style="background-image: url(${listing.image})"></div>
+              <div class="titleBox valign-wrapper">
+                <h3 class="card-title center cardTitle">${listing.title}</h3>
+              </div>
+            </div>
+          `
+          document.getElementById('listings').append(categoryElem)
+        })
+      })
+      .catch(err => console.error(err))
+  }
+
+  // send to login page on signout
   if ((event.target.classList.contains('signOut')) && (localStorage.getItem('token'))) {
     localStorage.removeItem('token')
     window.location = './index'

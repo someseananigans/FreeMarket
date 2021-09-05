@@ -43,30 +43,29 @@ document.getElementById('signUp').addEventListener('click', event => {
   axios.post('/api/user/register', newUser)
     .then(({ data }) => {
       if (data.user) {
+        console.log(data)
         localStorage.setItem('token', data.user)
         window.location = '/'
       } else {
-        if (data.status.name) {
-          document.getElementById('nameS').classList.add('invalid')
-          document.getElementById('invalidName').innerHTML = data.status.name
-        }
-        if (data.status.email) {
-          document.getElementById('emailS').classList.add('invalid')
-          document.getElementById('invalidEmail').innerHTML = data.status.email
-        }
-        if (data.status.phone) {
-          document.getElementById('phoneS').classList.add('invalid')
-          document.getElementById('invalidPhone').innerHTML = data.status.phone
-        }
-        if (data.status.username) {
-          document.getElementById('usernameS').classList.add('invalid')
-          document.getElementById('invalidUser').innerHTML = data.status.username
-        }
-        if (data.status.password) {
-          document.getElementById('passwordS').classList.add('invalid')
-          document.getElementById('invalidPassword').innerHTML = data.status.password
+        data.status.name && document.getElementById('nameS').classList.add('invalid')
+        document.getElementById('invalidName').innerHTML = data.status.name
 
-        }
+        data.status.email && document.getElementById('emailS').classList.add('invalid')
+        data.status.email && document.getElementById('emailS').classList.remove('valid')
+        document.getElementById('invalidEmail').innerHTML = data.status.email
+
+        data.status.phone && document.getElementById('phoneS').classList.add('invalid')
+        document.getElementById('invalidPhone').innerHTML = data.status.phone
+
+
+        data.status.username && document.getElementById('usernameS').classList.add('invalid')
+        data.status.username && document.getElementById('usernameS').classList.remove('valid')
+        document.getElementById('invalidUser').innerHTML = data.status.username
+
+        data.status.password && document.getElementById('passwordS').classList.add('invalid')
+
+        document.getElementById('invalidPassword').innerHTML = data.status.password
+        console.log('register/login failed')
       }
       console.log(data)
     })
@@ -79,9 +78,10 @@ document.getElementById('login').addEventListener('click', event => {
     password: document.getElementById('passwordL').value
   })
     .then(({ data: token }) => {
+      console.log(token)
       if (token) {
-        localStorage.setItem('token', token)
-        window.location = '/'
+        localStorage.setItem('token', token.user)
+        // window.location = '/'
       } else {
         document.getElementById('invalid').innerHTML = "Username and/or Password were incorrect. Please try again."
         document.getElementById('usernameL').classList.add('invalid')
