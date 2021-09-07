@@ -79,9 +79,9 @@ document.getElementById('login').addEventListener('click', event => {
   })
     .then(({ data: token }) => {
       console.log(token)
-      if (token) {
+      if (token.user) {
         localStorage.setItem('token', token.user)
-        // window.location = '/'
+        window.location = '/'
       } else {
         document.getElementById('invalid').innerHTML = "Username and/or Password were incorrect. Please try again."
         document.getElementById('usernameL').classList.add('invalid')

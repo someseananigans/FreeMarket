@@ -4,7 +4,7 @@ const passport = require('passport')
 const jwt = require('jsonwebtoken')
 
 // get user(listings)
-router.get('/user/auth', passport.authenticate('jwt'), (req, res) => {
+router.get('/user/auth', passport.authenticate('jwt', { session: false }), (req, res) => {
   res.json(req.user)
 })
 
@@ -15,7 +15,7 @@ router.get('/usernames', (req, res) => {
       users.forEach(user => {
         usernames.push(user.username)
       });
-      res.json(usernames)
+      res.json(users)
     })
     .catch(err => res.json(err))
 })

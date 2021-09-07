@@ -19,7 +19,7 @@ document.getElementById('myListings').addEventListener('click', event => {
 
 let token = localStorage.getItem('token')
 
-axios.get('api/user/auth', {
+axios.get('/api/user/auth', {
   headers: {
     "Authorization": `Bearer ${token}`
   }

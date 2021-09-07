@@ -5,9 +5,10 @@ const sequelize = require('../db')
 // establish user table (syntax for autherization purposes)
 const User = pls.defineUser(sequelize, {
   name: DataTypes.STRING,
+  username: DataTypes.STRING,
   email: {
     type: DataTypes.STRING,
-    unique: true 
+    unique: true
   },
   phone: DataTypes.STRING
 })
