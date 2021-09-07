@@ -20,7 +20,6 @@ document.getElementById("passwordS").addEventListener("keyup", event => {
 })
 
 document.getElementById('signUp').addEventListener('click', event => {
-
   let newUser = {
     name: document.getElementById('nameS').value,
     phone: document.getElementById('phoneS').value,
@@ -53,7 +52,6 @@ document.getElementById('signUp').addEventListener('click', event => {
         data.status.password && document.getElementById('passwordS').classList.add('invalid')
 
         document.getElementById('invalidPassword').innerHTML = data.status.password
-
       }
       console.log(data)
     })
