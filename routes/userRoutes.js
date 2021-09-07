@@ -29,7 +29,6 @@ router.post('/user/register', (req, res) => {
     username: '',
     password: ''
   }
-  console.log(status)
   const { name, email, phone, username, password } = req.body
   const lowerCaseUsername = username.toLowerCase()
 
@@ -112,7 +111,7 @@ router.post('/user/login', (req, res) => {
     if (err) { console.log(err) }
     // webtoken (store to represent users login)
     res.json({
-      user: user ? jwt.sign({ id: user._id }, process.env.SECRET) : null
+      user: user ? jwt.sign({ user: user._id }, process.env.SECRET) : null
     })
   })
 })

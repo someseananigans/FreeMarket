@@ -1,46 +1,46 @@
 const axios = window.axios
 // ----> set variables within the .env <----
-const firebaseConfig = {
-  apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",
-  authDomain: "freemarket-3263e.firebaseapp.com",
-  projectId: "freemarket-3263e",
-  storageBucket: "freemarket-3263e.appspot.com",
-  databaseURL: "https://freemarket-3263e.firebaseio.com",
-  messagingSenderId: "623455406150",
-  appId: "1:623455406150:web:0f8d92b06ff3902fd16247",
-  measurementId: "G-ZSJ89JVWDF"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAGOsAOTXtMr-AS0DGHL_1dyctsn4iA0mo",
+//   authDomain: "freemarket-3263e.firebaseapp.com",
+//   projectId: "freemarket-3263e",
+//   storageBucket: "freemarket-3263e.appspot.com",
+//   databaseURL: "https://freemarket-3263e.firebaseio.com",
+//   messagingSenderId: "623455406150",
+//   appId: "1:623455406150:web:0f8d92b06ff3902fd16247",
+//   measurementId: "G-ZSJ89JVWDF"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
 
 
-let imageUrl = ''
-// firebase file upload
-document.getElementById('fileButton').addEventListener('change', event => {
-  let file = event.target.files[0]
-  let newName = 'Free' + Date.now()
-  let storageRef = firebase.storage().ref('images/')
-  // 'images/' + file.name
-  let imageRef = storageRef.child(newName)
-  // let task = storageRef.put(file)
-  let task = imageRef.put(file)
-  // update status bar
-  task.on('state_changed',
-    function progress(snapshot) {
-      let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-      document.getElementById('uploader').value = percentage
-    },
-    function error(err) { console.log(err) },
-    function complete() {
-      imageRef.getDownloadURL()
-        .then((url) => {
-          imageUrl = url
-        })
-        .catch(err => console.log(err))
-    }
-  )
-})
+// let imageUrl = ''
+// // firebase file upload
+// document.getElementById('fileButton').addEventListener('change', event => {
+//   let file = event.target.files[0]
+//   let newName = 'Free' + Date.now()
+//   let storageRef = firebase.storage().ref('images/')
+//   // 'images/' + file.name
+//   let imageRef = storageRef.child(newName)
+//   // let task = storageRef.put(file)
+//   let task = imageRef.put(file)
+//   // update status bar
+//   task.on('state_changed',
+//     function progress(snapshot) {
+//       let percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+//       document.getElementById('uploader').value = percentage
+//     },
+//     function error(err) { console.log(err) },
+//     function complete() {
+//       imageRef.getDownloadURL()
+//         .then((url) => {
+//           imageUrl = url
+//         })
+//         .catch(err => console.log(err))
+//     }
+//   )
+// })
 
 // page load
 const getMyListings = () => {
@@ -49,10 +49,10 @@ const getMyListings = () => {
     headers: {
       "Authorization": `Bearer ${token}`
     }
-    })
+  })
     // grabs all listings from user and posts in a card
-  .then(({ data: { listings }}) => {
-    document.getElementById('items').innerHTML = '<h3>My Listings</h3>'
+    .then(({ data: { listings } }) => {
+      document.getElementById('items').innerHTML = '<h3>My Listings</h3>'
       listings.forEach(listing => {
         let listingElem = document.createElement('div')
         listingElem.className = 'col s12 m6 l4 xl3'
@@ -70,30 +70,19 @@ const getMyListings = () => {
                 </div>
           </div>
         `
-      document.getElementById('items').append(listingElem)
+        document.getElementById('items').append(listingElem)
       })
-  })
-  .catch(err => console.log(err))
+    })
+    .catch(err => console.log(err))
 }
 
-// sign Out
-document.getElementById('signOut').addEventListener('click', event => {
-  localStorage.removeItem('token')
-  window.location = '/login'
-})
 
-// go to edit profile page
-document.getElementById('editMyProfile').addEventListener('click', event => {
-  window.location = '/myProfile'
-})
-// go to create a post page
-document.getElementById('createListing').addEventListener('click', event => {
-  window.location = '/createListing'
-})
-// go to my listings page
-document.getElementById('myListings').addEventListener('click', event => {
-  window.location = '/myListings'
-})
+const elem = document.getElementById('modal1');
+const instance = M.Modal.init(elem, {
+  dismissible: true,
+  inDuration: 300, // Transition in duration
+  outDuration: 300
+});
 
 // global event listener
 document.addEventListener('click', event => {
@@ -107,6 +96,7 @@ document.addEventListener('click', event => {
         document.getElementById('uDescription').value = listing.description
         document.getElementById('activeD').classList.add('active')
         document.getElementById('saveUpdate').dataset.id = id
+        instance.open()
       })
       .catch(err => console.log(err))
   }
@@ -135,9 +125,9 @@ document.addEventListener('click', event => {
       .then(() => {
         getMyListings()
       })
-        .catch(err => console.log(err))
-    }
-  
+      .catch(err => console.log(err))
+  }
+
 
   // delete post event listener
   if (event.target.classList.contains('deletePost')) {
@@ -145,14 +135,14 @@ document.addEventListener('click', event => {
     const id = event.target.dataset.id
     axios.delete(`api/listings/${id}`, {
       headers: {
-      "Authorization": `Bearer ${token}`
+        "Authorization": `Bearer ${token}`
       }
     })
       .then(() => {
         event.target.parentNode.parentNode.remove()
       })
       .catch(err => console.error(err))
-    }
+  }
   if (event.target.classList.contains('saveUpdate')) {
     const id = event.target.dataset.id
   }
