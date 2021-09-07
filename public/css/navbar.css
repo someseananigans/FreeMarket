@@ -34,10 +34,15 @@
 
 #navList {
   width: 150px !important;
-  left: 918px !important;
-  text-align-last: center !important;
+  /*left: 918px !important;
+  */text-align-last: center !important;
   top: 64px !important;
   height: fit-content !important;
+  transform: translateX(-52px) !important;
+  -webkit-transform: translateX(-52px) !important;
+  -moz-transform: translateX(-52px) !important;
+  -ms-transform: translateX(-52px) !important;
+  -o-transform: translateX(-52px) !important;
 }
 
 .dropdown-content li>a, .dropdown-content li>span nav .input-field {
