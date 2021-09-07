@@ -84,6 +84,10 @@ body {
   margin: 0;
 }
 
+.hoverable {
+  cursor: pointer;
+}
+
 .titleBox {
   height: 75px;
   display: flex;
@@ -257,7 +261,7 @@ h5 {
   height: min-content;
 }
 
-.disabled {
+.dropdown-content .disabled {
   width: 100% !important;
 }
 
@@ -321,7 +325,6 @@ progress {
     width: 80%;
   }
 }
-
 
 @media only screen and (min-width: 1200px) {
   #profileTools {
