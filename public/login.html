@@ -5,29 +5,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- font package -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-  <link href="/css/styles.css" rel="stylesheet">
+  <!-- CSS styling -->
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="./css/navbar.css">
 
   <title>FreeMarket</title>
 </head>
 
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
   <div class="container-fluid">
+    <!-- navbar -->
     <nav class="nav-wrapper blue darken-1 header">
-      <div class="navContain">
-        <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="./index">Home Page</a></li>
-        </ul>
-      </div>
+      <a href="./index" class="brand-logo center"><img src="./freeMarketLogo.png" class="logo">
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="./index">Home Page</a></li>
+      </ul>
     </nav>
 
     <!-- Login and Sign up Tabs -->
@@ -40,14 +41,13 @@
 
         <div id="signUpBox" class="col s12">
           <div class="card-panel">
-            <div class="headSpace">
-              <h1 class="center-align" id="signUpHeader">Sign Up</h1>
-            </div>
+            <h1 class="center-align headSpace" id="signUpHeader">Sign Up</h1>
             <div class="row">
               <div class="itemName input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
                 <input id="nameS" type="text" class="validate">
                 <label for="nameS">Name</label>
+                <div id="invalidName"></div>
               </div>
             </div>
             <div class="row">
@@ -63,6 +63,7 @@
                 <i class="material-icons prefix">phone</i>
                 <input id="phoneS" type="tel" class="validate">
                 <label for="phoneS">Phone Number</label>
+                <div id="invalidPhone"></div>
               </div>
             </div>
             <div class="row">
@@ -78,6 +79,7 @@
                 <i class="material-icons prefix">lock</i>
                 <input id="passwordS" type="password" class="validate">
                 <label for="passwordS">Password</label>
+                <div id="invalidPassword"></div>
               </div>
             </div>
             <button id="signUp" class="waves-effect waves-light btn yellow darken-3">Sign Up</button>
@@ -86,9 +88,7 @@
 
         <div id="loginBox" class="col s12">
           <div class="card-panel">
-            <div class="headSpace">
-              <h1 class="center-align" id="logInHeader">Login</h1>
-            </div>
+            <h1 class="center-align headSpace" id="logInHeader">Login</h1>
             <div id="invalid"></div>
             <div class="row">
               <div class="itemName input-field col s12">
@@ -111,11 +111,13 @@
     </div>
 
 
-    <footer class="footer-copyright">
-      <p id="footerContent"> © Created by Sean Nguyen, Joseph Nielsen, and Kyle Ohlwiler</p>
-    </footer>
+    <!-- <footer class="footer-copyright">
+      <p id="footerContent"> © Created by Sean Nguyen</p>
+    </footer> -->
   </div>
+  
 
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
   </script>
@@ -125,6 +127,9 @@
     $(document).ready(function () {
       $('.sidenav').sidenav();
     })
+    $(document).ready(function () {
+        $('.tabs').tabs();
+      });
   </script>
   <script src="./js/login.js"></script>
 </body>

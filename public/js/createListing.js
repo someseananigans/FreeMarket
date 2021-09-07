@@ -36,21 +36,10 @@ document.getElementById('createItem').addEventListener('click', event => {
     })
     .catch(err => console.error(err))
 })
-// go to edit profile page
-document.getElementById('editMyProfile').addEventListener('click', event => {
-  window.location = '/myProfile'
-})
-// go to create a post page
-document.getElementById('createListing').addEventListener('click', event => {
-  window.location = '/createListing'
-})
-// go to my profile page
-document.getElementById('myListings').addEventListener('click', event => {
-  window.location = '/myListings'
-})
 
 // firebase file upload
 document.getElementById('fileButton').addEventListener('change', event => {
+  console.log('ping')
   let file = event.target.files[0]
   let newName = 'Free' + Date.now()
   let storageRef = firebase.storage().ref('images/')
@@ -68,9 +57,11 @@ document.getElementById('fileButton').addEventListener('change', event => {
     function complete() {
       imageRef.getDownloadURL()
         .then((url) => {
+          console.log(url)
           imageUrl = url
         })
         .catch(err => console.log(err))
     }
   )
 })
+
