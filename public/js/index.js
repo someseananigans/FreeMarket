@@ -99,6 +99,7 @@ document.addEventListener('click', event => {
 
   // open pagination modal
   if (event.target.id == 'pageNumber') {
+    // console.log(instance3)
     document.getElementById('pageModal').innerHTML = `
       <div id="pageDrop" class="pageDrop">
         <h5>Jump to page</h5>
@@ -225,67 +226,39 @@ document.addEventListener('click', event => {
   if (id !== '') {
     // send to new page (fuck modals)
 
-    let url = `./listing.html?id=${encodeURIComponent(id)}`
-    document.location.href = url
+    // let url = `./listing.html?id=${encodeURIComponent(id)}`
+    // document.location.href = url
 
-    // if (localStorage.getItem('token')) {
 
-    //   axios.get(`/api/listings/id/${id}`)
-    //     .then(({ data: listing }) => {
-    //       document.getElementById('listFull').innerHTML = `
-    //     <div class="row center">
-    //     <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
-    //     </div>
-    //       <div class="row">
-    //       <h4 id="listTitle">${listing.title}</h4>
-    //       </div>
-    //       <div class="row">
-    //       <p id="listDesc">${listing.description}</p>
-    //       </div>
-    //       <a href="mailto:${listing.User.email}">
-    //       <button class="btn modal-close waves-effect yellow darken-3" type="email" name="action">
-    //       <i class="material-icons right">email</i>
-    //       </button>
-    //       </a>
-    //       `
+    if (localStorage.getItem('token')) {
 
-    //       instance.open();
-    //     })
-    //     .catch(err => console.log(err))
-    // } else {
-    //   instance2.open()
-    // }
+      axios.get(`/api/listings/id/${id}`)
+        .then(({ data: listing }) => {
+          document.getElementById('listFull').innerHTML = `
+        <div class="row center">
+        <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
+        </div>
+          <div class="row">
+          <h4 id="listTitle">${listing.title}</h4>
+          </div>
+          <div class="row">
+          <p id="listDesc">${listing.description}</p>
+          </div>
+          <a href="mailto:${listing.User.email}">
+          <button class="btn modal-close waves-effect yellow darken-3" type="email" name="action">
+          <i class="material-icons right">email</i>
+          </button>
+          </a>
+          `
+
+          instance.open();
+        })
+        .catch(err => console.log(err))
+    } else {
+      instance2.open()
+    }
   }
 
-  // if (localStorage.getItem('token')) {
-  //   if (event.target.parentNode.classList.contains('listings')) {
-  //     let id = event.target.parentNode.dataset.id
-  //   }
-  //   else if (event.target.classList.contains('listings')) {
-  //     let id = event.target.dataset.id
-  //   }
-  //   // modal for listings
-  //   axios.get(`/api/listings/id/${id}`)
-  //     .then(({ data: listing }) => {
-  //       document.getElementById('listFull').innerHTML = `
-  //         <div class="row center">
-  //           <p id="listImage"><img src="${listing.image}" height="175px" width="auto"></p>
-  //         </div>
-  //         <div class="row">
-  //           <h4 id="listTitle">${listing.title}</h4>
-  //         </div>
-  //         <div class="row">
-  //           <p id="listDesc">${listing.description}</p>
-  //         </div>
-  //         <a href="mailto:${listing.User.email}">
-  //           <button class="btn modal-close waves-effect yellow darken-3" type="email" name="action">
-  //             <i class="material-icons right">email</i>
-  //           </button>
-  //         </a>
-  //       `
-  //     })
-  //     .catch(err => console.log(err))
-  // }
   // else if ((event.target.parentNode.classList.contains('listings')) && (!localStorage.getItem('token'))) {
 
   //   // if you click on listing without logging in --> this happens
