@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/QFults/Week06-Review.git"
+    "url": "git+https://github.com/someseananigans/freemarket.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/QFults/Week06-Review/issues"
+    "url": "https://github.com/someseananigans/freemarket/issues"
   },
-  "homepage": "https://github.com/QFults/Week06-Review#readme",
+  "homepage": "https://github.com/someseananigans/freemarket#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
