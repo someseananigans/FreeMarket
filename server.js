@@ -26,7 +26,7 @@ let opts = {}
 opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 opts.secretOrKey = process.env.SECRET
 
-passport.use(new JWTStrategy(opts, (jwt_payload, cb) => User.findOne({ id: jwt_payload, include: [Listing] })
+passport.use(new JWTStrategy(opts, (jwt_payload, cb) => User.findOne({ id: jwt_payload.id, include: [Listing] })
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 

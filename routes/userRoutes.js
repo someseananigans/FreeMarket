@@ -87,7 +87,7 @@ router.post('/user/register', (req, res) => {
           res.json({
             status: 200,
             message: 'Successfully Registered and Logged In',
-            user: user ? jwt.sign({ id: user._id }, process.env.SECRET) : null
+            user: user ? jwt.sign({ id: user.id }, process.env.SECRET) : null
           })
         })
       }
@@ -111,7 +111,7 @@ router.post('/user/login', (req, res) => {
     if (err) { console.log(err) }
     // webtoken (store to represent users login)
     res.json({
-      user: user ? jwt.sign({ user: user._id }, process.env.SECRET) : null
+      user: user ? jwt.sign({ id: user._id }, process.env.SECRET) : null
     })
   })
 })
